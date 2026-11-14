@@ -324,3 +324,30 @@ If the worksheet shows a real change (a new release, a different amount, a new o
     ![PO approved](./project-controls/img/p1155-po-hold/12-po-approved.jpg)
 
 **Done on 13 November 2026 (confirmed on MS):** Cost Plan revision 55 → native draft #799 revision 32 → cost approval #6 financially applied (on behalf of Eng. Mostafa, owner decision) → funding version 9 submitted, version 10 approved, unchanged → PO-26110015 (1466) and PO-26110016 (1467) approved at 17:09 as a delegated action for Eng. Mostafa. Purchase 4.23.2 also removed the old `PURCHASE_SOURCE_CHANGED` hold on PO-26110015.
+
+### 9. The yellow box "A Project Controls step is needed" (from Projects 1.155.1, tested on staging 14 November 2026)
+
+When a project's spending gate is closed, its RR, PR, budget and PO pages show a yellow box at the top. You no longer need to know the chain by heart: the box tells you the next step and opens its screen.
+
+![The box on a PO page](./project-controls/img/gate-box/01-po-gate-box.jpg)
+
+1. Read the sentence (1). It names the one step that is still open.
+2. Press the button (2). It opens that step's screen in a new tab.
+3. Do the step, come back and press **Refresh** (3). The box shows the next step, or disappears when everything is done.
+
+The steps, in the order the box shows them:
+
+| The box says | Do this |
+|---|---|
+| A budget line changed after the last cost approval | In the Cost Plan press **Update to current budget** (4). If a quantity grew, map the extra quantity on its row and **Save**. |
+| The native budget has not been compiled yet | Press **Compile native draft** (5). |
+| A budget line has more quantity than the Cost Plan maps (it names the item, for example "Diesel 1300 liter") | The line's quantity grew and the extra is not on a work package. In the Cost Plan put it on the work package row of that item, press **Save**, then **Compile native draft** (from Projects 1.156.3). |
+| Submit the review and cost approval | In the approval review press **Submit for review**, then **Submit cost approval**. |
+| The cost approval is waiting for its approver | The button opens that request: write the reason and **Approve**. |
+| The funding reconciliation must be recorded again | The button opens the funding trail: submit and approve it (see section 8). |
+
+![Cost Plan: Update to current budget and Compile native draft](./project-controls/img/gate-box/02-cost-plan-update.jpg)
+
+Tested on staging: after a quantity change on the M12 line, the box moved through each step and disappeared after the cost approval and **Refresh**.
+
+**A resource request keeps its price (from Budget 1.51.0).** When a budget line price changes by an approved amendment, the change is applied even while resource requests hold quantity on the line. Each existing request keeps the price it was made at; only new requests take the new price. The purchase request price limit is the resource request's own price. The new quantity still cannot be less than what requests hold. P1155 example, 14 November 2026: Diesel line 7950 became 2500 L at 5, while RR 1204 kept 291 L at 6.
