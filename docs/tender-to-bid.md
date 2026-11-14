@@ -25,7 +25,7 @@ This guide is for:
 | **Step 0 — Control fixes** | Final human sign-offs can't be switched to Auto, and a hold is released only by a real approval in the current run. | ✅ Closed on 10 November 2026 |
 | **PH0 — Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed on 11 November 2026 |
 | PH1 — Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
-| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; Tender Indexing and the tender as source built on 14 November 2026 (released with TenderOps 2.43.0 and Tenders 2.87.0) |
+| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.87.0 and Opportunities 2.35.0 |
 | P01–P06 | The bid stages themselves, from foundation to submission. | Planned |
 
 ## 3. Where to find it
@@ -404,6 +404,11 @@ A portal that re-sends the same lines is not a change. Each new change alerts on
 - **A tender is linked only to its own opportunity.** An opportunity is matched by the tender
   number only when it was created before tenders were linked, is not deleted, belongs to no other
   tender, and is the only match. Otherwise converting the tender creates its own opportunity.
+- **The tender's documents stay in the opportunity folder.** Converting moves the tender's SharePoint
+  folder into the opportunity's folder (Opportunities 2.35.0). Later syncs, Outlook files, uploads from
+  the Attachments tab and the tender portals no longer create the old tender folder again: anything
+  meant for it goes into the opportunity folder, so all the files are in one place. Each such redirect
+  is in the activity log.
 
 ## 7. Frequently asked questions
 
