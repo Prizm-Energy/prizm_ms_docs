@@ -25,7 +25,7 @@ This guide is for:
 | **Step 0 — Control fixes** | Final human sign-offs can't be switched to Auto, and a hold is released only by a real approval in the current run. | ✅ Closed on 10 November 2026 |
 | **PH0 — Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed on 11 November 2026 |
 | PH1 — Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
-| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.87.0 and Opportunities 2.35.0 |
+| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.88.0 and Opportunities 2.35.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.36.0 |
 | P01–P06 | The bid stages themselves, from foundation to submission. | Planned |
 
 ## 3. Where to find it
@@ -382,7 +382,7 @@ Tenders that were not converted into an opportunity are not listed yet; that com
 
 ### 6.9 The tender stays the source; the opportunity has its own BOQ
 
-From Tenders 2.87.0:
+From Tenders 2.88.0:
 
 - **Converting copies the BOQ.** The tender keeps its BOQ. The opportunity gets a copy of every
   line in its own BOQ, and each copied line remembers which tender line it came from. Before, the
@@ -409,6 +409,38 @@ A portal that re-sends the same lines is not a change. Each new change alerts on
   the Attachments tab and the tender portals no longer create the old tender folder again: anything
   meant for it goes into the opportunity folder, so all the files are in one place. Each such redirect
   is in the activity log.
+
+### 6.10 The opportunity owns its BOQ
+
+From Opportunities 2.36.0 the opportunity's BOQ is the opportunity's own. Opening a tab never
+changes it; you decide when it is filled and you record when you reviewed a tender change. The
+**BOQ source** box at the top of the opportunity's **BOQ** tab shows it.
+
+**An empty BOQ is filled once, by you:**
+
+![Copy BOQ from tender](./tender-to-bid/img/boq-source-01-copy.jpg)
+
+1. The tender this BOQ comes from, and how many BOQ lines the tender has.
+2. **Copy BOQ from tender** copies the tender's lines into the opportunity's BOQ. It appears only
+   while the opportunity's BOQ is empty, and only for staff who may edit BOQs. It works once: a BOQ
+   that already has lines is never copied over.
+
+Converting a tender copies its lines for you (section 6.9). The button is for an opportunity whose
+tender received its BOQ later, for example from Etimad after the conversion.
+
+**A tender change waits for your review:**
+
+![Tender change waiting for review](./tender-to-bid/img/boq-source-02-pending.jpg)
+
+1. The tender's BOQ changed after the latest revision of this BOQ, and when the change was found.
+   The opportunity's BOQ was not changed.
+2. Compare the two, update the opportunity's BOQ if you need to, and write what you reviewed.
+3. **I reviewed the change** records your review as a new revision; the warning goes away.
+4. The revisions of this BOQ: *Copy of the tender BOQ* (Rev 0), then every reviewed change, with who,
+   when and the note.
+
+The warning only informs you; it does not block anything. Every copy and every review is written to
+the activity log.
 
 ## 7. Frequently asked questions
 
