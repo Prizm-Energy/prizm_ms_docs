@@ -25,7 +25,7 @@ This guide is for:
 | **Step 0 — Control fixes** | Final human sign-offs can't be switched to Auto, and a hold is released only by a real approval in the current run. | ✅ Closed on 10 November 2026 |
 | **PH0 — Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed on 11 November 2026 |
 | PH1 — Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
-| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). | In progress — tender triage and conversion done on 14 November 2026; Tender Indexing built on 14 November 2026 (released with TenderOps 2.43.0); next: the tender stays the source and its changes never overwrite the opportunity |
+| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; Tender Indexing and the tender as source built on 14 November 2026 (released with TenderOps 2.43.0 and Tenders 2.87.0) |
 | P01–P06 | The bid stages themselves, from foundation to submission. | Planned |
 
 ## 3. Where to find it
@@ -379,6 +379,31 @@ the status on the tender page. Every approval and every indexing job is written 
 log.
 
 Tenders that were not converted into an opportunity are not listed yet; that comes in a later step.
+
+### 6.9 The tender stays the source; the opportunity has its own BOQ
+
+From Tenders 2.87.0:
+
+- **Converting copies the BOQ.** The tender keeps its BOQ. The opportunity gets a copy of every
+  line in its own BOQ, and each copied line remembers which tender line it came from. Before, the
+  tender lost its BOQ to the opportunity.
+- **A tender change never overwrites the opportunity.** A BOQ upload, an RFQ document or a portal
+  update after conversion changes the tender only. The opportunity's BOQ is yours to keep.
+- **You are told when the tender changes.** Every hour the ERP compares the tender's BOQ with the
+  one it had when it was converted. When it changed, the opportunity's responsible person gets a
+  notification, a Tender Alert is raised, and the conversion receipt on the tender page shows it:
+
+![Tender changed after conversion](./tender-to-bid/img/source-change-01-receipt.jpg)
+
+1. The opportunity this tender was converted into.
+2. The tender's BOQ changed after the conversion, and when the latest change was found. The
+   opportunity's BOQ was not changed: compare the two and update the opportunity if you need to.
+
+A portal that re-sends the same lines is not a change. Each new change alerts once.
+
+- **A tender is linked only to its own opportunity.** An opportunity is matched by the tender
+  number only when it was created before tenders were linked, is not deleted, belongs to no other
+  tender, and is the only match. Otherwise converting the tender creates its own opportunity.
 
 ## 7. Frequently asked questions
 
