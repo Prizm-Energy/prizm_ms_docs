@@ -25,7 +25,7 @@ This guide is for:
 | **Step 0 — Control fixes** | Final human sign-offs can't be switched to Auto, and a hold is released only by a real approval in the current run. | ✅ Closed on 10 November 2026 |
 | **PH0 — Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed on 11 November 2026 |
 | PH1 — Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
-| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.88.0 and Opportunities 2.35.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.36.0 |
+| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.88.0 and Opportunities 2.35.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.36.0; each business stage shows the AI team stages that feed it (P08-OPP, section 6.11) built on 15 November 2026, released with Opportunities 2.37.0 and TenderOps 2.44.0 |
 | P01–P06 | The bid stages themselves, from foundation to submission. | Planned |
 
 ## 3. Where to find it
@@ -441,6 +441,55 @@ tender received its BOQ later, for example from Etimad after the conversion.
 
 The warning only informs you; it does not block anything. Every copy and every review is written to
 the activity log.
+
+### 6.11 Each business stage shows the AI team stages that feed it
+
+From Opportunities 2.37.0 the opportunity's 9 business stages and the AI team's 11 stages are
+linked by one fixed map. You see on each business stage how far the AI team's work for it has gone,
+and on each AI team stage which business stage it feeds.
+
+**On the pursuit timeline:**
+
+![AI team stages on the pursuit timeline](./tender-to-bid/img/stage-map-01-timeline.jpg)
+
+1. **AI 0/3** under a business stage: how many of the AI team stages that feed it are complete, out
+   of how many. It turns bold when all are complete. Only staff who may see the AI team's work see it.
+2. **Site Visit**, **Client Evaluation** and **Outcome** have no count: no AI team stage feeds them.
+3. Select a stage to see, under its checks, **AI team stages for this stage**, each with its status.
+   A failed stage is red (here *Executive*).
+
+**On the AI Team tab of the timeline:**
+
+![AI team stages grouped by business stage](./tender-to-bid/img/stage-map-02-ai-team.jpg)
+
+1. The AI team stages are grouped under the business stage they feed, in pipeline order.
+2. A failed AI team stage is red.
+
+**In the Virtual Tendering Team tab:**
+
+![Feeds badge on an AI team stage](./tender-to-bid/img/stage-map-03-feeds.jpg)
+
+1. Each of the 11 AI team stages shows **Feeds: …**, the business stage its work goes to. For example,
+   *Benchmark* feeds *Resource Pricing*.
+
+| Business stage | AI team stages that feed it |
+|---|---|
+| Opportunity Init | Prep, Parse |
+| Scope & Solution | Executive, Decompose, Technical |
+| Site Visit | none |
+| Resource Pricing | Benchmark |
+| Commercial Estimate | Risk, Pricing |
+| Proposal Review | Legal, Proposal |
+| Submission | Submit QA |
+| Client Evaluation | none |
+| Outcome | none |
+
+The counts only inform you; they do not complete or block a business stage. Older runs that still
+have the retired *Go / No-Go* AI stage do not show it under any business stage.
+
+When a tender is converted with stage assignees, the stage names are read from the same map, so
+*resources_inquiry* and *resource_inquiry* go to the same person. A stage that has no assignee on the
+opportunity (Scope & Solution, Client Evaluation, Outcome) is refused with a clear reason.
 
 ## 7. Frequently asked questions
 
