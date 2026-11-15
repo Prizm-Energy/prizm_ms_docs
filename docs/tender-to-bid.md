@@ -25,7 +25,7 @@ This guide is for:
 | **Step 0 — Control fixes** | Final human sign-offs can't be switched to Auto, and a hold is released only by a real approval in the current run. | ✅ Closed on 10 November 2026 |
 | **PH0 — Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed on 11 November 2026 |
 | PH1 — Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
-| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.89.0 and Opportunities 2.35.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.36.0; each business stage shows the AI team stages that feed it (P08-OPP, section 6.11) built on 15 November 2026, released with Opportunities 2.37.0 and TenderOps 2.44.0 |
+| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.89.0 and Opportunities 2.35.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.36.0; each business stage shows the AI team stages that feed it (P08-OPP, section 6.11) built on 15 November 2026, released with Opportunities 2.37.0 and TenderOps 2.44.0; administrators are alerted when n8n delivery stops (P08-N8N-OPS, section 6.12) built on 15 November 2026, released with TenderOps 2.45.0 |
 | P01–P06 | The bid stages themselves, from foundation to submission. | Planned |
 
 ## 3. Where to find it
@@ -214,7 +214,8 @@ display.
 
 - **Decision alerts inside the ERP**, in the Automation section, switches the alerts in 6.2 on or
   off. It is on by default.
-- Sending events to n8n, for example Teams cards, is optional and is set in the same section.
+- Sending events to n8n, for example Teams cards, is optional and is set in the same section. When
+  it is set up, administrators are alerted if delivery stops (section 6.12).
 
 ### 6.4 One tender, one opportunity
 
@@ -490,6 +491,33 @@ have the retired *Go / No-Go* AI stage do not show it under any business stage.
 When a tender is converted with stage assignees, the stage names are read from the same map, so
 *resources_inquiry* and *resource_inquiry* go to the same person. A stage that has no assignee on the
 opportunity (Scope & Solution, Client Evaluation, Outcome) is refused with a clear reason.
+
+### 6.12 You are told when n8n stops receiving TenderOps events
+
+From TenderOps 2.45.0 the ERP checks every five minutes whether its events still reach n8n.
+Administrators no longer have to open the settings to find out that delivery stopped. The check
+runs only where n8n is set up (address and secret filled in, **Send events to n8n** on).
+
+In **Opportunities → Settings → TenderOps**, Automation section:
+
+![n8n delivery health](./tender-to-bid/img/n8n-health-01-status.jpg)
+
+1. **Health** shows the result of the latest check:
+   - **Healthy**: events are reaching n8n.
+   - **Down**: the reasons are listed under it. An event has waited longer than the set time, an
+     event has failed three attempts in a row, an event was given up in the last 24 hours, or n8n did
+     not answer its health check three times in a row.
+   - **Not checked yet**: no check has run since the setting was turned on.
+   - **Not checked**: n8n events are off or not set up.
+
+![n8n alert settings](./tender-to-bid/img/n8n-health-02-settings.jpg)
+
+2. **Alert when n8n delivery is down** (on by default). Administrators get one Tender Alert when
+   delivery goes down and one when it recovers. Each alert opens this settings page.
+3. **Waiting time before the alert** (30 minutes by default, 5 to 1440). Delivery counts as down
+   when the oldest waiting event is older than this.
+
+While delivery is down nothing is lost: the events wait and are sent again when n8n answers.
 
 ## 7. Frequently asked questions
 
