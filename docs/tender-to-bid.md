@@ -25,7 +25,7 @@ This guide is for:
 | **Step 0 — Control fixes** | Final human sign-offs can't be switched to Auto, and a hold is released only by a real approval in the current run. | ✅ Closed on 10 November 2026 |
 | **PH0 — Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed on 11 November 2026 |
 | PH1 — Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
-| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.88.0 and Opportunities 2.35.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.36.0; each business stage shows the AI team stages that feed it (P08-OPP, section 6.11) built on 15 November 2026, released with Opportunities 2.37.0 and TenderOps 2.44.0 |
+| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.89.0 and Opportunities 2.35.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.36.0; each business stage shows the AI team stages that feed it (P08-OPP, section 6.11) built on 15 November 2026, released with Opportunities 2.37.0 and TenderOps 2.44.0 |
 | P01–P06 | The bid stages themselves, from foundation to submission. | Planned |
 
 ## 3. Where to find it
@@ -382,7 +382,7 @@ Tenders that were not converted into an opportunity are not listed yet; that com
 
 ### 6.9 The tender stays the source; the opportunity has its own BOQ
 
-From Tenders 2.88.0:
+From Tenders 2.89.0:
 
 - **Converting copies the BOQ.** The tender keeps its BOQ. The opportunity gets a copy of every
   line in its own BOQ, and each copied line remembers which tender line it came from. Before, the
