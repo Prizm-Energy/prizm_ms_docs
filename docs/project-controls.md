@@ -27,6 +27,7 @@ When a project's spending gate is closed, its resource request, purchase request
 | The box says | Do this |
 |---|---|
 | A budget line changed after the last cost approval | In the Cost Plan press **Update to current budget** (4). If a quantity grew, map the extra quantity on its row and **Save**. |
+| A new additional budget was approved | Its lines show as unmapped in the Cost Plan. Map each one like the same item elsewhere in the project (3.1), **Save**, then follow the box. Until then the box holds every PO in the project, even for items that are already mapped. |
 | The native budget has not been compiled yet | Press **Compile native draft** (5). |
 | A budget line has more quantity than the Cost Plan maps | Put the extra quantity on the work package row of that item, press **Save**, then **Compile native draft**. |
 | Submit the review and cost approval | In the approval review press **Submit for review**, then **Submit cost approval**. |
