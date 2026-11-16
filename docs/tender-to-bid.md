@@ -1,15 +1,12 @@
 # Tender to Bid (T2B)
 
-## 1. Introduction
+## Introduction
 
-**Tender to Bid (T2B)** is the programme that takes a tender from its documents to a
-submitted bid inside the PRIZM ENERGY portal. The work happens in the **Virtual Tendering
-Team** of an opportunity: a team of AI agents prepares each stage of the bid (executive
-summary, decomposition, technical solution, risk, benchmarking, pricing, legal, proposal and
-submission QA), and people approve the result at agreed control points.
-
-This section grows with the programme. Each time a part of the T2B plan is finished, what it
-changes for you is added here.
+**Tender to Bid (T2B)** takes a tender from its documents to a submitted bid inside the PRIZM
+ENERGY portal. The work happens in the **Virtual Tendering Team** of an opportunity: a team of AI
+agents prepares each stage of the bid (executive summary, decomposition, technical solution,
+risk, benchmarking, pricing, legal, proposal and submission QA), and people approve the result at
+agreed control points.
 
 This guide is for:
 
@@ -18,55 +15,57 @@ This guide is for:
 - Engineers and estimators who review stage outputs
 - Managers who approve bids
 
-## 2. Programme progress
+The guide grows with the programme. Each time a part is finished, the steps it adds for you are
+written here.
+
+## Programme progress
 
 | Part | What it delivers | Status |
 |---|---|---|
-| **Step 0 — Control fixes** | Final human sign-offs can't be switched to Auto, and a hold is released only by a real approval in the current run. | ✅ Closed on 10 November 2026 |
-| **PH0 — Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed on 11 November 2026 |
-| PH1 — Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
-| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.89.0 and Opportunities 2.36.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.37.0; each business stage shows the AI team stages that feed it (P08-OPP, section 6.11) built on 15 November 2026, released with Opportunities 2.38.0 and TenderOps 2.44.0; administrators are alerted when n8n delivery stops (P08-N8N-OPS, section 6.12) built on 15 November 2026, released with TenderOps 2.45.0; all of these parts were merged for release on 16 November 2026 |
-| P01–P06 | The bid stages themselves, from foundation to submission. | Planned |
+| **Control fixes** | Final human sign-offs can't be switched to Auto, and a hold is released only by a real approval in the current run. | ✅ Closed |
+| **Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed |
+| Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
+| **Automation (foundation)** | The run starts on its own, decisions alert people inside the ERP, tender triage and conversion follow one set of rules, tender documents are indexed only after a person approves it, the tender stays the source and the opportunity owns its BOQ, each business stage shows the AI team stages that feed it, and administrators are told when n8n delivery stops. | ✅ Closed |
+| The bid stages | Documents, work breakdown, procurement, pricing, approvals, submission and award. | Planned |
 
-## 3. Where to find it
+## Open the Virtual Tendering Team
 
-Open an opportunity and select the **Virtual Tendering Team** tab.
+1. Open an opportunity.
+2. Select the **Virtual Tendering Team** tab.
+3. Select **Run Opportunity** to start a run. The virtual team works through the stages in order
+   and pauses only when a person has to decide.
 
 ![Virtual Tendering Team tab](./tender-to-bid/img/vtt_overview.png)
 
-- **Run Opportunity** starts a run: the virtual team works through the stages in order and
-  pauses only when a person has to decide.
-- **Intake & Documents**, **Scope Gate & ITP** and **Briefs** hold the set-up of the
-  opportunity.
-- Below them, one tab per stage shows its output, and **Decisions** lists what is waiting for
-  you.
+- **Intake & Documents**, **Scope Gate & ITP** and **Briefs** hold the set-up of the opportunity.
+- Below them, one tab per stage shows its output, and **Decisions** lists what is waiting for you.
 
-## 4. Step 0 — Control fixes (what changed for you)
+## Control fixes
 
-Step 0 makes sure no bid moves past a person who must approve it. It was finished on
-10 November 2026.
+These changes make sure no bid moves past a person who must approve it.
 
-### 4.1 Control modes (the ITP control matrix)
+### Set the control mode of a stage
 
-Every stage has controls, listed in **Scope Gate & ITP → ITP control matrix**. Each control has
-one of four modes:
+1. Open **Scope Gate & ITP → ITP control matrix**.
+2. For each control, choose a mode:
 
-| Mode | Meaning |
-|---|---|
-| **Auto** | The virtual team carries on without stopping. |
-| **WP** (Witness point) | The virtual team carries on and notifies the owner. |
-| **HP** (Hold point) | The run stops until a person approves. |
-| **NR** | The control is skipped. |
+   | Mode | Meaning |
+   |---|---|
+   | **Auto** | The virtual team carries on without stopping. |
+   | **WP** (Witness point) | The virtual team carries on and notifies the owner. |
+   | **HP** (Hold point) | The run stops until a person approves. |
+   | **NR** | The control is skipped. |
 
-The presets at the top (**All Hold**, **Conservative**, **Witness-heavy**, **Full Auto**) set many
-controls at once. The counters on the right show how many controls are in each mode.
+3. To set many controls at once, choose a preset at the top: **All Hold**, **Conservative**,
+   **Witness-heavy** or **Full Auto**. The counters on the right show how many controls are in each
+   mode.
 
 ![ITP control matrix](./tender-to-bid/img/itp_control_matrix.png)
 
-### 4.2 Final sign-offs always stay on Hold
+### Final sign-offs always stay on Hold
 
-Five controls are **final human sign-offs**. They stay on **HP** under every preset, including
-**Full Auto**, and can't be changed one by one:
+The final human sign-offs stay on **HP** under every preset, including **Full Auto**, and can't
+be changed one by one:
 
 | Stage | Control |
 |---|---|
@@ -76,41 +75,42 @@ Five controls are **final human sign-offs**. They stay on **HP** under every pre
 | Proposal | Human acceptance |
 | Submit QA | Human sign-off (statutory gate) |
 
-Every change of a control's mode, and every refused attempt to move a final sign-off off Hold,
-is recorded in the TenderOps audit trail.
+Every change of a control's mode, and every refused attempt to move a final sign-off off Hold, is
+recorded in the TenderOps audit trail.
 
 ![Executive Summary holds](./tender-to-bid/img/itp_mandatory_signoff.png)
 
-### 4.3 A hold is released only by an approval in the same run
+### Release a hold
 
-When a run reaches a Hold point, a decision appears in **Decisions**. Choose
-**Release hold — continue** and select **Submit decisions**.
+1. When a run reaches a Hold point, open **Decisions**.
+2. Choose **Release hold — continue**.
+3. Select **Submit decisions**.
 
-- The approval belongs to **that run only**. If the opportunity is run again later, the same
-  hold stops the new run and asks again. An approval from an earlier run never releases a later
-  one.
+Keep in mind:
+
+- The approval belongs to **that run only**. If the opportunity is run again, the same hold stops
+  the new run and asks again.
 - Only an explicit **Release hold** counts. **Keep on hold** never releases anything.
 - A stage can have several holds. Releasing one shows the next; they are not released together.
 
-### 4.4 "Re-approval required after control fix"
+### "Re-approval required after control fix"
 
-Approvals given **before** Step 0 were not tied to a run, so they no longer release a hold. The
-first time such a hold comes back, its title ends with **"Re-approval required after control
-fix"** and its text names the earlier decision, for example *"decision #5 approved this hold
-before the control fix"*.
+Approvals given before the control fixes were not tied to a run, so they no longer release a hold.
+When such a hold comes back, its title ends with **"Re-approval required after control fix"** and
+its text names the earlier decision.
 
-Approve it again to continue. This happens once per control and opportunity; after that, holds
-look normal.
+1. Read the earlier decision named in the text.
+2. Approve the hold again to continue.
 
-### 4.5 Answering decisions
+This happens once per control and opportunity; after that, holds look normal.
+
+### Answer decisions
 
 ![Decisions box](./tender-to-bid/img/decisions_box.png)
 
 1. Open the **Decisions** tab. The counter shows how many decisions are waiting.
 2. For each decision you want to settle, choose one answer and, if needed, add a note.
 3. Select **Submit decisions** once. All your answers are sent together.
-
-There are two kinds of decisions:
 
 | Kind | When it appears | Answers |
 |---|---|---|
@@ -119,24 +119,27 @@ There are two kinds of decisions:
 
 **Who can answer:** the person the decision is assigned to, and any administrator.
 
-## 5. PH0 — Where bids wait (what changed for you)
+## Where bids wait
 
-PH0 measured where bids wait and on whom, before any new feature is built. It was finished on
-11 November 2026.
+This screen shows where bids wait and on whom.
 
-### 5.1 The "Where bids wait" screen
+### Read the "Where bids wait" screen
 
-Open **Opportunities → Where bids wait** in the left menu. The screen is read-only and is shown
-to administrators and to staff with the TenderOps *view audit* permission.
+1. Open **Opportunities → Where bids wait** in the left menu. It is read-only and shown to
+   administrators and to staff with the TenderOps *view audit* permission.
+2. Choose the start date of the period you want to see.
+3. Read the cards at the top:
+   - **Waits**, and how many are still open;
+   - **Median wait**, in days;
+   - **Technical faults sent to a business owner**: worker and configuration faults that waited on
+     a person instead of IT;
+   - **Answered by someone else**: decisions answered by someone other than their owner, usually
+     an administrator.
+4. Use the two small tables to group the waits **by class** and **by owner**.
+5. In the large table, select an opportunity to open it.
 
-It lists every **wait** since the date you choose (the default is the last 180 days):
-
-- a **decision** waiting for, or answered by, a person;
-- a **run that failed** without raising a decision;
-- a **stage review** that nobody has approved or rejected yet.
-
-Each wait shows its **blocker class**, its **owner**, who answered it and how many days it
-waited.
+A wait is a decision waiting for a person, a run that failed without raising a decision, or a
+stage review nobody has approved or rejected yet. Each wait has a blocker class:
 
 | Class | Meaning |
 |---|---|
@@ -145,45 +148,35 @@ waited.
 | **W** | A worker or software fault. |
 | **C** | A configuration or connection problem, for example with the AI provider. |
 
-At the top, four cards summarise the period:
-
-- **Waits**, and how many are still open.
-- **Median wait**, in days.
-- **Technical faults sent to a business owner:** W and C waits that waited on a person instead
-  of IT. PH1 is about bringing this number down.
-- **Answered by someone else:** decisions answered by someone other than their owner, usually
-  an administrator.
-
-Below the cards, two small tables group the waits **by class** and **by owner**, and the large
-table lists every wait. Select an opportunity to open it.
-
 A failed run stops at once, so its waiting time is unknown: it is listed, but left out of the
 medians.
 
-### 5.2 A dismissed tender can't be converted
+### Convert a dismissed tender
 
-A tender **dismissed** in triage can no longer be converted to an opportunity or marked as
-converted. Reopen it in triage first. The dismissal and its reason stay on record.
+A tender **dismissed** in triage can't be converted or marked as converted.
 
-### 5.3 The lowest quote is chosen among eligible quotes
+1. Reopen the tender in triage.
+2. Convert it as usual.
 
-In a quotation comparison, the **lowest** quote and the price score now come only from quotes
-that can be selected. A cheaper quote that is expired or doesn't comply no longer lowers the
-score of the compliant quotes, and the compliant leader can be selected automatically.
+The dismissal and its reason stay on record.
 
-## 6. P00 — Automation (what changed for you)
+### The lowest quote is chosen among eligible quotes
 
-P00 makes the bid move on its own and stop only where a person has to decide. Its first parts
-were released on 11 and 12 November 2026.
+In a quotation comparison, the **lowest** quote and the price score come only from quotes that can
+be selected. A cheaper quote that is expired or doesn't comply no longer lowers the score of the
+compliant quotes, and the compliant leader can be selected automatically.
 
-### 6.1 The run starts on its own
+## Automation
 
-When a tender is converted and pursued, the Opportunity Run starts by itself as soon as its
-checks pass. You no longer need to press **Run Opportunity**. The final sign-offs still wait for
-a person. If the run can't start within 24 hours, the problem goes to IT or to the opportunity
-owner.
+Automation makes the bid move on its own and stop only where a person has to decide.
 
-### 6.2 Decision alerts inside the ERP
+### The run starts on its own
+
+When a tender is converted and pursued, the Opportunity Run starts by itself as soon as its checks
+pass. You don't need to press **Run Opportunity**. The final sign-offs still wait for a person. If
+the run can't start within the set waiting time, the problem goes to IT or to the opportunity owner.
+
+### Answer a decision alert
 
 When the virtual team needs a decision, you are told inside the ERP. You don't need Teams.
 
@@ -193,56 +186,53 @@ When the virtual team needs a decision, you are told inside the ERP. You don't n
 | The decision's **named authority**, the person who may answer it | The **Opportunities** bell |
 | **Administrators** | The **Tender Alerts** bell (gavel icon), marked *TenderOps · decision requested* |
 
-The alert reads, for example, *"Decision needed — OPP-262863 · Opportunity name: Source lane:
-switch to Storage Box? Due 19 Nov 2026 00:00."* It comes from **Prizm automation**.
+The alert names the opportunity, the question and its due time, and comes from **Prizm automation**.
 
 1. Select the alert. It opens the opportunity's **Decisions** tab with the decision waiting.
-2. Answer it as described in 4.5 and select **Submit decisions**.
+2. Answer it as described in *Answer decisions* and select **Submit decisions**.
 3. The alert is marked read for everyone who received it, so the bell shows only what is still
    waiting.
 
 If the responsible person is also the named authority, they get one alert, not two. The
-responsible person is told even when only the authority or an administrator may answer, so the
-person running the bid knows it is waiting.
+responsible person is told even when only the authority or an administrator may answer.
 
-### 6.3 TenderOps settings (administrators)
+### Change the TenderOps settings (administrators)
 
-Administrators, and staff with the TenderOps *manage settings* permission, find every TenderOps
-setting in **Opportunities → Settings → TenderOps**. The settings are in seven sections:
-automation, approvals and gates, pricing and suppliers, AI review, integrations, people, and
-display.
+1. Open **Opportunities → Settings → TenderOps**. You need to be an administrator, or have the
+   TenderOps *manage settings* permission.
+2. Choose a section: automation, approvals and gates, pricing and suppliers, AI review,
+   integrations, people, or display.
+3. Change a setting and save.
 
-- **Decision alerts inside the ERP**, in the Automation section, switches the alerts in 6.2 on or
-  off. It is on by default.
-- Sending events to n8n, for example Teams cards, is optional and is set in the same section. When
-  it is set up, administrators are alerted if delivery stops (section 6.12).
+- **Decision alerts inside the ERP**, in the Automation section, switches decision alerts on or off.
+  It is on by default.
+- Sending events to n8n, for example Teams cards, is optional and is set in the same section. When it
+  is set up, administrators are alerted if delivery stops (see *Get told when n8n stops receiving
+  events*).
 
-### 6.4 One tender, one opportunity
+### Convert a tender: one tender, one opportunity
 
 A tender can be converted from the tender screen, through the API or from the eSupply extension.
-If two of them convert the same tender at the same moment, for example two people, or a double
-click, you still get **one** opportunity:
 
-- The first conversion runs. The second one waits for it.
-- The second one then shows *"Tender already exists in opportunities"*. Open the tender to reach
-  the opportunity.
-- If the first conversion takes longer than 30 seconds, the second one stops without creating
-  anything and shows *"This tender is being converted by another request. Wait a moment and try
-  again."* Try again after a moment.
+1. Select **Convert** on the tender.
+2. If someone else converts the same tender at the same moment, you see *"Tender already exists in
+   opportunities"*. Open the tender to reach the opportunity.
+3. If you see *"This tender is being converted by another request. Wait a moment and try again."*,
+   wait a moment and try again. You reach the same opportunity.
 
-### 6.5 The conversion receipt
+### Check the conversion receipt
 
-After a tender is converted, several steps finish the work around the new opportunity. Each
-conversion now leaves a **Conversion receipt** that shows whether they all finished. Open the
-converted tender: the receipt is on its **Main** tab.
+Every conversion leaves a **Conversion receipt** that shows whether the follow-up steps finished.
 
-The receipt shows:
-
-- who converted the tender, when, and how: *Converted on the Tenders screen*, *Converted through
-  the Tenders API* or *Converted from the eSupply extension*;
-- a mark for each step: ✓ done, ⚠ needs a look, ✗ failed;
-- the conversion's **Warnings**, for example when the SharePoint record folder could not be
-  prepared.
+1. Open the converted tender.
+2. On its **Main** tab, read the receipt:
+   - who converted the tender, when, and how: *Converted on the Tenders screen*, *Converted through
+     the Tenders API* or *Converted from the eSupply extension*;
+   - a mark for each step: ✓ done, ⚠ needs a look, ✗ failed;
+   - the conversion's **Warnings**, for example when the SharePoint record folder could not be
+     prepared.
+3. If the receipt says **needs attention**, look at the step marked ⚠ or ✗ and tell an
+   administrator. They can run the steps again; this never creates a second opportunity.
 
 | Step | What it does |
 |---|---|
@@ -252,49 +242,41 @@ The receipt shows:
 | eSupply details capture | Collects the full tender details from eSupply (eSupply tenders only). |
 | TenderOps conversion event and preparation | Prepares the opportunity for the virtual tendering team. |
 
-At the top, the receipt says **every step finished** or **needs attention**. A receipt that needs
-attention also raises one **Tender Alert** (gavel icon) titled *"Conversion of tender … to …
-needs attention"*. Select it to open the tender.
+A receipt that needs attention also raises one **Tender Alert** (gavel icon). Select it to open the
+tender. Tenders converted before the receipt existed have none.
 
-If a step did not finish, tell an administrator. They can run the steps again; this never
-creates a second opportunity. The receipt then shows the new result and how many times the steps
-were run again.
+### Link a pursued tender that matches more than one opportunity
 
-Tenders converted before 13 November 2026 have no receipt.
+The ERP regularly checks the tenders marked **Pursue** in triage and moves a tender to
+**Converted** by itself only when **exactly one** live opportunity matches its number and no other
+tender owns it.
 
-### 6.6 Tenders the ERP marks as converted for you
+When more than one opportunity matches, you get one **Tender Alert** listing the candidates.
 
-Every hour the ERP checks the tenders you marked **Pursue** in triage. When it finds the
-opportunity a tender became, it moves the tender to **Converted** by itself. Since 13 November
-2026 it does this only when it is sure:
-
-- it uses only opportunities that are not deleted;
-- it never takes an opportunity that already belongs to another tender;
-- **exactly one** opportunity must match the tender's number.
-
-When more than one opportunity matches, the tender stays in **Pursue** and you get one **Tender
-Alert**: *"Tender … matches more than one opportunity"*, with the candidate opportunities.
-Open them, decide which one is the tender's bid, and link it by hand. The alert is not repeated
-for the same tender.
+1. Select the alert and open the candidate opportunities.
+2. Decide which one is the tender's bid.
+3. In triage, use **Link opportunity** to link it by hand.
 
 Every tender the ERP marks as converted is written to the activity log.
 
-### 6.7 Who works tender triage, and the rules for each action
+### Work in tender triage
 
-Since 14 November 2026 tender triage is no longer for administrators only. An administrator gives
-access in **Setup → Staff → Roles** (or on the staff member), under **Tenders - Tender Triage**:
+An administrator gives access:
 
-| Permission | What you can do |
-|---|---|
-| **View** | Open **Tenders → Triage** and read the queue and each tender's details. You see no action buttons. |
-| **Edit** | Everything in View, plus **Pursue**, **Watch**, **To inbox**, **Dismiss**, **Reopen**, **Link opportunity**, **Not converted** and **Undo**. |
+1. Open **Setup → Staff → Roles** (or the staff member).
+2. Under **Tenders - Tender Triage**, tick the permission:
 
-Administrators can always do everything. Staff without either permission don't see **Triage** in
-the menu. Muting an authority or a sub-division stays with administrators, because it hides every
-future tender from it.
+   | Permission | What you can do |
+   |---|---|
+   | **View** | Open **Tenders → Triage** and read the queue and each tender's details. No action buttons. |
+   | **Edit** | Everything in View, plus **Pursue**, **Watch**, **To inbox**, **Dismiss**, **Reopen**, **Link opportunity**, **Not converted** and **Undo**. |
 
-The same rules apply on the triage screen and in the mobile app. Each action is offered only from
-the right status:
+3. Save.
+
+Administrators can always do everything. Muting an authority or a sub-division stays with
+administrators, because it hides every future tender from it.
+
+Each action is offered only from the right status, on the triage screen and in the mobile app:
 
 | Action | Available when the tender is in |
 |---|---|
@@ -306,34 +288,32 @@ the right status:
 | Link opportunity (mark converted) | Pursue |
 | Not converted | Converted |
 
-- **Link opportunity** needs a live (not deleted) opportunity of this tender that no other tender
-  is linked to.
-- **Not converted** is refused when the tender was really converted into that opportunity. It
-  still removes a wrong link made by hand or by the hourly check.
-- **Undo** reverses only the last decision, and only the person who made it or an administrator
-  can undo it.
-- If someone else changed the same tender a moment before you, you see *"This item was changed
-  elsewhere in the meantime. Refresh the page and try again."* Nothing was changed; refresh and
-  look again.
+- **Link opportunity** needs a live opportunity of this tender that no other tender is linked to.
+- **Not converted** is refused when the tender was really converted into that opportunity. It still
+  removes a wrong link made by hand or by the regular check.
+- **Undo** reverses only the last decision, and only the person who made it or an administrator can
+  undo it.
+- If you see *"This item was changed elsewhere in the meantime. Refresh the page and try again."*,
+  nothing was changed: refresh and look again.
 
 Every decision, and every refused attempt, is written to the activity log.
 
-### 6.8 Tender Indexing: which tenders' documents are indexed, and starting it
+### Index a tender's documents
 
-From TenderOps 2.43.0 a tender's documents are indexed and embedded (PostgreSQL and Qdrant, used
-by the Virtual Tendering Team to answer from the documents) **only after a person approves it**.
-Tenders that were already indexed before this release keep working; nothing is lost.
-
-Open **Tenders → Tender Indexing**. Every converted tender has one row:
+A tender's documents are indexed for the Virtual Tendering Team **only after a person approves
+it**. Tenders indexed before this rule keep working.
 
 ![Tender Indexing screen](./tender-to-bid/img/indexing-01-screen.jpg)
 
-1. **Indexing status** filter: show only one status, for example *Not approved* or *Failed*.
-2. **Index selected**: approve and start indexing for the tenders you ticked, up to 20 at a time.
-3. Tick a tender to include it in **Index selected**.
-4. The tender's indexing status (table below).
-5. The number of documents. Click it to see each file.
-6. **Index now**: approve and start indexing for this one tender.
+1. Open **Tenders → Tender Indexing**. Every converted tender has one row.
+2. Use the **Indexing status** filter to show one status, for example *Not approved* or *Failed*.
+3. To index one tender, select **Index now** on its row.
+4. To index several, tick them and select **Index selected**.
+5. Select the document count of a tender to see the state of each file.
+
+Pressing **Index now** or **Index selected** is the approval. It is recorded with your name and the
+time, and after it any change to the tender's files is kept in step automatically. A tender whose
+job is already waiting is not queued twice.
 
 | Status | Meaning |
 |---|---|
@@ -341,137 +321,106 @@ Open **Tenders → Tender Indexing**. Every converted tender has one row:
 | **Queued** | Approved; the indexing job is waiting for the indexing computer. |
 | **In progress** | The documents are being indexed now. |
 | **Indexed** / **Partly indexed** | All, or some, of the documents are indexed and not yet verified. |
-| **Verified** | Every document is in PostgreSQL and Qdrant and matches the current files. |
+| **Verified** | Every document is indexed and matches the current files. |
 | **Files changed** | Files changed after the last verification; they are re-indexed automatically. |
 | **Failed** | The last run failed. The **Last error** column says why; press **Index now** to try again. |
 
-Pressing **Index now** (or **Index selected**) is the approval. It is recorded with your name and
-the time, and after it any change to the tender's files is kept in step automatically. A tender
-whose job is already waiting is not queued twice. The **Approved by** column shows *Already
-indexed* for tenders approved automatically because they were indexed before this release.
-
-Click the document count to see the state of each file:
-
 ![Documents of one tender](./tender-to-bid/img/indexing-02-documents.jpg)
 
-1. The opportunity of the tender.
-2. The file's indexing status.
-3. The PostgreSQL units made from the file.
-4. The Qdrant vectors made from the file.
+The marked items show the opportunity of the tender, each file's indexing status, and the units and
+vectors made from each file.
 
-The tender page also shows the status, next to the **Opportunities** button. Click it to open
-Tender Indexing:
+The tender page also shows the status next to the **Opportunities** button. Select it to open Tender
+Indexing:
 
 ![Indexing status on the tender page](./tender-to-bid/img/indexing-03-tender-badge.jpg)
 
-1. **Opportunities** opens the tender's opportunity.
-2. The indexing status, with indexed / total documents.
-
-An administrator gives access in **Setup → Staff → Roles**, under **Tender Indexing**:
+To give access, an administrator opens **Setup → Staff → Roles** and, under **Tender Indexing**,
+ticks:
 
 ![Tender Indexing permission](./tender-to-bid/img/indexing-04-permission.jpg)
 
-1. The **Tender Indexing** permission group.
-2. **View (Global)**: open the screen and see every tender's status and documents.
-3. **Approve and start indexing**: everything in View, plus **Index now** and **Index selected**.
+- **View (Global)**: open the screen and see every tender's status and documents.
+- **Approve and start indexing**: everything in View, plus **Index now** and **Index selected**.
 
-Administrators can always do both. Staff with neither don't see **Tender Indexing** in the menu or
-the status on the tender page. Every approval and every indexing job is written to the activity
-log.
+Administrators can always do both. Every approval and every indexing job is written to the activity
+log. Tenders that were not converted into an opportunity are not listed yet.
 
-Tenders that were not converted into an opportunity are not listed yet; that comes in a later step.
+### Check a tender change after conversion
 
-### 6.9 The tender stays the source; the opportunity has its own BOQ
+Converting copies the tender's BOQ into the opportunity. The tender keeps its BOQ, and a later change
+to the tender (a BOQ upload, an RFQ document or a portal update) changes the tender only.
 
-From Tenders 2.89.0:
-
-- **Converting copies the BOQ.** The tender keeps its BOQ. The opportunity gets a copy of every
-  line in its own BOQ, and each copied line remembers which tender line it came from. Before, the
-  tender lost its BOQ to the opportunity.
-- **A tender change never overwrites the opportunity.** A BOQ upload, an RFQ document or a portal
-  update after conversion changes the tender only. The opportunity's BOQ is yours to keep.
-- **You are told when the tender changes.** Every hour the ERP compares the tender's BOQ with the
-  one it had when it was converted. When it changed, the opportunity's responsible person gets a
-  notification, a Tender Alert is raised, and the conversion receipt on the tender page shows it:
+When the tender's BOQ changes after conversion, the opportunity's responsible person gets a
+notification and a Tender Alert is raised.
 
 ![Tender changed after conversion](./tender-to-bid/img/source-change-01-receipt.jpg)
 
-1. The opportunity this tender was converted into.
-2. The tender's BOQ changed after the conversion, and when the latest change was found. The
-   opportunity's BOQ was not changed: compare the two and update the opportunity if you need to.
+1. Open the tender. The conversion receipt names the opportunity and says when the latest change was
+   found.
+2. Open the opportunity and compare the two BOQs.
+3. Update the opportunity's BOQ if you need to.
 
 A portal that re-sends the same lines is not a change. Each new change alerts once.
 
-- **A tender is linked only to its own opportunity.** An opportunity is matched by the tender
-  number only when it was created before tenders were linked, is not deleted, belongs to no other
-  tender, and is the only match. Otherwise converting the tender creates its own opportunity.
+- **A tender is linked only to its own opportunity.** Converting creates the tender's own
+  opportunity unless exactly one older, live opportunity without a tender matches its number.
 - **The tender's documents stay in the opportunity folder.** Converting moves the tender's SharePoint
-  folder into the opportunity's folder (Opportunities 2.36.0). Later syncs, Outlook files, uploads from
-  the Attachments tab and the tender portals no longer create the old tender folder again: anything
-  meant for it goes into the opportunity folder, so all the files are in one place. Each such redirect
-  is in the activity log.
+  folder into the opportunity's folder. Later syncs, Outlook files, uploads and the tender portals
+  put anything meant for the old folder into the opportunity folder, so all files are in one place.
 
-### 6.10 The opportunity owns its BOQ
+### Fill an empty opportunity BOQ from its tender
 
-From Opportunities 2.37.0 the opportunity's BOQ is the opportunity's own. Opening a tab never
-changes it; you decide when it is filled and you record when you reviewed a tender change. The
-**BOQ source** box at the top of the opportunity's **BOQ** tab shows it.
-
-**An empty BOQ is filled once, by you:**
+Opening a tab never changes the opportunity's BOQ; you decide when it is filled.
 
 ![Copy BOQ from tender](./tender-to-bid/img/boq-source-01-copy.jpg)
 
-1. The tender this BOQ comes from, and how many BOQ lines the tender has.
-2. **Copy BOQ from tender** copies the tender's lines into the opportunity's BOQ. It appears only
-   while the opportunity's BOQ is empty, and only for staff who may edit BOQs. It works once: a BOQ
-   that already has lines is never copied over.
+1. Open the opportunity's **BOQ** tab. The **BOQ source** box at the top shows the tender and its BOQ
+   lines.
+2. Select **Copy BOQ from tender**. It appears only while the opportunity's BOQ is empty, and only for
+   staff who may edit BOQs.
 
-Converting a tender copies its lines for you (section 6.9). The button is for an opportunity whose
-tender received its BOQ later, for example from Etimad after the conversion.
+The copy works once: a BOQ that already has lines is never copied over. Converting a tender copies its
+lines for you; the button is for an opportunity whose tender received its BOQ later.
 
-**A tender change waits for your review:**
+### Review a tender change on the opportunity BOQ
 
 ![Tender change waiting for review](./tender-to-bid/img/boq-source-02-pending.jpg)
 
-1. The tender's BOQ changed after the latest revision of this BOQ, and when the change was found.
+1. Read the warning in the **BOQ source** box: the tender's BOQ changed after the latest revision.
    The opportunity's BOQ was not changed.
-2. Compare the two, update the opportunity's BOQ if you need to, and write what you reviewed.
-3. **I reviewed the change** records your review as a new revision; the warning goes away.
-4. The revisions of this BOQ: *Copy of the tender BOQ* (Rev 0), then every reviewed change, with who,
+2. Compare the two and update the opportunity's BOQ if you need to.
+3. Write what you reviewed.
+4. Select **I reviewed the change**. Your review is saved as a new revision and the warning goes
+   away.
+5. Read the revision list: the first copy of the tender BOQ, then every reviewed change, with who,
    when and the note.
 
 The warning only informs you; it does not block anything. Every copy and every review is written to
 the activity log.
 
-### 6.11 Each business stage shows the AI team stages that feed it
+### See which AI team stages feed a business stage
 
-From Opportunities 2.38.0 the opportunity's 9 business stages and the AI team's 11 stages are
-linked by one fixed map. You see on each business stage how far the AI team's work for it has gone,
-and on each AI team stage which business stage it feeds.
-
-**On the pursuit timeline:**
+The opportunity's business stages and the AI team's stages are linked by one fixed map.
 
 ![AI team stages on the pursuit timeline](./tender-to-bid/img/stage-map-01-timeline.jpg)
 
-1. **AI 0/3** under a business stage: how many of the AI team stages that feed it are complete, out
-   of how many. It turns bold when all are complete. Only staff who may see the AI team's work see it.
-2. **Site Visit**, **Client Evaluation** and **Outcome** have no count: no AI team stage feeds them.
-3. Select a stage to see, under its checks, **AI team stages for this stage**, each with its status.
-   A failed stage is red (here *Executive*).
-
-**On the AI Team tab of the timeline:**
+1. On the pursuit timeline, read the **AI** count under a business stage: how many of the AI team
+   stages that feed it are complete. It turns bold when all are complete. Only staff who may see the
+   AI team's work see it.
+2. Stages with no count (**Site Visit**, **Client Evaluation**, **Outcome**) have no AI team stage.
+3. Select a stage to see, under its checks, **AI team stages for this stage**, each with its status. A
+   failed stage is red.
 
 ![AI team stages grouped by business stage](./tender-to-bid/img/stage-map-02-ai-team.jpg)
 
-1. The AI team stages are grouped under the business stage they feed, in pipeline order.
-2. A failed AI team stage is red.
-
-**In the Virtual Tendering Team tab:**
+4. On the **AI Team** tab of the timeline, the AI team stages are grouped under the business stage
+   they feed, in pipeline order. A failed one is red.
 
 ![Feeds badge on an AI team stage](./tender-to-bid/img/stage-map-03-feeds.jpg)
 
-1. Each of the 11 AI team stages shows **Feeds: …**, the business stage its work goes to. For example,
-   *Benchmark* feeds *Resource Pricing*.
+5. In the **Virtual Tendering Team** tab, each AI team stage shows **Feeds: …**, the business stage
+   its work goes to. For example, *Benchmark* feeds *Resource Pricing*.
 
 | Business stage | AI team stages that feed it |
 |---|---|
@@ -485,41 +434,37 @@ and on each AI team stage which business stage it feeds.
 | Client Evaluation | none |
 | Outcome | none |
 
-The counts only inform you; they do not complete or block a business stage. Older runs that still
-have the retired *Go / No-Go* AI stage do not show it under any business stage.
+The counts only inform you; they do not complete or block a business stage. When a tender is
+converted with stage assignees, the stage names are read from the same map. A stage that has no
+assignee on the opportunity is refused with a clear reason.
 
-When a tender is converted with stage assignees, the stage names are read from the same map, so
-*resources_inquiry* and *resource_inquiry* go to the same person. A stage that has no assignee on the
-opportunity (Scope & Solution, Client Evaluation, Outcome) is refused with a clear reason.
+### Get told when n8n stops receiving events
 
-### 6.12 You are told when n8n stops receiving TenderOps events
-
-From TenderOps 2.45.0 the ERP checks every five minutes whether its events still reach n8n.
-Administrators no longer have to open the settings to find out that delivery stopped. The check
-runs only where n8n is set up (address and secret filled in, **Send events to n8n** on).
-
-In **Opportunities → Settings → TenderOps**, Automation section:
+The ERP regularly checks whether its events still reach n8n, so administrators don't have to open
+the settings to find out that delivery stopped. The check runs only where n8n is set up (address
+and secret filled in, **Send events to n8n** on).
 
 ![n8n delivery health](./tender-to-bid/img/n8n-health-01-status.jpg)
 
-1. **Health** shows the result of the latest check:
+1. Open **Opportunities → Settings → TenderOps**, Automation section.
+2. Read **Health**:
    - **Healthy**: events are reaching n8n.
-   - **Down**: the reasons are listed under it. An event has waited longer than the set time, an
-     event has failed three attempts in a row, an event was given up in the last 24 hours, or n8n did
-     not answer its health check three times in a row.
+   - **Down**: the reasons are listed under it: an event waited longer than the set time, an event
+     kept failing, an event was given up, or n8n stopped answering its health check.
    - **Not checked yet**: no check has run since the setting was turned on.
    - **Not checked**: n8n events are off or not set up.
 
 ![n8n alert settings](./tender-to-bid/img/n8n-health-02-settings.jpg)
 
-2. **Alert when n8n delivery is down** (on by default). Administrators get one Tender Alert when
-   delivery goes down and one when it recovers. Each alert opens this settings page.
-3. **Waiting time before the alert** (30 minutes by default, 5 to 1440). Delivery counts as down
-   when the oldest waiting event is older than this.
+3. Keep **Alert when n8n delivery is down** on (the default). Administrators get one Tender Alert
+   when delivery goes down and one when it recovers. Each alert opens this settings page.
+4. Set **Waiting time before the alert**. Delivery counts as down when the oldest waiting event is
+   older than this.
+5. Save.
 
 While delivery is down nothing is lost: the events wait and are sent again when n8n answers.
 
-## 7. Frequently asked questions
+## Frequently asked questions
 
 **I can open Tender Triage but there are no action buttons.**
 You have the **View** permission only. Ask an administrator for **Edit** under *Tenders - Tender
@@ -528,12 +473,12 @@ Triage*.
 **Why can't I undo a decision?**
 Only the person who made the last decision, or an administrator, can undo it.
 
-**I approved this hold yesterday. Why is it asking again?**
-Either the opportunity was run again (each run needs its own approval), or your approval was
-given before Step 0 (the hold then says "Re-approval required after control fix").
+**I approved this hold before. Why is it asking again?**
+Either the opportunity was run again (each run needs its own approval), or your approval was given
+before the control fixes (the hold then says "Re-approval required after control fix").
 
 **Can I set the final sign-offs to Auto to save time?**
-No. The five final sign-offs stay on Hold under every preset. This is intentional.
+No. The final sign-offs stay on Hold under every preset. This is intentional.
 
 **What happens if I choose "Keep on hold"?**
 The run stays paused. Nothing moves until someone releases the hold.
@@ -543,25 +488,25 @@ It is shown to administrators and to staff with the TenderOps *view audit* permi
 administrator for access.
 
 **I received a decision alert but can't answer the decision.**
-Only the decision's named authority and administrators can answer. As the responsible person,
-you are told so you know the bid is waiting. Follow up with the authority named on the decision.
+Only the decision's named authority and administrators can answer. As the responsible person, you
+are told so you know the bid is waiting. Follow up with the authority named on the decision.
 
 **The decision is answered. Why don't I see the alert any more?**
 Once a decision is answered, its alerts are marked read automatically. The answer stays on the
 **Decisions** tab.
 
 **I pressed Convert and got "This tender is being converted by another request".**
-Someone else, or the API, is converting the same tender right now. Wait a moment and try again;
-you will reach the same opportunity.
+Someone else, or the API, is converting the same tender right now. Wait a moment and try again; you
+will reach the same opportunity.
 
 **The receipt says "needs attention". What do I do?**
-Look at the step marked ⚠ or ✗ and at the warnings. If a step did not finish, tell an
-administrator; they can run the steps again without creating a second opportunity.
+Look at the step marked ⚠ or ✗ and at the warnings, and tell an administrator. They can run the
+steps again without creating a second opportunity.
 
 **Why didn't my pursued tender move to Converted by itself?**
 Either no opportunity carries its number yet, or more than one does. In the second case you have a
 Tender Alert listing them; link the right one by hand.
 
-**Why does a failed run show "unknown" days?**
-A failed run stops at once, and nothing records when the bid moved again, so its waiting time
-can't be measured. It is counted, but left out of the medians.
+**Why does a failed run show an unknown waiting time?**
+A failed run stops at once, and nothing records when the bid moved again, so its waiting time can't
+be measured. It is counted, but left out of the medians.
