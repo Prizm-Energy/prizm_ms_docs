@@ -116,6 +116,8 @@ This happens once per control and opportunity; after that, holds look normal.
 |---|---|---|
 | **Blocker** (a hold) | The run reached a Hold point. | Release hold — continue · Provide input and re-run this stage · Keep on hold |
 | **Escalation** | The virtual team could not close all gaps itself, for example claims without a source. | Provide missing input — re-run stage · Waive gaps and continue with documented risk · Hold pursuit pending clarification |
+| **Send this fault to IT?** | A stage failed on a technical fault and the system drafted a support ticket. | Send this ticket to IT · Not a technical fault — send to the stage owner · Keep the run on hold |
+| **Technical fault — IT** | The support ticket was sent, or could not be sent. For IT. | Fault fixed — re-run the stage · Not a technical fault — send to the stage owner · Keep the run on hold |
 
 **Who can answer:** the person the decision is assigned to, and any administrator.
 
@@ -209,6 +211,9 @@ responsible person is told even when only the authority or an administrator may 
 - Sending events to n8n, for example Teams cards, is optional and is set in the same section. When it
   is set up, administrators are alerted if delivery stops (see *Get told when n8n stops receiving
   events*).
+- **IT ticket department** and **IT ticket priority**, in the Integrations section, choose where a
+  technical fault's support ticket goes and how urgent it is. Left empty, the ticket goes to the
+  *Information Technology* department with *Medium* priority (see *Send a technical fault to IT*).
 
 ### Convert a tender: one tender, one opportunity
 
@@ -464,6 +469,48 @@ and secret filled in, **Send events to n8n** on).
 
 While delivery is down nothing is lost: the events wait and are sent again when n8n answers.
 
+### Send a technical fault to IT
+
+When a stage keeps failing because of a technical fault (the AI worker, software, a provider or a
+setting), the system doesn't send it to IT straight away. It drafts a support ticket first and asks
+the stage's authority to approve it.
+
+**As the stage's authority**
+
+1. Open the opportunity's **Decisions** tab and find **Send this fault to IT?**. The draft shows the
+   opportunity, the stage, the run, the error (with any secrets removed) and a link back.
+2. Choose one answer:
+   - **Send this ticket to IT**: add a note if IT needs more context. Your note goes on top of the
+     ticket.
+   - **Not a technical fault — send to the stage owner**: the stage owner gets the fault instead.
+   - **Keep the run on hold**: nothing is sent and the run stays paused.
+3. Select **Submit decisions**.
+
+If nobody answers, nothing is sent to IT.
+
+**What IT receives**
+
+- A support ticket in the IT department, assigned to the department's head. If the department has
+  no head, the whole department is told, and the decision card says so.
+- A **Technical fault — IT** decision on the opportunity, with a link to the ticket. IT fixes the
+  fault, then answers **Fault fixed — re-run the stage** to run the stage again.
+- If the same stage fails again while the ticket is open, the new failure is added to the same
+  ticket as a reply. No second ticket is opened.
+- Closing the ticket is recorded on the decision card, but it doesn't re-run anything. Only the
+  decision does.
+
+**If the ticket could not be sent**
+
+The decision card shows **Not sent** and the reason, and IT still gets its decision. Fix the cause,
+for example choose the IT ticket department in the settings, then select **Retry send** on the card.
+The decision's authority or an administrator can retry.
+
+**Before you rely on it (administrators)**
+
+- Make sure the IT department has its head set in **HR Profile → Departments**.
+- If IT tickets should go to another department or with another priority, set **IT ticket
+  department** and **IT ticket priority** in the TenderOps settings.
+
 ## Frequently asked questions
 
 **I can open Tender Triage but there are no action buttons.**
@@ -494,6 +541,11 @@ are told so you know the bid is waiting. Follow up with the authority named on t
 **The decision is answered. Why don't I see the alert any more?**
 Once a decision is answered, its alerts are marked read automatically. The answer stays on the
 **Decisions** tab.
+
+**The stage failed on a technical fault. Why isn't there a ticket in IT yet?**
+The ticket is sent only after the stage's authority answers **Send this fault to IT?** with **Send
+this ticket to IT**. Check the opportunity's **Decisions** tab. If the card shows **Not sent**, see
+the reason and use **Retry send**.
 
 **I pressed Convert and got "This tender is being converted by another request".**
 Someone else, or the API, is converting the same tender right now. Wait a moment and try again; you
