@@ -25,7 +25,7 @@ This guide is for:
 | **Step 0 — Control fixes** | Final human sign-offs can't be switched to Auto, and a hold is released only by a real approval in the current run. | ✅ Closed on 10 November 2026 |
 | **PH0 — Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed on 11 November 2026 |
 | PH1 — Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
-| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.89.0 and Opportunities 2.35.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.36.0; each business stage shows the AI team stages that feed it (P08-OPP, section 6.11) built on 15 November 2026, released with Opportunities 2.37.0 and TenderOps 2.44.0; administrators are alerted when n8n delivery stops (P08-N8N-OPS, section 6.12) built on 15 November 2026, released with TenderOps 2.45.0 |
+| **P00 — Automation** | The run starts on its own, every TenderOps setting is on one tab, and decisions alert people inside the ERP. Tender triage and conversion follow one set of rules (sections 6.4 to 6.7). Tender documents are indexed only after a person approves it (section 6.8). The tender stays the source and its changes never overwrite the opportunity (section 6.9). | In progress — tender triage and conversion done on 14 November 2026; tender–opportunity integrity (P00-INT) built on 14 November 2026, released with TenderOps 2.43.0, Tenders 2.89.0 and Opportunities 2.36.0; the opportunity owns its BOQ (P00-OPP, section 6.10) built on 14 November 2026, released with Opportunities 2.37.0; each business stage shows the AI team stages that feed it (P08-OPP, section 6.11) built on 15 November 2026, released with Opportunities 2.38.0 and TenderOps 2.44.0; administrators are alerted when n8n delivery stops (P08-N8N-OPS, section 6.12) built on 15 November 2026, released with TenderOps 2.45.0; all of these parts were merged for release on 16 November 2026 |
 | P01–P06 | The bid stages themselves, from foundation to submission. | Planned |
 
 ## 3. Where to find it
@@ -406,14 +406,14 @@ A portal that re-sends the same lines is not a change. Each new change alerts on
   number only when it was created before tenders were linked, is not deleted, belongs to no other
   tender, and is the only match. Otherwise converting the tender creates its own opportunity.
 - **The tender's documents stay in the opportunity folder.** Converting moves the tender's SharePoint
-  folder into the opportunity's folder (Opportunities 2.35.0). Later syncs, Outlook files, uploads from
+  folder into the opportunity's folder (Opportunities 2.36.0). Later syncs, Outlook files, uploads from
   the Attachments tab and the tender portals no longer create the old tender folder again: anything
   meant for it goes into the opportunity folder, so all the files are in one place. Each such redirect
   is in the activity log.
 
 ### 6.10 The opportunity owns its BOQ
 
-From Opportunities 2.36.0 the opportunity's BOQ is the opportunity's own. Opening a tab never
+From Opportunities 2.37.0 the opportunity's BOQ is the opportunity's own. Opening a tab never
 changes it; you decide when it is filled and you record when you reviewed a tender change. The
 **BOQ source** box at the top of the opportunity's **BOQ** tab shows it.
 
@@ -445,7 +445,7 @@ the activity log.
 
 ### 6.11 Each business stage shows the AI team stages that feed it
 
-From Opportunities 2.37.0 the opportunity's 9 business stages and the AI team's 11 stages are
+From Opportunities 2.38.0 the opportunity's 9 business stages and the AI team's 11 stages are
 linked by one fixed map. You see on each business stage how far the AI team's work for it has gone,
 and on each AI team stage which business stage it feeds.
 
