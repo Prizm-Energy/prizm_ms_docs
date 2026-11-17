@@ -26,7 +26,7 @@ written here.
 | **Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed |
 | Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
 | **Automation (foundation)** | The run starts on its own, decisions alert people inside the ERP, tender triage and conversion follow one set of rules, tender documents are indexed only after a person approves it, the tender stays the source and the opportunity owns its BOQ, each business stage shows the AI team stages that feed it, and administrators are told when n8n delivery stops. | ✅ Closed |
-| The bid stages | Documents, work breakdown, procurement, pricing, approvals, submission and award. | Planned |
+| The bid stages | Documents, work breakdown, procurement, pricing, approvals, submission and award. | In progress: every document version is kept, outputs from an old version are flagged, documents are registered and marked ready, and problems go on an issue register |
 
 ## Open the Virtual Tendering Team
 
@@ -511,7 +511,55 @@ The decision's authority or an administrator can retry.
 - If IT tickets should go to another department or with another priority, set **IT ticket
   department** and **IT ticket priority** in the TenderOps settings.
 
+## The bid stages
+
+### Keep track of the tender documents
+
+Open the opportunity's **Virtual Tendering Team** tab, then **Documents**. It lists every document of
+the tender with who issued it, its revision, its dates, how binding it is and whether it is ready. A
+second tab, **Issues**, lists the problems found in the documents.
+
+**When the client re-issues a document**
+
+The system keeps every version. A re-issued file becomes a new version (v2, v3, …), and the old one
+stays in the document's history. Only the work the AI team built from the old version is marked as
+out of date, with the reason, for example "Source changed: BOQ.xlsx v1 → v2". Run those stages again.
+Work that never used that document is not touched. A file that disappears from the tender folder is
+marked **Withdrawn**.
+
+**Register a document and mark it ready** (needs *Edit opportunity documents*)
+
+1. On **Documents**, select **Details** on the document's row.
+2. Check the fields. The system suggests how binding the document is and the date it was received:
+   - **Issuer**: who issued it, for example the client or its consultant.
+   - **Client revision**: the revision written on the document, for example B.
+   - **Authority**: **Contractual** (binding: conditions, specifications, BOQ, addenda),
+     **Informative** (drawings for information, reports) or **Reference** (standards, past bids).
+   - **Received on** and, if the document says so, **Effective from**.
+3. Select **Confirm fields**. The document becomes **Registered**.
+4. When the document can be relied on, select **Mark ready**. It becomes **Ready**.
+
+A re-issued document goes back to **Received** so that it is checked again. The run never waits for
+documents to be ready; the **Documents** tab shows how many are not ready yet.
+
+**Report a problem in a document** (anyone who can view the opportunity)
+
+1. Open the document's **Details**.
+2. Under **Raise issue**, choose the type (missing pages, conflict with another document, ambiguous,
+   illegible, other) and write what is wrong and where.
+3. Select **Raise issue**. The issue is attached to the version you are looking at.
+
+Someone with *Edit opportunity documents* resolves it from the **Issues** tab with **Resolve** and
+writes how it was resolved.
+
 ## Frequently asked questions
+
+**Why are some stages marked out of date after a document changed?**
+They used the old version of that document. Run them again so they use the new version. Stages that
+didn't use the document are not marked.
+
+**Can I delete an old version of a document?**
+No. Every version is kept so you can always see what an earlier output was based on.
 
 **I can open Tender Triage but there are no action buttons.**
 You have the **View** permission only. Ask an administrator for **Edit** under *Tenders - Tender
