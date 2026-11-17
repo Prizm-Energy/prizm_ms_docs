@@ -137,8 +137,15 @@ This screen shows where bids wait and on whom.
      a person instead of IT;
    - **Answered by someone else**: decisions answered by someone other than their owner, usually
      an administrator.
-4. Use the two small tables to group the waits **by class** and **by owner**.
-5. In the large table, select an opportunity to open it.
+4. Under the cards, choose a tab. Each tab has one table:
+   - **Every wait**: one row per wait. Select an opportunity, an owner or the person who answered
+     to open them.
+   - **By blocker class**: how many waits each class has, how many are open, and the median days.
+   - **By owner**: the same per owner, with the oldest open wait.
+   - **AI worker availability (last 14 days)**: whether each AI worker is running now and how much
+     of the last 14 days it was available. The PH1 target is 95%.
+5. Filter or sort any column, or search above the table. The open tab stays in the page link, so
+   you can send the link or reload the page and land on the same tab.
 
 A wait is a decision waiting for a person, a run that failed without raising a decision, or a
 stage review nobody has approved or rejected yet. Each wait has a blocker class:
