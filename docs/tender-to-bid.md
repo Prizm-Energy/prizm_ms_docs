@@ -591,6 +591,36 @@ documents to be ready; the **Documents** tab shows how many are not ready yet.
 Someone with *Edit opportunity documents* resolves it from the **Issues** tab with **Resolve** and
 writes how it was resolved.
 
+### See what the client requires
+
+Open the opportunity and its **Client requirements** tab. The system reads everything the client sent
+for the opportunity, on its own, a few minutes after the files arrive: the tender files, the messages
+on the tender portal and the details of the tender itself. You don't start anything, and it doesn't
+wait for the AI team's run or for RAG.
+
+At the top you see how many files came in and where they stand (**received**, **typed, waiting to be
+read**, **placed**, **need a person**, **failed**) and what the reading cost. Below, one grid lists every
+requirement found, by category: key dates, what to submit, qualifications, evaluation, bonds and
+guarantees, commercial terms, technical requirements, legal terms, deliverables, contacts and open
+points. Each row shows the value, whether it is mandatory, the file it came from (open it with the link),
+the page and the client's own words.
+
+- Choose a category in the list above the grid to see only that one.
+- When the client sends a newer file, its values replace the older ones; the grid always shows the
+  current values.
+- A file marked **need a person** could not be read (for example a scanned file with no text, or a file
+  too large); read it yourself.
+
+**How long the client's files stay with the AI provider** (needs *TenderOps edit*)
+
+To read a file, the system may send it to the AI provider once and keep it there while the opportunity
+is studied. The default is set in **Opportunities → Settings → TenderOps → AI review** (30 days). To
+change it for one opportunity, type a number of days (1 to 365) in **Days client files stay with the
+AI provider** on the **Client requirements** tab and select **Submit**; leave it empty to use the
+default. Each provider allows a maximum (OpenAI 30 days, Anthropic 90; Gemini keeps files 48 hours),
+and the files are deleted from the provider when the time ends. **What each provider allows** opens
+the list with the official source of every limit.
+
 ## Frequently asked questions
 
 **Why are some stages marked out of date after a document changed?**
@@ -641,6 +671,11 @@ will reach the same opportunity.
 **The receipt says "needs attention". What do I do?**
 Look at the step marked ⚠ or ✗ and at the warnings, and tell an administrator. They can run the
 steps again without creating a second opportunity.
+
+**The Client requirements tab is empty.**
+The tender's files are read a few minutes after they arrive, and only for bids that are still open.
+If the counts at the top show files **received** or **typed, waiting to be read**, wait a little. If
+there are no files at all, the tender has none in the system yet.
 
 **Why didn't my pursued tender move to Converted by itself?**
 Either no opportunity carries its number yet, or more than one does. In the second case you have a
