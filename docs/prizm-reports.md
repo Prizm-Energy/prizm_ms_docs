@@ -55,7 +55,20 @@ Click **+ New Report** to create a new daily progress report.
 
 ![Report Form – Header Fields](./prizm-reports/img/prizm_report_add1.png)
 
+**Field Guide (Header):**
+
+1. **Related To** - Linked project
+2. **Report Date** - Date of the report
+3. **Today's Overall Progress** - Current progress percentage
+4. **Outstanding Issues** - Unresolved issues summary
+5. **Additional Remarks** - Extra notes or comments
+
 ![Report Form – Work Tables & Images](./prizm-reports/img/prizm_report_add2.png)
+
+**Field Guide (Work Tables):**
+
+1. **Work Activities Table** - Daily work activities with details
+2. **Images/Photos Section** - Site photos and documentation
 
 **Header fields:**
 
@@ -172,6 +185,12 @@ Click **+ New Certificate** to create a new record.
 ### 5.2 Creating / Editing a Certificate
 
 ![Edit Completion Certificate](./prizm-reports/img/Completion_certificates_add_edit.png)
+
+**Field Guide:**
+
+1. **Certificate Details** - Certificate information and type
+2. **Project Reference** - Linked project reference
+3. **Completion Date** - Date of project completion
 
 **Fields:**
 

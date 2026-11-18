@@ -684,3 +684,13 @@ Tender Alert listing them; link the right one by hand.
 **Why does a failed run show an unknown waiting time?**
 A failed run stops at once, and nothing records when the bid moved again, so its waiting time can't
 be measured. It is counted, but left out of the medians.
+
+**I changed a stage prompt. Does the AI team's run use it?**
+Yes. Since TenderOps 2.52.1 the run reads the prompt saved on the TenderOps prompt screens. Before that
+it kept using the built-in text, so prompts saved earlier start to apply now. Leave a prompt empty to go
+back to the built-in text.
+
+**The AI model a stage uses was retired by its provider. Do I need to do anything?**
+No. Two weeks before the date, the system picks the replacement that costs least without being weaker
+than the old model, and switches on the date. Administrators see the choice, and can change it, in
+**AI Gateway → Provider facts**.

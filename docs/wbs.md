@@ -48,6 +48,11 @@ The WBS module provides comprehensive tools for:
 
 The WBS Builder is the home screen for the whole module. Across the top you set up the structure — the **WBS Name**, **Relation Type** (e.g. Opportunity), the linked **Opportunity**, the **Coding System Root**, the **Data Date**, and the **Scheduling Mode**. Below that sits a toolbar of feature buttons (import/export, add/indent rows, the reporting and procurement modals, and more), followed by the **WBS grid** where the hierarchy of work is actually built.
 
+> **An opportunity's WBS is its own.** When the Relation Type is Opportunity, saving, importing or
+> deleting changes only that opportunity's rows, never a project that happens to have the same number
+> (fixed in Prizm Projects 1.169.0). A WBS that belongs to another record can't be saved here; open it
+> from its own record.
+
 Each row in the grid is either a WBS element or an activity. The columns are grouped by purpose, described below.
 
 ### 4.2 Grid Columns — Identity
