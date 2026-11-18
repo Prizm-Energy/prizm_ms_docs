@@ -51,7 +51,15 @@ Map a new line the same way the same kind of item is already mapped in the proje
 
 ### 3.2 A line whose unit is N/A
 
-A line with unit N/A cannot be approved by quantity. Record it as a whole-line money amount, the same way the project already records other lump-sum lines, and keep it mapped to its work package.
+A line whose unit is N/A does not appear when you make a resource request, and it cannot be approved by quantity.
+
+1. Ask the project engineer for the real unit of each such line (trip, month, day, job, man-month and so on). Suggest a unit from the item description and the price, and let the engineer confirm it in writing (for example on Microsoft Teams).
+2. Send the confirmed units to the technical team. They correct the unit on the budget line and on its old resource request lines; quantity and price stay the same.
+3. Some old lines keep N/A on purpose because Project Controls already gives them a unit of its own (a unit declaration from a quotation, or a labour correction in hours). The technical team checks this first and leaves those lines as they are.
+4. In the Cost Plan, withdraw the money-only hold of each corrected line (3.3), map the line (3.1) and **Save**.
+5. Continue the chain: compile, review, cost approval, funding.
+
+Until the unit is corrected, the line can only be recorded as a whole-line money amount.
 
 ### 3.3 A line held as money-only that no longer matches
 
@@ -63,6 +71,8 @@ When a line held as a money-only allowance changes (new price or quantity), savi
 4. Continue the chain from step 2 of section 1.
 
 Withdrawing alone leaves the line unallocated; it still blocks spending until it is mapped.
+
+A line can be mapped **and** still carry an old money-only hold from the time it had no unit. After its unit is corrected that hold no longer matches, and the cost approval is held (5). Withdraw every such hold before you compile.
 
 ### 3.4 Physical allocations after a new governing scope
 
@@ -85,6 +95,21 @@ If the review shows `PROJECT_COMPANY_SOURCE_INVALID`, set the project's company 
 
 If you are not the approver, the system records the decision **on behalf of** the approver. Record an on-behalf decision only when the approver has agreed (for example on Microsoft Teams) or the project owner decided, and say which in the reason.
 
+![Cost approval decided on behalf of the approver](./project-controls/img/unit-and-approval/01-cost-approval-on-behalf.jpg)
+
+1. **Request status: Financially applied**: the approval is done.
+2. **Decided by … on behalf of …**: the system shows who pressed **Approve** and for whom.
+3. The reason: what changed and who decided.
+
+### 5.1 The approval is held
+
+![Cost approval approved but held for source review](./project-controls/img/unit-and-approval/02-cost-approval-held.jpg)
+
+1. **Request status: Held for source review** means the decision was recorded but the system did not apply it.
+2. The step itself shows **Approved**, so do not approve it again.
+
+The usual cause is a line that still carries an old money-only hold (3.3). Withdraw the hold, compile again, submit the review and a new cost approval, and approve the new request. The held request stays in the history.
+
 ## 6. Funding reconciliation
 
 This is needed again after **every** new cost approval.
@@ -96,6 +121,13 @@ This is needed again after **every** new cost approval.
 5. The window shows **Funding reconciliation approved**.
 
 If the worksheet shows a real change (a new release, a different amount, a new overdraw), stop: the project owner decides first.
+
+When the funding is approved, the yellow box disappears and the purchase order approver can approve the order.
+
+![Purchase order approved after the chain](./project-controls/img/unit-and-approval/03-po-approved.jpg)
+
+1. The approver's stamp **Approved** on the purchase order.
+2. The date and time of the approval.
 
 ### Step-by-step pictures
 
