@@ -236,22 +236,22 @@ A tender can be converted from the tender screen, through the API or from the eS
 
 Every conversion leaves a **Conversion receipt** that shows whether the follow-up steps finished.
 
-1. Open the converted tender.
-2. On its **Main** tab, read the receipt:
-   - who converted the tender, when, and how: *Converted on the Tenders screen*, *Converted through
-     the Tenders API* or *Converted from the eSupply extension*;
-   - a mark for each step: ✓ done, ⚠ needs a look, ✗ failed;
-   - the conversion's **Warnings**, for example when the SharePoint record folder could not be
-     prepared.
-3. If the receipt says **needs attention**, look at the step marked ⚠ or ✗ and tell an
-   administrator. They can run the steps again; this never creates a second opportunity.
+1. Open the converted tender. On its **Main** tab, a mark shows the state of the conversion
+   (✓ finished, ⚠ needs attention), with the link **Conversion details in TenderOps**.
+2. Open the **Activity Log** tab. It starts with the conversion:
+   - who converted the tender and when, and the opportunity it became;
+   - how many steps finished, and a mark for each step: ✓ done, ⚠ needs a look, ✗ did not report.
+     Point at a step to see what it did;
+   - a line when the tender's BOQ changed after the conversion.
+3. Select **Details in TenderOps** to see every step with what it did, the conversion's warnings and,
+   when the receipt needs attention, how an administrator runs the steps again. Running them again
+   never creates a second opportunity.
 
 | Step | What it does |
 |---|---|
 | SharePoint access for the opportunity team | Gives the opportunity team access to the bid folder. |
 | Bid decision recorded on the opportunity | Records that converting the tender was the decision to bid. |
 | Triage record marked converted | Moves the tender to *Converted* in tender triage. |
-| eSupply details capture | Collects the full tender details from eSupply (eSupply tenders only). |
 | TenderOps conversion event and preparation | Prepares the opportunity for the virtual tendering team. |
 
 A receipt that needs attention also raises one **Tender Alert** (gavel icon). Select it to open the
@@ -358,6 +358,22 @@ ticks:
 Administrators can always do both. Every approval and every indexing job is written to the activity
 log. Tenders that were not converted into an opportunity are not listed yet.
 
+### Read the RAG backlog
+
+Reading a tender's files for the bid does not wait for indexing: the files are read directly. Indexing
+for the AI team's search (RAG) is an extra step that catches up when the indexing computers run. The
+top of **Tenders → Tender Indexing** shows what is still waiting:
+
+| Tile | What it counts |
+|---|---|
+| **Documents waiting for RAG** | Documents not indexed yet, in how many tenders, and how many failed on the last try. |
+| **Approved, waiting for a worker** | Documents of approved tenders, waiting for an indexing computer, and the oldest one. |
+| **Tender not approved for indexing** | Documents of tenders nobody approved yet. **Index now** approves them. |
+| **Embed jobs in the queue** | Indexing jobs waiting or running, and the oldest one. |
+
+A large number here does not stop a bid. It only means the AI team's search does not cover those
+documents yet.
+
 ### Check a tender change after conversion
 
 Converting copies the tender's BOQ into the opportunity. The tender keeps its BOQ, and a later change
@@ -368,8 +384,8 @@ notification and a Tender Alert is raised.
 
 ![Tender changed after conversion](./tender-to-bid/img/source-change-01-receipt.jpg)
 
-1. Open the tender. The conversion receipt names the opportunity and says when the latest change was
-   found.
+1. Open the tender and its **Activity Log** tab. The conversion indicators name the opportunity and
+   say when the latest change was found.
 2. Open the opportunity and compare the two BOQs.
 3. Update the opportunity's BOQ if you need to.
 
@@ -517,6 +533,22 @@ The decision's authority or an administrator can retry.
 - Make sure the IT department has its head set in **HR Profile → Departments**.
 - If IT tickets should go to another department or with another priority, set **IT ticket
   department** and **IT ticket priority** in the TenderOps settings.
+
+### Choose who decides for one opportunity
+
+Each decision of a bid stage goes to the holder of its role: BD manager, Technical authority,
+Commercial manager, Legal counsel, Bid authority, or IT support for technical faults. The
+**Authority map** (**Opportunities → Authority map**) is the setting for all opportunities. To change
+it for one opportunity only:
+
+1. Open the opportunity and its **Stage owners** tab.
+2. Each role shows the stages that go to it and its default holder from the Authority map.
+3. Choose a person for a role, or **Use the default** to go back to the Authority map.
+4. Select **Save**.
+
+From then on, the decisions of that role's stages on this opportunity go to the person you chose.
+Other opportunities keep the Authority map. Administrators and staff with TenderOps *manage
+settings* can change the stage owners; everyone else sees them.
 
 ## The bid stages
 
