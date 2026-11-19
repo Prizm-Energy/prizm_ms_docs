@@ -664,6 +664,67 @@ When an awarded opportunity is converted to a project, its WBS is frozen and cop
 three times: **Level 0 (award)** (frozen, what was won), a working copy, and baseline 0 (approved). Make
 changes in the project's working WBS. Saving on a frozen WBS shows *This WBS is frozen*.
 
+### Find your way on the TenderOps page
+
+*Available after the next release (TenderOps 2.55.0).*
+
+Open the opportunity and its **Virtual Tendering Team** tab. **Run Opportunity** stays at the top; below it, one row of
+tabs, each holding one topic:
+
+| Tab | What it holds |
+|---|---|
+| **Run** | The run status, what still blocks the run, and the 11 stage cards. Select a card to open that stage. |
+| **Intake** | The context panel and the indexing and embedding status. |
+| **Documents** | The document register. |
+| **Scope gate & ITP** | The scope gate and the ITP matrix. |
+| **Briefs** | The intake brief and the executive summary. |
+| **Stages** | The 11 analysis stages, each in its own tab. |
+| **Decisions**, **Coverage**, **Anatomy**, **Artifacts**, **Attachments**, **Compare** | As before. |
+| **VTO settings** | Stage settings, Configurations, Evidence, PRIZM Input and Consulto. |
+| **Settings** | The document index of this opportunity. |
+
+A reload or a shared link keeps the open tab.
+
+### Choose the model of each analysis stage
+
+*Available after the next release (TenderOps 2.55.0).*
+
+There is one central setting and one copy per opportunity:
+
+1. **For every new opportunity** (needs *TenderOps manage settings*): open **Opportunities → Settings → TenderOps →
+   Stage settings**. Each stage shows the model it runs on. Only models of providers TenderOps holds its own AI Gateway
+   key for are offered. Select **Submit**; the setting is saved as a new revision.
+2. **For one opportunity**: open the opportunity, **Virtual Tendering Team → VTO settings → Stage settings**. The same
+   table, copied from the central setting when the opportunity opened, plus the virtual team member of each stage.
+   A change here applies to this opportunity only.
+
+### Edit the AI prompts of TenderOps
+
+*Available after the next release (TenderOps 2.55.0, AI Gateway 1.12.0).*
+
+All TenderOps prompts are in one place: **Opportunities → Settings → TenderOps → Prompts** (needs the AI Gateway
+**Prompts** permission). Each analysis stage has two prompts, *open art* and *structured*, holding its system and user
+text; the client requirements prompts are there too.
+
+1. The grid shows each prompt with part of its text. Select the arrow next to the text to read all of it.
+2. Select a prompt's title to open its edit screen in the same place. **Back to the prompts** returns to the grid.
+3. Change what you need: titles, the system and user text, the variables, the model, the parameters, the output, the
+   tools, caching and the files the prompt takes. What the chosen model's provider does not take is shown greyed out.
+4. Select **Save draft**, then **Test**. **Publish** makes the draft the version every new run uses. To undo, publish
+   the older version again from AI Gateway → Prompts.
+5. **New prompt** adds a prompt with its own key, title and text.
+
+For an analysis stage, the model comes from the stage settings; a prompt's own model and parameters apply only where
+a stage has none.
+
+### Admit a PRIZM Input file as evidence
+
+*Available after the next release (TenderOps 2.55.0).*
+
+Open **Virtual Tendering Team → VTO settings → PRIZM Input**. The grid lists private fact files sent for this
+opportunity, with search and filters. For a file still private, choose its **Fact class** and select **Admit to
+evidence**; it is then indexed as evidence. Nothing is copied to SharePoint.
+
 ## Frequently asked questions
 
 **Why are some stages marked out of date after a document changed?**
