@@ -623,7 +623,6 @@ the list with the official source of every limit.
 
 ### Choose how the analysis uses RAG
 
-*Available after the release of TenderOps 2.53.0.*
 
 On the opportunity's **Client requirements** tab, **How the analysis uses RAG** has three choices (needs *TenderOps edit*):
 
@@ -637,7 +636,6 @@ On the opportunity's **Client requirements** tab, **How the analysis uses RAG** 
 
 ### Follow each file's RAG steps
 
-*Available after the release of TenderOps 2.53.0.*
 
 Open **Tenders → Tender Indexing** and the **RAG register** tab, or **Open the RAG register** from the
 opportunity. Every client file and opportunity information item has one row per RAG step, with its state:
@@ -649,7 +647,6 @@ indexing computers do not report that step yet).
 
 ### Improve the AI prompts that read the client's files
 
-*Available after the release of AI Gateway 1.11.0 and TenderOps 2.54.0.*
 
 The two AI prompts that type a client file and read its requirements are now in **AI Gateway → Prompts**
 (module *tenderops*: *requirements_classify* and *requirements_extract*). Version 1 is the same text as
@@ -662,7 +659,6 @@ before, so the results do not change. With the **Prompts** permission you can:
 
 ### The WBS freezes when the bid is won
 
-*Available after the release of Prizm Projects 1.170.0.*
 
 When an awarded opportunity is converted to a project, its WBS is frozen and copied to the project
 three times: **Level 0 (award)** (frozen, what was won), a working copy, and baseline 0 (approved). Make
