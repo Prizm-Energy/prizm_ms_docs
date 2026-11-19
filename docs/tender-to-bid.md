@@ -621,6 +621,53 @@ default. Each provider allows a maximum (OpenAI 30 days, Anthropic 90; Gemini ke
 and the files are deleted from the provider when the time ends. **What each provider allows** opens
 the list with the official source of every limit.
 
+### Choose how the analysis uses RAG
+
+*Available after the release of TenderOps 2.53.0.*
+
+On the opportunity's **Client requirements** tab, **How the analysis uses RAG** has three choices (needs *TenderOps edit*):
+
+| Choice | What happens |
+|---|---|
+| **Off** | The client files are read directly. RAG still runs in the background, but the analysis never waits for it. |
+| **Companion** | The files are read directly, and RAG results are added as supporting context. |
+| **Primary** | A file is read from RAG once its embedding is verified; every other file is read directly. |
+
+**Default** follows the setting **How the analysis of client files uses RAG** in **Opportunities → Settings → TenderOps**.
+
+### Follow each file's RAG steps
+
+*Available after the release of TenderOps 2.53.0.*
+
+Open **Tenders → Tender Indexing** and the **RAG register** tab, or **Open the RAG register** from the
+opportunity. Every client file and opportunity information item has one row per RAG step, with its state:
+**done**, **waiting**, **skipped** (with the reason), **failed** (with the error) or **not reported** (the
+indexing computers do not report that step yet).
+
+- Filter by **Step** and **State** to find what is stuck.
+- **Refresh now** recomputes the register of one opportunity; **Retry** sends a failed file to RAG again.
+
+### Improve the AI prompts that read the client's files
+
+*Available after the release of AI Gateway 1.11.0 and TenderOps 2.54.0.*
+
+The two AI prompts that type a client file and read its requirements are now in **AI Gateway → Prompts**
+(module *tenderops*: *requirements_classify* and *requirements_extract*). Version 1 is the same text as
+before, so the results do not change. With the **Prompts** permission you can:
+
+1. Open the prompt and create a draft.
+2. Change the text and **Test** it on the sample values; the answer, tokens and cost are shown.
+3. **Publish** the tested draft. Every later analysis uses it, and the request log shows the version.
+4. If the new version is worse, publish the older version again.
+
+### The WBS freezes when the bid is won
+
+*Available after the release of Prizm Projects 1.170.0.*
+
+When an awarded opportunity is converted to a project, its WBS is frozen and copied to the project
+three times: **Level 0 (award)** (frozen, what was won), a working copy, and baseline 0 (approved). Make
+changes in the project's working WBS. Saving on a frozen WBS shows *This WBS is frozen*.
+
 ## Frequently asked questions
 
 **Why are some stages marked out of date after a document changed?**
