@@ -743,8 +743,10 @@ Open the opportunity, **TenderOps → Storage Box**. The Attachments tab stays t
 4. To add files, choose the layer and select **Upload**. Customer files land in `11 - Triage`, kept as received;
    commercial files in `02 - BOQ & Pricing`, technical in `03 - Engineering & Drawings`, dispatch in
    `07 - Communications`. A private layer is kept outside the opportunity's folder.
-5. The list shows the files by folder. Files stored before 2.60.0 stay where they are, still open, and are listed under
-   **Earlier files**.
+5. The files show as a folder tree: the opportunity code, `00 - Overview.md` and the twelve folders (empty ones too);
+   open a folder to see its files and select a file to download it. Files stored before 2.60.0 stay where they are,
+   still open, and are under **Earlier files**, by layer. Files that could not be copied are under **Not copied**, with
+   the reason and, where allowed, **Copy anyway**.
 
 A new opportunity gets its folders a few minutes after it is created.
 
