@@ -725,6 +725,40 @@ Open **Virtual Tendering Team → VTO settings → PRIZM Input**. The grid lists
 opportunity, with search and filters. For a file still private, choose its **Fact class** and select **Admit to
 evidence**; it is then indexed as evidence. Nothing is copied to SharePoint.
 
+### Keep an opportunity's files on the Storage Box
+
+*Available after the next release (TenderOps 2.58.0 to 2.60.0).*
+
+Open the opportunity, **TenderOps → Storage Box**. The Attachments tab stays the SharePoint page; nothing changes there.
+
+1. Select **Move to Storage Box** (needs *TenderOps edit*). The opportunity gets its folder and its files are copied.
+   The counters show what was copied, what waits and what failed.
+2. The folder is named after the full opportunity code, for example `documentcontrol/opportunities/OPP-262865`. It has
+   twelve folders, the same as Document Control:
+   `00 - Client Files`, `01 - Award & Contract`, `02 - BOQ & Pricing`, `03 - Engineering & Drawings`,
+   `04 - Procurement`, `05 - Execution & QA-QC`, `06 - Photos`, `07 - Communications`, `08 - Closeout`,
+   `09 - Financials`, `10 - Manual Review` and `11 - Triage`.
+3. `00 - Overview.md` in the folder shows the opportunity's ERP id, code, Document Control code (`O262865`), title,
+   client, status and dates. The ERP writes it and updates it when the opportunity changes; do not edit it.
+4. To add files, choose the layer and select **Upload**. Customer files land in `11 - Triage`, kept as received;
+   commercial files in `02 - BOQ & Pricing`, technical in `03 - Engineering & Drawings`, dispatch in
+   `07 - Communications`. A private layer is kept outside the opportunity's folder.
+5. The list shows the files by folder. Files stored before 2.60.0 stay where they are, still open, and are listed under
+   **Earlier files**.
+
+A new opportunity gets its folders a few minutes after it is created.
+
+### Read the client's files one at a time
+
+*Available after the next release (TenderOps 2.59.0).*
+
+In **Stage settings**, each stage has **How files are read**:
+
+- **All files in one call** (as before).
+- **One file per AI job, then merge**: each Storage Box file is checked against its fingerprint and read in its own
+  job; a file that fails is tried once more and named in the stage output. The stage then merges the file results. A
+  file already read with the same prompt and model is not sent again. Each file's cost is in the AI Gateway.
+
 ## Frequently asked questions
 
 **Why are some stages marked out of date after a document changed?**
