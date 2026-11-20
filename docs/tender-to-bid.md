@@ -753,9 +753,8 @@ nothing changes there.
    `09 - Financials`, `10 - Manual Review` and `11 - Triage`.
 3. `00 - Overview.md` in the folder shows the opportunity's ERP id, code, Document Control code (`O262865`), title,
    client, status and dates. The ERP writes it and updates it when the opportunity changes; do not edit it.
-4. To add files, choose the layer and select **Upload**. Every new file lands in `11 - Triage`, kept as received,
-   whatever its layer. A private layer is kept outside the opportunity's folder and only its owner or an administrator
-   sees it.
+4. To add files, choose **Upload to** and select **Upload**: **11 - Triage** (kept as received; Document Control files
+   it on) or **Private** (kept outside the opportunity's folder; only you and administrators see it).
 5. The files show as a folder tree: the opportunity code, `00 - Overview.md` and the twelve folders (empty ones too);
    open a folder to see its files and select a file to download it. Files stored before 2.60.0 stay where they are,
    still open, and are under **Earlier files**, by layer. Files that could not be copied are under **Not copied**, with
