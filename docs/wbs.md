@@ -38,6 +38,15 @@ The WBS module provides comprehensive tools for:
 3. Open a project and select its **WBS** tab (or navigate directly to the project's WBS builder)
 4. The WBS Builder opens, showing the project setup fields, the feature toolbar, and the WBS grid
 
+### Who can open a WBS
+
+You need the **WBS view** permission (**Setup → Staff → Roles → Prizm Project WBS → View**) to see the WBS screens. On top of that, you reach the WBS of a project or an opportunity only if you can open that record itself:
+
+- **Project:** the **View** projects permission, or you are a member of the project. A project's frozen Level 0 copy follows the project.
+- **Opportunity:** admin, the **View** or **View global country** opportunity permission, or **View own** when you created the opportunity, are responsible for it or for one of its stages, are a team member, or hold an active bid role. Without any opportunity permission, only an active bid role opens it.
+
+The WBS list shows only the WBS you can reach. Opening any other one shows the access-denied page, and its data (budgets, CBS rollup, payment applications and so on) is refused. Access to an opportunity through its SharePoint folder alone does not open its WBS. If you need a WBS you cannot open, ask to be added to the project or opportunity team (Prizm Projects 1.171.0).
+
 ---
 
 ## 4. WBS Builder — Main Page
@@ -130,6 +139,31 @@ BOQ Mapping links Bill of Quantities line items to a WBS code so that measuremen
 ![Match Templates](wbs/img/match_templates.png)
 
 Match Templates helps you find an existing WBS template that fits new work — either by choosing a BOQ item to match against, or by describing the work in plain text. Candidate templates are ranked by similarity and can be loaded straight into the builder.
+
+### 5.6 Apply RFQ Prices to Work Packages
+
+On an opportunity's WBS, choose **Apply RFQ prices**. The received supplier quotation lines appear in a grid you can search, filter, sort and page.
+
+1. For each line you want to use, click **Target WP / CBS** and type to find the work package.
+2. Click **Mode** to choose **Per line** or **Discipline**.
+3. For lines without a match, pick a CBS code under **Per discipline** and a control work package. The list shows only the codes found on the received lines that are not applied yet, with the discipline name and the number of lines.
+4. Choose **Apply selected**.
+
+Each line becomes its own **rate build-up** component on its work package and **adds** its amount (quantity × rate) to the budget; components already on the work package stay. A discipline adds the total of its lines as one component. Lines without a target are not applied, and a line already used is tagged **mapped**. To move an applied line to another work package, tick **Force overwrite**. The quantity and rate always come from the received line, and every apply is recorded in the Activity Log.
+
+### 5.7 CBS Disciplines
+
+Open **Prizm Projects → CBS disciplines**, or **Manage CBS disciplines** in the Apply RFQ prices window. The page lists each discipline with its order, code, English and Arabic names, component type, keywords and status. It starts with **L** Labour, **M** Material, **P** Plant and **S** Subcontract.
+
+A received RFQ line gets the code of the first active discipline, in order, whose keywords appear in its description (for example "labour" gives L). Its applied price becomes a rate build-up component of that discipline's component type.
+
+With the WBS **manage cost data** permission you can:
+
+- **Add a discipline:** a code (letters, digits, - or _), a name, an optional Arabic name, the component type, keywords separated by commas, and the order (lower orders are checked first).
+- **Edit (pencil):** change anything except the code, which is fixed once added because applied prices keep it.
+- **Switch it off:** clear **Active**. Disciplines are never deleted.
+
+Each change is recorded in the Activity Log.
 
 ---
 
