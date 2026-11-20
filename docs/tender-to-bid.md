@@ -669,7 +669,7 @@ changes in the project's working WBS. Saving on a frozen WBS shows *This WBS is 
 *Available after the next release (TenderOps 2.55.0).*
 
 Open the opportunity and its **Virtual Tendering Team** tab. **Run Opportunity** stays at the top; below it, one row of
-tabs, each holding one topic:
+tabs, each holding one topic. The tabs wrap onto a second line on a narrow screen, so none is hidden:
 
 | Tab | What it holds |
 |---|---|
@@ -680,8 +680,9 @@ tabs, each holding one topic:
 | **Briefs** | The intake brief and the executive summary. |
 | **Stages** | The 11 analysis stages, each in its own tab. |
 | **Decisions**, **Coverage**, **Anatomy**, **Artifacts**, **Attachments**, **Compare** | As before. |
-| **VTO settings** | Stage settings, Configurations, Evidence, PRIZM Input and Consulto. |
-| **Settings** | The document index of this opportunity. |
+| **Storage Box** | The opportunity's files in the Document Control folders, with the file actions. |
+| **Approvals** | Filing requests waiting for approval and their files. A yellow counter shows how many wait. |
+| **Settings** | One tab, a sub-tab per topic: Stage settings, Configurations, Evidence, PRIZM Input, Consulto, Document index and Prompts (TenderOps 2.61.0; before it, VTO settings and Settings were two tabs). |
 
 A reload or a shared link keeps the open tab.
 
@@ -694,7 +695,7 @@ There is one central setting and one copy per opportunity:
 1. **For every new opportunity** (needs *TenderOps manage settings*): open **Opportunities → Settings → TenderOps →
    Stage settings**. Each stage shows the model it runs on. Only models of providers TenderOps holds its own AI Gateway
    key for are offered. Select **Submit**; the setting is saved as a new revision.
-2. **For one opportunity**: open the opportunity, **Virtual Tendering Team → VTO settings → Stage settings**. The same
+2. **For one opportunity**: open the opportunity, **Virtual Tendering Team → Settings → Stage settings**. The same
    table, copied from the central setting when the opportunity opened, plus the virtual team member of each stage.
    A change here applies to this opportunity only.
 
@@ -721,7 +722,7 @@ a stage has none.
 
 *Available after the next release (TenderOps 2.55.0).*
 
-Open **Virtual Tendering Team → VTO settings → PRIZM Input**. The grid lists private fact files sent for this
+Open **Virtual Tendering Team → Settings → PRIZM Input**. The grid lists private fact files sent for this
 opportunity, with search and filters. For a file still private, choose its **Fact class** and select **Admit to
 evidence**; it is then indexed as evidence. Nothing is copied to SharePoint.
 
@@ -769,6 +770,31 @@ A new opportunity gets its folders a few minutes after it is created.
 **File to…** on a file and choose the folder. A file in `11 - Triage` stays there; a copy linked to it goes to the
 folder. A file in `00`–`10` moves. Nothing can be filed into Triage by hand or into another opportunity or project, and
 every copy and move is recorded.
+
+### Let the AI sort the Triage files, then approve
+
+*Available after the next release (TenderOps 2.61.0).*
+
+On **Virtual Tendering Team → Storage Box**, the icons above the files (hover one for what it does) and the
+right-click menu on a file hold the same actions: download, File to…, classify, change the proposed folder, send for
+approval, upload to Triage or Private, copy anyway, retry, refresh. An action you may not use is not shown.
+
+1. **Classify.** Document Control (administrators, or Document Control *issue* / *administer*) selects a file in
+   `11 - Triage` and chooses **Classify the selected Triage file with AI**, or **Classify all Triage files with AI**.
+   The AI reads each file on its own and proposes a folder (`00` to `10`) with the document's title, issuer and
+   numbers. When it is not sure, it proposes `10 - Manual Review`. The proposal shows in the **Proposed folder** and
+   **AI proposal** columns.
+2. **Check.** To change a proposal, select the file and choose **Change the folder the AI proposed**.
+3. **Send for approval.** Choose **Send the AI proposals for approval**: all proposed files of the opportunity go as
+   one request to the Approvals module.
+4. **Approve.** The request shows on the **Approvals** tab, with a yellow counter while it waits. The approver (or an
+   administrator on their behalf) selects **Approve** or **Reject**.
+5. **Result.** Once approved, each file is copied into its folder; the original stays in `11 - Triage`. Once
+   rejected, nothing is copied. Every step is in the Activity Log.
+
+The prompt the AI uses is on **Opportunities → Settings → TenderOps → Prompts** (*Document Control: classify a Triage
+file*). An administrator sets who approves in **Approvals → Policies**, document type **Document Control filing (AI
+proposals)**.
 
 ### Read the client's files one at a time
 
