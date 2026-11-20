@@ -142,6 +142,8 @@ Match Templates helps you find an existing WBS template that fits new work — e
 
 ### 5.6 Apply RFQ Prices to Work Packages
 
+![Apply RFQ prices](wbs/img/apply_rfq_prices.jpg)
+
 On an opportunity's WBS, choose **Apply RFQ prices**. The received supplier quotation lines appear in a grid you can search, filter, sort and page.
 
 1. For each line you want to use, click **Target WP / CBS** and type to find the work package.
@@ -153,6 +155,8 @@ Each line becomes its own **rate build-up** component on its work package and **
 
 ### 5.7 CBS Disciplines
 
+![CBS disciplines](wbs/img/cbs_disciplines.jpg)
+
 Open **Prizm Projects → CBS disciplines**, or **Manage CBS disciplines** in the Apply RFQ prices window. The page lists each discipline with its order, code, English and Arabic names, component type, keywords and status. It starts with **L** Labour, **M** Material, **P** Plant and **S** Subcontract.
 
 A received RFQ line gets the code of the first active discipline, in order, whose keywords appear in its description (for example "labour" gives L). Its applied price becomes a rate build-up component of that discipline's component type.
@@ -162,6 +166,8 @@ With the WBS **manage cost data** permission you can:
 - **Add a discipline:** a code (letters, digits, - or _), a name, an optional Arabic name, the component type, keywords separated by commas, and the order (lower orders are checked first).
 - **Edit (pencil):** change anything except the code, which is fixed once added because applied prices keep it.
 - **Switch it off:** clear **Active**. Disciplines are never deleted.
+
+![Edit discipline](wbs/img/cbs_discipline_edit.jpg)
 
 Each change is recorded in the Activity Log.
 
