@@ -773,11 +773,13 @@ every copy and move is recorded.
 
 ### Let the AI sort the Triage files, then approve
 
-*Available after the next release (TenderOps 2.61.0).*
+*On the development system since 20 November 2026 (TenderOps 2.61.0); on production after its next deploy.*
 
 On **Virtual Tendering Team → Storage Box**, the icons above the files (hover one for what it does) and the
 right-click menu on a file hold the same actions: download, File to…, classify, change the proposed folder, send for
 approval, upload to Triage or Private, copy anyway, retry, refresh. An action you may not use is not shown.
+
+![Right-click menu on a Triage file](./tender-to-bid/img/storagebox_ai_menu.jpg)
 
 1. **Classify.** Document Control (administrators, or Document Control *issue* / *administer*) selects a file in
    `11 - Triage` and chooses **Classify the selected Triage file with AI**, or **Classify all Triage files with AI**.
@@ -795,6 +797,13 @@ approval, upload to Triage or Private, copy anyway, retry, refresh. An action yo
 The prompt the AI uses is on **Opportunities → Settings → TenderOps → Prompts** (*Document Control: classify a Triage
 file*). An administrator sets who approves in **Approvals → Policies**, document type **Document Control filing (AI
 proposals)**.
+
+### Filter and open from the TenderOps lists
+
+Every TenderOps list (Documents, Issues, PRIZM Input, Activity Log, Tender Indexing, RAG register, Requirements, Where
+bids wait) works the same way: the filter under a column header offers *Contains*, *Does not contain*, *Equals*,
+*Starts with* and *Ends with*. A file name opens the file (or its details), and a person's name opens their staff
+profile. Labels such as an activity's action and status, and the stage in *Where bids wait*, show in your language.
 
 ### Read the client's files one at a time
 
