@@ -740,15 +740,20 @@ Open the opportunity, **TenderOps → Storage Box**. The Attachments tab stays t
    `09 - Financials`, `10 - Manual Review` and `11 - Triage`.
 3. `00 - Overview.md` in the folder shows the opportunity's ERP id, code, Document Control code (`O262865`), title,
    client, status and dates. The ERP writes it and updates it when the opportunity changes; do not edit it.
-4. To add files, choose the layer and select **Upload**. Customer files land in `11 - Triage`, kept as received;
-   commercial files in `02 - BOQ & Pricing`, technical in `03 - Engineering & Drawings`, dispatch in
-   `07 - Communications`. A private layer is kept outside the opportunity's folder.
+4. To add files, choose the layer and select **Upload**. Every new file lands in `11 - Triage`, kept as received,
+   whatever its layer. A private layer is kept outside the opportunity's folder and only its owner or an administrator
+   sees it.
 5. The files show as a folder tree: the opportunity code, `00 - Overview.md` and the twelve folders (empty ones too);
    open a folder to see its files and select a file to download it. Files stored before 2.60.0 stay where they are,
    still open, and are under **Earlier files**, by layer. Files that could not be copied are under **Not copied**, with
    the reason and, where allowed, **Copy anyway**.
 
 A new opportunity gets its folders a few minutes after it is created.
+
+**Document Control files the documents** (administrators, or Document Control *issue* / *administer*): select
+**File to…** on a file and choose the folder. A file in `11 - Triage` stays there; a copy linked to it goes to the
+folder. A file in `00`–`10` moves. Nothing can be filed into Triage by hand or into another opportunity or project, and
+every copy and move is recorded.
 
 ### Read the client's files one at a time
 
