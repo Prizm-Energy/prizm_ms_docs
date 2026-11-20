@@ -754,7 +754,9 @@ nothing changes there.
 3. `00 - Overview.md` in the folder shows the opportunity's ERP id, code, Document Control code (`O262865`), title,
    client, status and dates. The ERP writes it and updates it when the opportunity changes; do not edit it.
 4. To add files, choose **Upload to** and select **Upload**: **11 - Triage** (kept as received; Document Control files
-   it on) or **Private** (kept outside the opportunity's folder; only you and administrators see it).
+   it on) or **Private** (kept outside the opportunity's folder; only you and administrators see it). You can also drag
+   files from your computer and drop them on **11 - Triage** or **Private** in the tree. Everyone who can open the
+   opportunity sees Triage; Private is yours. Files from SharePoint and Outlook arrive in Triage on their own.
 5. The files show as a folder tree: the opportunity code, `00 - Overview.md` and the twelve folders (empty ones too);
    open a folder to see its files and select a file to download it. Files stored before 2.60.0 stay where they are,
    still open, and are under **Earlier files**, by layer. Files that could not be copied are under **Not copied**, with
