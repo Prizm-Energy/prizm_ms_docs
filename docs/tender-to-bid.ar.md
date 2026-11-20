@@ -666,10 +666,21 @@ SharePoint.
 
 *متاح بعد الإصدار القادم (TenderOps من 2.58.0 إلى 2.60.0).*
 
-افتح الفرصة، ثم **TenderOps ← Storage Box**. تبويب المرفقات يبقى صفحة SharePoint كما هو، لا يتغير فيه شيء.
+افتح الفرصة، ثم **Virtual Tendering Team ← Storage Box**. تبويب المرفقات يبقى صفحة SharePoint كما هو، لا يتغير فيه
+شيء.
 
-1. اختر **Move to Storage Box** (يحتاج صلاحية *TenderOps edit*). يُنشأ مجلد الفرصة وتُنسخ ملفاتها، وتعرض العدادات ما
-   نُسخ وما ينتظر وما فشل.
+1. **انقل الفرصة.** زر **Move to Storage Box** يظهر فقط ما دامت ملفات الفرصة على SharePoint، ولمن لديه صلاحية
+   *TenderOps edit*. اضغطه وأكّد.
+
+   ![Move to Storage Box](./tender-to-bid/img/storagebox_move.jpg)
+
+   يُنشأ مجلد الفرصة، وتدخل ملفاتها المفهرسة على SharePoint، من كل الطبقات، قائمة نسخ. لا يوجد زر ثانٍ: النسخ يعمل
+   وحده في الخلفية، مرة كل دقيقة تقريباً. كل ملف يُنزَّل ويُطابَق مع بصمة SharePoint، ثم يُكتب في `11 - Triage`
+   ويُطابَق مرة أخرى. والملف الذي يصل SharePoint بعد النقل يُنسخ بنفس الطريقة.
+
+   العدادات تتابع النسخ: **Waiting to copy** ينقص و**Copied** يزيد. الملفات في **Failed** تُعاد وحدها بضع مرات، ثم
+   يعيدها زر **Retry failed**. الملفات المستبعدة (المكررة وملفات النظام) تظهر تحت **Not copied** في الشجرة، وزر
+   **Copy anyway** ينسخ أحدها. عندما تفرغ القائمة يظهر **Switch complete** ويختفي الزر.
 2. يحمل المجلد كود الفرصة الكامل، مثلاً `documentcontrol/opportunities/OPP-262865`، وفيه اثنا عشر مجلداً مثل
    الـ Document Control:
    `00 - Client Files` و`01 - Award & Contract` و`02 - BOQ & Pricing` و`03 - Engineering & Drawings`

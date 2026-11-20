@@ -729,10 +729,23 @@ evidence**; it is then indexed as evidence. Nothing is copied to SharePoint.
 
 *Available after the next release (TenderOps 2.58.0 to 2.60.0).*
 
-Open the opportunity, **TenderOps → Storage Box**. The Attachments tab stays the SharePoint page; nothing changes there.
+Open the opportunity, then **Virtual Tendering Team → Storage Box**. The Attachments tab stays the SharePoint page;
+nothing changes there.
 
-1. Select **Move to Storage Box** (needs *TenderOps edit*). The opportunity gets its folder and its files are copied.
-   The counters show what was copied, what waits and what failed.
+1. **Move the opportunity.** The **Move to Storage Box** button shows only while the opportunity's files are still on
+   SharePoint, and only to staff with *TenderOps edit*. Select it and confirm.
+
+   ![Move to Storage Box](./tender-to-bid/img/storagebox_move.jpg)
+
+   The opportunity gets its folder, and its indexed SharePoint files, from every layer, are put in a copy queue. There
+   is no second button: the copy runs on its own in the background, about once a minute. Each file is downloaded,
+   checked against SharePoint's fingerprint, written to `11 - Triage` and checked again. A file that reaches SharePoint
+   after the move is copied the same way.
+
+   The counters follow the copy: **Waiting to copy** goes down and **Copied** goes up. **Failed** files are retried on
+   their own a few times, then **Retry failed** tries them again. Files left out (duplicates, system files) are under
+   **Not copied** in the tree; **Copy anyway** copies one. When the queue is empty the label says **Switch complete**,
+   and the button no longer shows.
 2. The folder is named after the full opportunity code, for example `documentcontrol/opportunities/OPP-262865`. It has
    twelve folders, the same as Document Control:
    `00 - Client Files`, `01 - Award & Contract`, `02 - BOQ & Pricing`, `03 - Engineering & Drawings`,
