@@ -758,9 +758,10 @@ nothing changes there.
    files from your computer and drop them on **11 - Triage** or **Private** in the tree. Everyone who can open the
    opportunity sees Triage; Private is yours. Files from SharePoint and Outlook arrive in Triage on their own.
 5. The files show as a folder tree: the opportunity code, `00 - Overview.md` and the twelve folders (empty ones too);
-   open a folder to see its files and select a file to download it. Files stored before 2.60.0 stay where they are,
-   still open, and are under **Earlier files**, by layer. Files that could not be copied are under **Not copied**, with
-   the reason and, where allowed, **Copy anyway**.
+   open a folder to see its files and select a file to download it. Your private files are under **Private**. Files
+   stored before 2.60.0 are moved into `11 - Triage` by the system; until then they show under **Earlier files**, by
+   layer, and still open. Files that could not be copied are under **Not copied**, with the reason and, where allowed,
+   **Copy anyway**.
 
 A new opportunity gets its folders a few minutes after it is created.
 
