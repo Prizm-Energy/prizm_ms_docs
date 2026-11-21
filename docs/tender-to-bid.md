@@ -628,8 +628,9 @@ the list with the official source of every limit.
 Open the opportunity, then **Virtual Tendering Team → RFIs**, and click **New RFI**.
 
 1. Write the subject and the question, and pick the documents it is about. **Save draft**.
-2. **Submit for approval**. Staff who hold the permission **Approve RFIs** get a notification. Approving or
-   **Return to draft** (with the reason) is theirs; if you hold the permission yourself, you may approve your own RFI.
+2. **Submit for approval**. The RFI goes to the **Approvals** module, where the policy for **TenderOps RFI to the
+   client** (Approvals › Policies) names the approvers; they decide there. When approved, the RFI shows **Approved,
+   not sent**; when rejected, it comes back as a draft for you to change.
 3. After approval, send the question yourself by mail or on the portal. Then click **Record as sent** and say how
    (mail, portal or other), when, and the reference (the mail subject or the portal number). The system does not
    send anything by itself yet.
