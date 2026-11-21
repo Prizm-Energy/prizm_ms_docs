@@ -322,6 +322,20 @@ The panel shows **Shared crew day** with the hours and any reconciliation flags 
 - **Baselines** — compare a baseline **View** against the current plan.
 - **Activity outline** — open a work package's side panel to see its activity breakdown.
 
+### 13.1 Long-lead alerts (Procurement → Long-Lead Alerts)
+
+A work package appears in this list when its order-by date has passed, or falls within the next 14 days, and it is not marked **Ordered**. The order-by date is the required on-site date minus the lead time.
+
+- Set the **lead time** (in weeks) and the **required on-site date** on the work package in the WBS builder.
+- The alert shows the lead time, the required on-site date, the order-by date, and how many days it is overdue.
+- Marking the work package as **Ordered** removes it from the alerts.
+
+### 13.2 EVM report (WBS page → EVM Report)
+
+- **Budget at completion** and **planned value** come from each work package's budget and its planned start and finish, measured against the latest **Project baseline**. **Earned value** is budget × percent complete. Take a new baseline after adding work packages or changing budgets, so they are included.
+- On a project with Project Controls, daily returns do not change the WBS percent complete by themselves — the EVM report reads the WBS progress.
+- If the report shows zeros right after the page opens, wait for the project to finish loading; the tab now refreshes itself once the WBS has loaded.
+
 ## 14. Good practice
 
 - Write a clear reason on every decision: what changed and who decided.
