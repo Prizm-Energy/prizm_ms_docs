@@ -621,6 +621,28 @@ default. Each provider allows a maximum (OpenAI 30 days, Anthropic 90; Gemini ke
 and the files are deleted from the provider when the time ends. **What each provider allows** opens
 the list with the official source of every limit.
 
+### Ask the client a question (RFI)
+
+*Available after the next release (TenderOps 2.64.0).*
+
+Open the opportunity, then **Virtual Tendering Team → RFIs**, and click **New RFI**.
+
+1. Write the subject and the question, and pick the documents it is about. **Save draft**.
+2. **Submit for approval**. Staff who hold the permission **Approve RFIs** get a notification. Approving or
+   **Return to draft** (with the reason) is theirs; if you hold the permission yourself, you may approve your own RFI.
+3. After approval, send the question yourself by mail or on the portal. Then click **Record as sent** and say how
+   (mail, portal or other), when, and the reference (the mail subject or the portal number). The system does not
+   send anything by itself yet.
+4. When the client answers, click **Record the answer**, paste the answer and say how it came. The answer becomes a
+   clarification document on the opportunity, so the analysis stages read it, and the outputs that relied on the
+   documents you asked about are marked to check again.
+5. **Close the RFI** when nothing more is needed. **Withdraw** (with the reason) drops an RFI before the answer.
+
+The answer is due on the tender's clarification deadline when it is known, otherwise a number of working days after
+sending (Settings → Approvals and gates: 3 days by default, with Friday and Saturday off). The RFIs tab counts the RFIs
+waiting for approval or past their date, and an RFI past its date also shows on **Where bids wait**, under the person
+who recorded the sending.
+
 ### Choose how the analysis uses RAG
 
 
