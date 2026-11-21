@@ -680,7 +680,8 @@ tabs, each holding one topic. The tabs wrap onto a second line on a narrow scree
 | **Briefs** | The intake brief and the executive summary. |
 | **Stages** | The 11 analysis stages, each in its own tab. |
 | **Decisions**, **Coverage**, **Anatomy**, **Artifacts**, **Attachments**, **Compare** | As before. |
-| **Storage Box** | The opportunity's files in the Document Control folders, with the file actions. |
+| **SharePoint** | The opportunity's Attachments panel itself: the same SharePoint files and actions as the opportunity's Attachments tab (TenderOps 2.62.0). |
+| **Storage Box** | Document Control's work list (Triage, Manual Review, AI proposals) and, below it, the same files panel on the Storage Box (TenderOps 2.62.0). |
 | **Approvals** | Filing requests waiting for approval and their files. A yellow counter shows how many wait. |
 | **Settings** | One tab, a sub-tab per topic: Stage settings, Configurations, Evidence, PRIZM Input, Consulto, Document index and Prompts (TenderOps 2.61.0; before it, VTO settings and Settings were two tabs). |
 
@@ -728,10 +729,10 @@ evidence**; it is then indexed as evidence. Nothing is copied to SharePoint.
 
 ### Keep an opportunity's files on the Storage Box
 
-*Available after the next release (TenderOps 2.58.0 to 2.60.0).*
+*Available after the next release (TenderOps 2.58.0 to 2.62.0).*
 
 Open the opportunity, then **Virtual Tendering Team → Storage Box**. The Attachments tab stays the SharePoint page;
-nothing changes there.
+nothing changes there. **Virtual Tendering Team → SharePoint** shows that same Attachments panel inside TenderOps.
 
 1. **Move the opportunity.** The **Move to Storage Box** button shows only while the opportunity's files are still on
    SharePoint, and only to staff with *TenderOps edit*. Select it and confirm.
@@ -747,43 +748,45 @@ nothing changes there.
    their own a few times, then **Retry failed** tries them again. Files left out (duplicates, system files) are under
    **Not copied** in the tree; **Copy anyway** copies one. When the queue is empty the label says **Switch complete**,
    and the button no longer shows.
-2. The folder is named after the full opportunity code, for example `documentcontrol/opportunities/OPP-262865`. It has
-   twelve folders, the same as Document Control:
-   `00 - Client Files`, `01 - Award & Contract`, `02 - BOQ & Pricing`, `03 - Engineering & Drawings`,
-   `04 - Procurement`, `05 - Execution & QA-QC`, `06 - Photos`, `07 - Communications`, `08 - Closeout`,
-   `09 - Financials`, `10 - Manual Review` and `11 - Triage`.
+2. The folder is named after the full opportunity code, for example `documentcontrol/opportunities/OPP-262865`. Since
+   TenderOps 2.62.0 it has the opportunity's own folders, the same as its SharePoint layers, plus the two Document
+   Control folders: `01 - Customer Documents`, `02 - Internal Technical`, `03 - Internal Commercial`, `05 - Dispatch`,
+   `10 - Manual Review` and `11 - Triage`. Files filed into the earlier folders (`00 - Client Files`,
+   `01 - Award & Contract` … `09 - Financials`) are moved to the new ones by the system.
 3. `00 - Overview.md` in the folder shows the opportunity's ERP id, code, Document Control code (`O262865`), title,
    client, status and dates. The ERP writes it and updates it when the opportunity changes; do not edit it.
-4. To add files, choose **Upload to** and select **Upload**: **11 - Triage** (kept as received; Document Control files
-   it on) or **Private** (kept outside the opportunity's folder; only you and administrators see it). You can also drag
-   files from your computer and drop them on **11 - Triage** or **Private** in the tree. Everyone who can open the
-   opportunity sees Triage; Private is yours. Files from SharePoint and Outlook arrive in Triage on their own.
-5. The files show as a folder tree: the opportunity code, `00 - Overview.md` and the twelve folders (empty ones too);
-   open a folder to see its files and select a file to download it. Your private files are under **Private**. Files
-   stored before 2.60.0 are moved into `11 - Triage` by the system; until then they show under **Earlier files**, by
-   layer, and still open. Files that could not be copied are under **Not copied**, with the reason and, where allowed,
-   **Copy anyway**.
+4. The files show in the same panel as the Attachments tab, one section per folder, plus **Private (only you)**. Each
+   section shows only to people with its view permission, as on SharePoint (Internal Technical and Internal
+   Commercial need their own permissions). Preview, download, version history, favourites and the right-click menu
+   work as on SharePoint.
+5. To add files, use **Upload** or a section's upload button: every file arrives in **11 - Triage** (kept as received;
+   Document Control files it on), tagged with the section you uploaded from. An upload from **Private** stays private
+   (only you and administrators see it). Files from SharePoint and Outlook arrive in Triage on their own.
+6. Above the panel, Document Control's list shows `11 - Triage` and `10 - Manual Review` with each file's AI proposal,
+   and **Not copied** with the reason and, where allowed, **Copy anyway**.
 
 A new opportunity gets its folders a few minutes after it is created.
 
-**Document Control files the documents** (administrators, or Document Control *issue* / *administer*): select
-**File to…** on a file and choose the folder. A file in `11 - Triage` stays there; a copy linked to it goes to the
-folder. A file in `00`–`10` moves. Nothing can be filed into Triage by hand or into another opportunity or project, and
-every copy and move is recorded.
+**Document Control files the documents** (administrators, or Document Control *issue* / *administer*): drag a file
+onto a section, or choose **Move to** / **Copy to** on it in the panel, or **File to…** in the list above. A file in
+`11 - Triage` stays there; a copy linked to it goes to the folder. A file in another folder moves. The same file is
+never copied twice into one folder. Nothing can be filed into Triage by hand or into another opportunity or project,
+and every copy and move is recorded.
 
 ### Let the AI sort the Triage files, then approve
 
 *On the development system since 20 November 2026 (TenderOps 2.61.0); on production after its next deploy.*
 
-On **Virtual Tendering Team → Storage Box**, the icons above the files (hover one for what it does) and the
-right-click menu on a file hold the same actions: download, File to…, classify, change the proposed folder, send for
-approval, upload to Triage or Private, copy anyway, retry, refresh. An action you may not use is not shown.
+On **Virtual Tendering Team → Storage Box**, the icons above Document Control's list (hover one for what it does)
+and the right-click menu on a file in it hold the same actions: download, File to…, classify, change the proposed
+folder, send for approval, copy anyway, retry, refresh. An action you may not use is not shown. Uploads are in the files
+panel below the list (TenderOps 2.62.0).
 
 ![Right-click menu on a Triage file](./tender-to-bid/img/storagebox_ai_menu.jpg)
 
 1. **Classify.** Document Control (administrators, or Document Control *issue* / *administer*) selects a file in
    `11 - Triage` and chooses **Classify the selected Triage file with AI**, or **Classify all Triage files with AI**.
-   The AI reads each file on its own and proposes a folder (`00` to `10`) with the document's title, issuer and
+   The AI reads each file on its own and proposes a folder (`01`, `02`, `03`, `05` or `10`) with the document's title, issuer and
    numbers. When it is not sure, it proposes `10 - Manual Review`. The proposal shows in the **Proposed folder** and
    **AI proposal** columns.
 2. **Check.** To change a proposal, select the file and choose **Change the folder the AI proposed**.
