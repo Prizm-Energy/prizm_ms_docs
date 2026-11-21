@@ -305,6 +305,15 @@ Submitting a daily return also creates or updates that day's **daily report** fo
 - In Daily records, a report created from returns shows **"linked activities"**. Older hand-written reports show **"No current activity links"** and flags such as no crew count or no WP/activity link.
 - A return can be entered for a past day even when no plan was issued for it; the page says so ("No issued plan for this date…").
 
+### 12.2 Recording the crew day (crew hours into the daily report)
+
+1. Save or submit the day's entries first. **Details / crew** opens only when the table has no unsaved entries; otherwise it shows a short "unsaved" note next to the table.
+2. **Details / crew** opens a panel below the table, not a window. In **Shared crew day**, press **Manage crew day**.
+3. Fill in: the project crew name, the actual headcount, the actual crew (the people deployed that day), the declared team lineup (required), working hours, total paid hours, and unpaid break hours. Rule: working hours plus delay hours must equal total paid hours; the unpaid break is separate.
+4. Press **Save shared crew day** (not **Save draft**).
+
+The panel shows **Shared crew day** with the hours and any reconciliation flags (for example a missing manpower budget link). The day's daily report then gets a manpower line with the crew name and headcount.
+
 ## 13. Other Project Controls / WBS screens
 
 - **BOQ Mapping** — the **Available BOQ items** and **Mapped** tabs; **Map** a line to update the remaining value.
