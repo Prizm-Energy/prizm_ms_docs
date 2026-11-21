@@ -296,6 +296,15 @@ The server rechecks the plan, permissions and source version at the moment of is
 
 The page shows **"Daily return saved"**. The work package shows its reported percentage, and the Activities view shows **Today**, the last submitted return date and the balance remaining.
 
+### 12.1 How the daily return feeds the daily report
+
+Submitting a daily return also creates or updates that day's **daily report** for the project in Prizm Reports. Its record number starts with the project's local code and the date. Open it under Project Controls → Work → **Daily reports → Daily records**.
+
+- Each reported activity becomes a work line ("done") with its outcome (partial / completed). Crew hours entered in the return's **Details / crew** are added as manpower lines.
+- The report starts as a draft, with company and client approval pending. The report details show the chain from work row to task, activity and work package, and mark the quantity as a construction claim only — QC and client acceptance are not inferred.
+- In Daily records, a report created from returns shows **"linked activities"**. Older hand-written reports show **"No current activity links"** and flags such as no crew count or no WP/activity link.
+- A return can be entered for a past day even when no plan was issued for it; the page says so ("No issued plan for this date…").
+
 ## 13. Other Project Controls / WBS screens
 
 - **BOQ Mapping** — the **Available BOQ items** and **Mapped** tabs; **Map** a line to update the remaining value.
