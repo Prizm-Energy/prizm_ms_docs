@@ -647,6 +647,29 @@ sending (Settings → Approvals and gates: 3 days by default, with Friday and Sa
 waiting for approval or past their date, and an RFI past its date also shows on **Where bids wait**, under the person
 who recorded the sending.
 
+### When the tender's BOQ changes (addendum)
+
+*Available after the next release (Opportunities 2.44.0).*
+
+When the client changes the tender's BOQ (an addendum or a revised BOQ), the opportunity's BOQ follows by itself within
+the hour: changed lines take the new quantity, unit or description (your rates stay), removed lines are hidden, not
+deleted, and new lines are added. It becomes a new BOQ revision **to review**. You can also click **Apply now** on the
+BOQ tab when it shows that the tender's BOQ changed.
+
+On the opportunity's **BOQ** tab:
+
+- **Revisions** lists every BOQ revision: the copy from the tender, each applied change, and each roll-back, with who and
+  when. Click a revision to see its changes. **Roll back** (with the reason) puts the BOQ back as it was before that
+  change, as a new revision; nothing is deleted.
+- **Changes** shows one revision against the one before it, line by line: added, removed or changed, before and after,
+  e.g. "Qty 120 → 150".
+- **Stale lines** lists what the change touched: the BOQ line, and the RFQ lines and priced lines built on it in
+  TenderOps, each with the reason. **Mark checked** when you have looked at it.
+
+The review runs in the **Approvals** module: set a policy for "Opportunity BOQ change from the tender" in Approvals ›
+Policies. When the approver approves, the revision is reviewed; when they reject it, it is rolled back. The opportunity's
+owner gets a notification, and the commercial manager too when priced lines are affected.
+
 ### Choose how the analysis uses RAG
 
 
