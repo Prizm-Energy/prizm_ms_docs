@@ -236,6 +236,15 @@ Use this when a work package needs a condition met before it can start (for exam
 
 The condition gets a reference and shows as **Open**. The window then offers **Save revision**, **Propose clearance** (with supporting evidence) and **Withdraw condition**. The Activities grid shows the reference under **Readiness checks**. While a condition is open, the day plan shows the work as **Awaiting release**.
 
+### 10.1 Clearing a readiness condition
+
+1. Open the condition from its **Readiness checks** link. Press **Update proposal** if a proposal is already saved.
+2. Fill in the clearance assessment, the actual clearance date (it cannot be in the future), **Valid until**, and the evidence. Evidence is picked from files attached to the linked task, so attach the permit or document to the task first.
+3. Write the reason and press **Propose clearance**.
+4. Press **Verify saved proposal**. The condition becomes **Readiness verified**. **Reopen / reconfirm** and **Withdraw condition** stay available afterwards.
+
+While a condition is open, **Site ready** in the daily plan is locked and the work shows **Awaiting release**.
+
 ## 11. Daily plan
 
 **Where:** Project Controls → Plan → **Daily plan**.
@@ -245,6 +254,35 @@ The condition gets a reference and shows as **Open**. The window then offers **S
 3. Press **Review & issue** to go through four steps: **1 Work selection**, **2 Crew & readiness** (crew, the task crew lineup, the readiness register, and material needs for the selected work), **3 Checks & warnings**, **4 Confirm issue**.
 
 Step 3 lists every blocker. The plan cannot be issued while any remain: an open readiness condition, site readiness not confirmed, no named task crew, or no deployment for the selected day.
+
+### 11.1 Naming the task crew
+
+People appear in the crew list only when they are registered in **People** and have a dated deployment to the project for that day. The role list shows the budget's labour lines that the project's Project Controls setup accepts as crew roles.
+
+1. Open **Activities**, select the task, then **Task crew lineup**.
+2. Enter a crew name and the planned headcount.
+3. For each member, choose the person and the role / budget resource, and enter the planned paid hours and productive hours. **Add crew member** adds a row.
+4. Press **Save crew lineup**; before people are deployed, the button reads **Save proposed lineup**.
+
+The **Task crew lineup** column shows the crew name. The daily plan header shows **Crew available** and **Allocated to selected work** in person-hours.
+
+Paid hours above the planning day's limit for a person (from the project calendar) block the issue as a **paid-hour conflict**. Lower the hours to fit the day.
+
+### 11.2 Resource basis (named site crew)
+
+1. Open **Activities**, select the task, then its resource basis button.
+2. Choose **Named site crew required** (or **Named crew present throughout the working periods**, **No named site crew required**, or **Withdraw**).
+3. Enter the planning basis or reference and why it applies.
+4. Press **Preview impact**, tick **"I reviewed this resource basis…"**, then press **Apply local declaration**.
+
+The result reads **"Local declaration recorded"**. An undeclared basis is reported as **"Resource applicability needs reconciliation"** and blocks the issue.
+
+### 11.3 Issuing the daily plan
+
+1. After the steps above: tick **Site ready**, **Save plan draft**, then **Review & issue** → **Check selected plan**. **Crew & readiness** and **Checks & warnings** must both show **0 checks to review**, and **Confirm issue** shows **Checked**.
+2. Press **Issue day plan** (step 4). The page shows **Plan issued** and the button changes to **Review daily plan**.
+
+The server rechecks the plan, permissions and source version at the moment of issue. Spending approval and mobilisation approval stay separate from issuing the plan.
 
 ## 12. Daily return (report project work)
 

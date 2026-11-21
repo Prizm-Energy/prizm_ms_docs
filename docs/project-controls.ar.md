@@ -236,6 +236,15 @@
 
 يحصل الشرط على مرجع ويظهر بحالة **Open**. تعرض النافذة بعدها **Save revision** و**Propose clearance** (مع أدلة داعمة) و**Withdraw condition**. شبكة Activities تُظهر المرجع تحت **Readiness checks**. وما دام الشرط مفتوحًا، تُظهر الخطة اليومية العمل بحالة **Awaiting release**.
 
+### 10.1 تصفية شرط جاهزية
+
+1. افتح الشرط من رابط **Readiness checks** الخاص به. اضغط **Update proposal** إذا كان هناك اقتراح محفوظ مسبقًا.
+2. املأ تقييم التصفية، وتاريخ التصفية الفعلي (لا يجوز أن يكون في المستقبل)، و**Valid until**، والدليل. يُختار الدليل من الملفات المرفقة بالمهمة المرتبطة، لذا أرفق التصريح أو المستند بالمهمة أولًا.
+3. اكتب السبب واضغط **Propose clearance**.
+4. اضغط **Verify saved proposal**. يصبح الشرط **Readiness verified**. يبقى **Reopen / reconfirm** و**Withdraw condition** متاحين بعد ذلك.
+
+وما دام الشرط مفتوحًا، يبقى **Site ready** في الخطة اليومية مقفلًا ويظهر العمل بحالة **Awaiting release**.
+
 ## 11. الخطة اليومية (Daily plan)
 
 **المكان:** Project Controls ← Plan ← **Daily plan**.
@@ -245,6 +254,35 @@
 3. اضغط **Review & issue** لتمر بأربع خطوات: **1 Work selection**، **2 Crew & readiness** (الطاقم، تشكيلة طاقم المهمة، سجل الجاهزية، واحتياج المواد للعمل المختار)، **3 Checks & warnings**، **4 Confirm issue**.
 
 الخطوة 3 تسرد كل عائق. لا يمكن إصدار الخطة ما دام أي منها باقيًا: شرط جاهزية مفتوح، جاهزية موقع غير مؤكدة، لا يوجد طاقم مهمة محدد، أو لا يوجد نشر لليوم المختار.
+
+### 11.1 تسمية طاقم المهمة
+
+لا يظهر الأشخاص في قائمة الطاقم إلا إذا كانوا مسجلين في **People** ولديهم نشر مؤرخ للمشروع في ذلك اليوم. قائمة الأدوار تُظهر سطور عمالة الميزانية التي يقبلها إعداد Project Controls للمشروع كأدوار طاقم.
+
+1. افتح **Activities**، اختر المهمة، ثم **Task crew lineup**.
+2. أدخل اسم الطاقم والعدد المخطط.
+3. لكل عضو اختر الشخص والدور / مورد الميزانية، وأدخل الساعات المدفوعة المخططة والساعات المنتجة. **Add crew member** يضيف صفًا.
+4. اضغط **Save crew lineup**؛ قبل نشر الأشخاص يقرأ الزر **Save proposed lineup**.
+
+عمود **Task crew lineup** يُظهر اسم الطاقم. رأس الخطة اليومية يُظهر **Crew available** و**Allocated to selected work** بساعات العمل.
+
+الساعات المدفوعة الزائدة عن حد يوم التخطيط لشخص ما (حسب تقويم المشروع) توقف الإصدار كـ**تعارض ساعات مدفوعة**. قلّل الساعات لتناسب اليوم.
+
+### 11.2 أساس المورد (طاقم موقع مسمّى)
+
+1. افتح **Activities**، اختر المهمة، ثم زر أساس المورد الخاص بها.
+2. اختر **Named site crew required** (أو **Named crew present throughout the working periods** أو **No named site crew required** أو **Withdraw**).
+3. أدخل أساس التخطيط أو المرجع وسبب انطباقه.
+4. اضغط **Preview impact**، علّم **"I reviewed this resource basis…"**، ثم اضغط **Apply local declaration**.
+
+النتيجة تقرأ **"Local declaration recorded"**. الأساس غير المُعلن يظهر كـ**"Resource applicability needs reconciliation"** ويوقف الإصدار.
+
+### 11.3 إصدار الخطة اليومية
+
+1. بعد الخطوات أعلاه: علّم **Site ready**، اضغط **Save plan draft**، ثم **Review & issue** ← **Check selected plan**. يجب أن يُظهر **Crew & readiness** و**Checks & warnings** كلاهما **0 checks to review**، ويُظهر **Confirm issue** حالة **Checked**.
+2. اضغط **Issue day plan** (الخطوة 4). تظهر الصفحة **Plan issued** ويتغير الزر إلى **Review daily plan**.
+
+يعيد الخادم فحص الخطة والصلاحيات ونسخة المصدر لحظة الإصدار. اعتماد الصرف واعتماد الحشد (mobilisation) يبقيان منفصلين عن إصدار الخطة.
 
 ## 12. التقرير اليومي (Daily return)
 
