@@ -623,8 +623,6 @@ the list with the official source of every limit.
 
 ### Ask the client a question (RFI)
 
-*Available after the next release (TenderOps 2.64.0).*
-
 Open the opportunity, then **Virtual Tendering Team → RFIs**, and click **New RFI**.
 
 1. Write the subject and the question, and pick the documents it is about. **Save draft**.
@@ -648,8 +646,6 @@ waiting for approval or past their date, and an RFI past its date also shows on 
 who recorded the sending.
 
 ### When the tender's BOQ changes (addendum)
-
-*Available after the next release (Opportunities 2.44.0).*
 
 When the client changes the tender's BOQ (an addendum or a revised BOQ), the opportunity's BOQ follows by itself within
 the hour: changed lines take the new quantity, unit or description (your rates stay), removed lines are hidden, not
@@ -715,8 +711,6 @@ changes in the project's working WBS. Saving on a frozen WBS shows *This WBS is 
 
 ### Find your way on the TenderOps page
 
-*Available after the next release (TenderOps 2.55.0).*
-
 Open the opportunity and its **Virtual Tendering Team** tab. **Run Opportunity** stays at the top; below it, one row of
 tabs, each holding one topic. The tabs wrap onto a second line on a narrow screen, so none is hidden:
 
@@ -738,8 +732,6 @@ A reload or a shared link keeps the open tab.
 
 ### Choose the model of each analysis stage
 
-*Available after the next release (TenderOps 2.55.0).*
-
 There is one central setting and one copy per opportunity:
 
 1. **For every new opportunity** (needs *TenderOps manage settings*): open **Opportunities → Settings → TenderOps →
@@ -750,8 +742,6 @@ There is one central setting and one copy per opportunity:
    A change here applies to this opportunity only.
 
 ### Edit the AI prompts of TenderOps
-
-*Available after the next release (TenderOps 2.55.0, AI Gateway 1.12.0).*
 
 All TenderOps prompts are in one place: **Opportunities → Settings → TenderOps → Prompts** (needs the AI Gateway
 **Prompts** permission). Each analysis stage has two prompts, *open art* and *structured*, holding its system and user
@@ -769,8 +759,6 @@ For an analysis stage, the model comes from the stage settings; a prompt's own m
 a stage has none.
 
 ### Admit a PRIZM Input file as evidence
-
-*Available after the next release (TenderOps 2.55.0).*
 
 Open **Virtual Tendering Team → Settings → PRIZM Input**. The grid lists private fact files sent for this
 opportunity, with search and filters. For a file still private, choose its **Fact class** and select **Admit to
@@ -872,8 +860,6 @@ works the same way too, with sorting and pages of 50:
 - In **Generate Stage Output**, tick the files to send in the list; **Show older versions** adds earlier versions.
 
 ### Read the client's files one at a time
-
-*Available after the next release (TenderOps 2.59.0).*
 
 In **Stage settings**, each stage has **How files are read**:
 
