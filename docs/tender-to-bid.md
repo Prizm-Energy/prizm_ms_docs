@@ -639,6 +639,9 @@ Open the opportunity, then **Virtual Tendering Team → RFIs**, and click **New 
    documents you asked about are marked to check again.
 5. **Close the RFI** when nothing more is needed. **Withdraw** (with the reason) drops an RFI before the answer.
 
+Every step is kept. **Virtual Tendering Team → RFI history** lists all the steps of all the opportunity's RFIs, newest
+first: when, which RFI, the step, who and the reason. **This RFI's history** in an RFI opens that list filtered on it.
+
 The answer is due on the tender's clarification deadline when it is known, otherwise a number of working days after
 sending (Settings → Approvals and gates: 3 days by default, with Friday and Saturday off). The RFIs tab counts the RFIs
 waiting for approval or past their date, and an RFI past its date also shows on **Where bids wait**, under the person
