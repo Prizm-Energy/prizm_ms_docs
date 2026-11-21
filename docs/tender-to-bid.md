@@ -808,6 +808,20 @@ bids wait) works the same way: the filter under a column header offers *Contains
 *Starts with* and *Ends with*. A file name opens the file (or its details), and a person's name opens their staff
 profile. Labels such as an activity's action and status, and the stage in *Where bids wait*, show in your language.
 
+*On the development system and production since 21 November 2026 (TenderOps 2.63.0):* every other TenderOps list
+works the same way too, with sorting and pages of 50:
+
+- **Tender Indexing** has a **Documents** tab: click an opportunity's document count to see its documents there.
+- A document's **versions**, **Artifacts** (tick two, then **Compare selected**), **Attachments** (private VTO PDFs),
+  the **assumptions** on Anatomy › Coverage & Decisions, the **Document index** and the **Benchmark** lines and their
+  observations.
+- The **Supply lane** on the pricing stage shows the catalog item, technical inquiry, RFQ and quotation by name; each
+  opens its own screen.
+- The **ITP control matrix** is one list with a **Stage** filter; pick a stage to set all its controls at once.
+- The **Scope gate** page has a tab per list (Blockers, Sources, Levy plan, Gaps, Roles, Revisions, Receipts); the
+  **Supply gate** page has **Priced lines** and **Decision trail**.
+- In **Generate Stage Output**, tick the files to send in the list; **Show older versions** adds earlier versions.
+
 ### Read the client's files one at a time
 
 *Available after the next release (TenderOps 2.59.0).*
