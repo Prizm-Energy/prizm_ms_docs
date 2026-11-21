@@ -729,7 +729,7 @@ evidence**; it is then indexed as evidence. Nothing is copied to SharePoint.
 
 ### Keep an opportunity's files on the Storage Box
 
-*Available after the next release (TenderOps 2.58.0 to 2.62.0).*
+*On the development system and production since 21 November 2026 (TenderOps 2.62.0; the move to the Storage Box since 2.58.0).*
 
 Open the opportunity, then **Virtual Tendering Team → Storage Box**. The Attachments tab stays the SharePoint page;
 nothing changes there. **Virtual Tendering Team → SharePoint** shows that same Attachments panel inside TenderOps.
@@ -775,7 +775,7 @@ and every copy and move is recorded.
 
 ### Let the AI sort the Triage files, then approve
 
-*On the development system since 20 November 2026 (TenderOps 2.61.0); on production after its next deploy.*
+*On the development system since 20 November 2026 and on production (TenderOps 2.61.0; folder numbers as of 2.62.0).*
 
 On **Virtual Tendering Team → Storage Box**, the icons above Document Control's list (hover one for what it does)
 and the right-click menu on a file in it hold the same actions: download, File to…, classify, change the proposed
