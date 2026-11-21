@@ -266,6 +266,8 @@ People appear in the crew list only when they are registered in **People** and h
 
 The **Task crew lineup** column shows the crew name. The daily plan header shows **Crew available** and **Allocated to selected work** in person-hours.
 
+You can also start this from the daily plan itself: select exactly one activity row, then **Crew → Task crew lineup**. Selecting more than one row, or none, shows "Select one linked task first". From there, enter the crew name and planned headcount, add one line per person (the person, their role or budget resource, planned paid hours and productive hours), then the roster, then **Save proposed lineup**.
+
 Paid hours above the planning day's limit for a person (from the project calendar) block the issue as a **paid-hour conflict**. Lower the hours to fit the day.
 
 ### 11.2 Resource basis (named site crew)
@@ -283,6 +285,13 @@ The result reads **"Local declaration recorded"**. An undeclared basis is report
 2. Press **Issue day plan** (step 4). The page shows **Plan issued** and the button changes to **Review daily plan**.
 
 The server rechecks the plan, permissions and source version at the moment of issue. Spending approval and mobilisation approval stay separate from issuing the plan.
+
+**What the checks look for:**
+
+- **Paid-hour conflict** — the same person planned on two activities beyond the planning day's limit (for example 8 hours plus 8 hours on an 8-hour day) blocks the issue. Remove one activity from the day, or split the hours.
+- **Target above crew capacity** — lower the day target (edit the **Day target** cell, then **Save plan draft**) until it fits the crew hours available.
+- **Site ready** must be ticked per activity.
+- Only the next working day after the last reported day can be issued. A later date can be saved as a draft, but it shows **"Schedule readiness needs review"** until the earlier days are reported. A daily return cannot be entered for a future date.
 
 ## 12. Daily return (report project work)
 
@@ -336,7 +345,49 @@ A work package appears in this list when its order-by date has passed, or falls 
 - On a project with Project Controls, daily returns do not change the WBS percent complete by themselves — the EVM report reads the WBS progress.
 - If the report shows zeros right after the page opens, wait for the project to finish loading; the tab now refreshes itself once the WBS has loaded.
 
-## 14. Good practice
+## 14. Schedule tools
+
+**Where:** Schedule → **Planning tools**.
+
+### 14.1 Hold an activity's start (Activity constraint)
+
+1. Choose the activity and the constraint type, for example **"start no earlier than"**, then the date.
+2. Write a reason and tick the confirmation. **Apply** stays disabled until both are done.
+3. Press **Apply**.
+
+A rule that does not move anything reports **"0 affected"** — choose a date that really changes the programme. Saving creates a new local programme revision; the baseline and actuals are kept.
+
+### 14.2 Set an activity's working time (Working time)
+
+1. Choose the activity, the start date and time, and the working hours needed.
+2. For **every** calendar in the list, enter the working periods per weekday (for example `07:00-12:00,13:00-17:00`). Leave a day empty when it is a rest day. **Preview** stays disabled until every calendar has periods; the counter shows **"n/n calendars have explicit periods"**.
+3. Press **Preview impact**. It lists the affected activities, the requested and calculated hours, and the new project finish. Nothing is saved yet.
+4. Write a reason, tick the confirmation, then press **Apply local programme**.
+
+A new local revision is saved; the baseline and actuals are kept.
+
+## 15. Inspections
+
+### 15.1 Request an inspection of reported work
+
+**Where:** Work → **Work & inspections** → **Inspect an activity**.
+
+1. Choose a reported operation (date, work package, activity). The page shows its details.
+2. Enter the requested inspection date, who is inspecting (**Client** or **Internal QC**) and readiness notes.
+3. Press **Prepare local operation IR draft**.
+
+The request appears under **Preparations**. It asserts no quantity and gives no approval or payment credit.
+
+### 15.2 Record the inspection result
+
+**Where:** **Preparations** → **Record inspected scope**.
+
+1. Enter the inspected scope and acceptance criterion, the inspection reference, the date, the signatory and the organisation.
+2. Choose the outcome (**Accepted scope** or **Rejected**) and upload the signed IR PDF (up to 10 MB). The system keeps its fingerprint.
+
+The result appears under **Outcomes** as **"Awaiting independent review"**. A different, authorised reviewer must make that decision — the person who recorded it cannot.
+
+## 16. Good practice
 
 - Write a clear reason on every decision: what changed and who decided.
 - Do not approve a funding worksheet as a repeat if any amount changed.
