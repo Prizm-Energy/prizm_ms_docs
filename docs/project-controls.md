@@ -222,11 +222,51 @@ Pressing **Approved** on a purchase order can be held. The box at the top of the
 
 Lines of the same resource request that the purchase request does not use do not hold the PO.
 
-## 10. Daily return
+## 10. Readiness register
 
-**Where:** Project Controls → Work → **Daily return**, next to **Daily plan** and **Daily reports**. Changing the date keeps you inside the project. Saving and submitting a return work as before.
+Use this when a work package needs a condition met before it can start (for example a drawing approval, a material delivery or a permit).
 
-## 11. Good practice
+**Where:** Project Controls → Plan → **Activities**. In the work's row, open its **Readiness checks** link (it shows "No readiness review recorded" when there is none).
+
+1. Choose the linked work scope and an accountable owner (an active staff member).
+2. Write the condition required before the work can proceed.
+3. Set **Required by** (the planning need date) and, if known, the expected release date.
+4. Write the reason or the assessment trail.
+5. Press **Record condition**.
+
+The condition gets a reference and shows as **Open**. The window then offers **Save revision**, **Propose clearance** (with supporting evidence) and **Withdraw condition**. The Activities grid shows the reference under **Readiness checks**. While a condition is open, the day plan shows the work as **Awaiting release**.
+
+## 11. Daily plan
+
+**Where:** Project Controls → Plan → **Daily plan**.
+
+1. Pick the day in the date strip. A non-working day on the project calendar shows **Nonworking day**.
+2. Switch between **Ticked activities only** and **All remaining activities**, tick the work planned for the day, then press **Save plan draft**. The page shows **Draft saved**. Saving a draft never posts actuals or deploys people.
+3. Press **Review & issue** to go through four steps: **1 Work selection**, **2 Crew & readiness** (crew, the task crew lineup, the readiness register, and material needs for the selected work), **3 Checks & warnings**, **4 Confirm issue**.
+
+Step 3 lists every blocker. The plan cannot be issued while any remain: an open readiness condition, site readiness not confirmed, no named task crew, or no deployment for the selected day.
+
+## 12. Daily return (report project work)
+
+**Where:** Project Controls → Work → **Daily return**, next to **Daily plan** and **Daily reports** — or **Record actuals** from the daily plan. Changing the date keeps you inside the project.
+
+1. Pick the date.
+2. Under **Add activities**, choose the activity, then **Add activities** (or add a whole work package). Expand the work package to see its activities.
+3. For each activity choose the **Outcome**: **Partial**, **Completed** or **Not done**. A Partial outcome needs a **Completed to date** value.
+4. Use **Details / crew** to record hours, notes and evidence.
+5. Press **Submit daily return**. **Save entered drafts** keeps it unsubmitted.
+
+The page shows **"Daily return saved"**. The work package shows its reported percentage, and the Activities view shows **Today**, the last submitted return date and the balance remaining.
+
+## 13. Other Project Controls / WBS screens
+
+- **BOQ Mapping** — the **Available BOQ items** and **Mapped** tabs; **Map** a line to update the remaining value.
+- **Procurement packages** — **Manage** the **Mapped** and **Available** WBS elements of a package.
+- **Calendars** — the project's calendars and their holidays.
+- **Baselines** — compare a baseline **View** against the current plan.
+- **Activity outline** — open a work package's side panel to see its activity breakdown.
+
+## 14. Good practice
 
 - Write a clear reason on every decision: what changed and who decided.
 - Do not approve a funding worksheet as a repeat if any amount changed.
