@@ -361,14 +361,14 @@ Submitting a daily return also creates or updates that day's **daily report** fo
 
 1. Save or submit the day's entries first. **Details / crew** opens only when the table has no unsaved entries; otherwise it shows a short "unsaved" note next to the table.
 2. **Details / crew** opens a panel below the table, not a window. In **Shared crew day**, press **Manage crew day**. (The same block is reached from the task's own **Daily Execution** tab.)
-3. Fill in: the project crew name, the actual headcount, the actual crew (the people deployed that day, each with their role), and the declared team lineup (required).
+3. Fill in: the project crew name, the actual headcount, the actual crew (the people deployed that day, each with their role), and the declared team lineup (required). The actual crew starts pre-filled from the task's planned crew lineup (11.1); if different people worked, select who actually worked instead — supplier-supplied (subcontract) workers deployed on the project can be selected the same way as own employees.
 4. Enter working hours for **each** person listed in the actual crew — entering only the totals (Working MH / Total paid MH) is refused; the person-level hours must add up to them.
 5. To record lost time, press **Add delay**, choose the reason and enter the delay hours and a note. The per-person table then shows a delay column: split each person's hours between working and delay.
 6. Rule: working hours plus delay hours must equal total paid hours; the unpaid break is separate.
 7. Untick **"Actual roster incomplete"** only once everyone who worked that day is listed.
 8. Press **Save shared crew day** (not **Save draft**).
 
-One person cannot be booked on two crews for the same day: the second crew's save is refused and asks you to pick the actual people.
+One person cannot be booked on two crews for the same day: the second crew's save is refused and asks you to pick the actual people. Several crews can work on different tasks on the same day, as long as each person is on only one of them.
 
 The block then shows the shared crew day with its Working, Delay and Paid figures, the delay reason, and any reconciliation flags (for example a missing manpower budget link). The day's daily report then gets a manpower line with the crew name and headcount.
 
@@ -376,7 +376,7 @@ The block then shows the shared crew day with its Working, Delay and Paid figure
 
 **Where:** Prizm Reports → Daily execution → **Delay catalogue**.
 
-Add each reason with a name and mark it **active**. Reasons are never deleted — retire one by making it inactive; its history stays. While the catalogue has no active reason, **Add delay** in the shared crew day (12.2) is disabled.
+Add each reason with a name and mark it **active**. Reasons are never deleted — retire one by making it inactive; its history stays. **Add delay** in the shared crew day (12.2) becomes available only once the day has finished loading, and only when the catalogue has at least one active reason.
 
 ## 13. Other Project Controls / WBS screens
 
