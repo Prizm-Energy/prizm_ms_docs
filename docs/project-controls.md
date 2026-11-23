@@ -78,6 +78,16 @@ A line can be mapped **and** still carry an old money-only hold from the time it
 
 After a new Governing Scope review is recorded, open **QS Support → Planning Review → Plan operation allocations**, save each work package's allocation rows again, then confirm the planning review. Then use **Review source reconciliation** in the Cost Plan.
 
+### 3.5 Cost-code dictionary
+
+**Where:** Cost Plan → **Cost-code dictionary**.
+
+1. Under **Add a code**, enter the cost code, its English and Arabic labels, the parent classification (or root), the selection status, and the permitted resource families (Manpower / Materials / Plant / Services / Other).
+2. Choose the review decision: **Draft** or **Approved**. Enter the source / review reference and the reason.
+3. Press **Preview dictionary impact**, then confirm.
+
+Each confirmation creates a new dictionary version. Allocations (3.1) can use only codes from an **approved** version; without one, the Cost Plan refuses with **"Select an active approved code compatible with the resource family"**.
+
 ## 4. Native budget and approval review
 
 1. In the Cost Plan press **Compile native draft**. The new draft opens under **Latest proposal**.
@@ -299,6 +309,13 @@ The server rechecks the plan, permissions and source version at the moment of is
 - **Site ready** must be ticked per activity.
 - Only the next working day after the last reported day can be issued. A later date can be saved as a draft, but it shows **"Schedule readiness needs review"** until the earlier days are reported. A daily return cannot be entered for a future date.
 
+### 11.4 Material allocation in the daily plan
+
+When the Cost Plan maps material budget lines to an activity (3.1), selecting that activity in the daily plan shows **"Current allocation revision"**, and for each item the allocated quantity, the linked request / requisition records, and material receipts.
+
+- **"Activity allowance — takeoff not established"** means the quantity shown is an allowance; link an activity takeoff before deriving material quantities from it.
+- Without a mapping, the panel reports no material allocation is linked; daily reporting still works.
+
 ## 12. Daily return (report project work)
 
 **Where:** Project Controls → Work → **Daily return**, next to **Daily plan** and **Daily reports** — or **Record actuals** from the daily plan. Changing the date keeps you inside the project.
@@ -355,6 +372,18 @@ A work package appears in this list when its order-by date has passed, or falls 
 - **Budget at completion** and **planned value** come from each work package's budget and its planned start and finish, measured against the latest **Project baseline**. **Earned value** is budget × percent complete. Take a new baseline after adding work packages or changing budgets, so they are included.
 - On a project with Project Controls, daily returns do not change the WBS percent complete by themselves — the EVM report reads the WBS progress.
 - If the report shows zeros right after the page opens, wait for the project to finish loading; the tab now refreshes itself once the WBS has loaded.
+
+### 13.3 WP visual build (Prepare build)
+
+**Where:** WP visual → **Prepare build**.
+
+1. Upload the JSON build bundle, then press **Validate and prepare candidate**. The visual proposal review opens with the parts and dimensions.
+2. Under **Decision**, choose **Accept illustrative display** (or **Hold visual**), write the review reason, tick the four acknowledgements and the personal-review box.
+3. Press **Record local decision**, then **Confirm local decision**.
+
+The page then shows **"Illustrative display accepted"**, with the review kept in history. This approves only the illustrative display — not drawings, quantities, QC, client acceptance or billing.
+
+The **material** editor inside the WP visual sets only the render material of each part; it is not purchasing material.
 
 ## 14. Schedule tools
 
