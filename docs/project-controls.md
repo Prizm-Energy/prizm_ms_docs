@@ -292,6 +292,8 @@ Paid hours above the planning day's limit for a person (from the project calenda
 
 Saving the lineup marks the plan **"Sources changed"**; press **Save plan draft** again on the daily plan to clear it.
 
+Choose people deployed on the project, including subcontract workers, and give each one the budget role line they work on. A person's role appears on crew days (12.2) and in the daily report (12.1) only when it comes from the lineup. People picked directly on the crew day, outside the lineup, are recorded by name only, with the role shown as **unconfirmed**. Crew days that are already saved keep the people and roles they were saved with.
+
 ### 11.2 Resource basis (named site crew)
 
 In the daily plan, a **"Resource checks"** note next to an activity means its resource basis has not been declared yet.
