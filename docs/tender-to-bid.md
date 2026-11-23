@@ -713,6 +713,24 @@ On the TenderOps **Bid pack** tab, the offer is put together, approved and submi
    The receipt is kept with its hash and filed in the Dispatch layer. A pack is submitted once; a resubmission needs a
    new pack.
 
+### An opportunity with no tender BOQ: the first BOQ from the client's file
+
+!!! note "Available after the next release"
+    Opportunities 2.51.0 and TenderOps 2.72.0. Built and tested; not on the live system yet.
+
+When an opportunity has no BOQ (no tender, or a tender without a BOQ), its first BOQ comes from the client's files:
+
+- When a client file typed BOQ arrives, the AI reads it. If the file gives the whole BOQ, its lines become the
+  opportunity's BOQ as **Rev 0**, to review in **Approvals**. A file that lists only changes does not start a BOQ.
+- The currency is the one the file states, otherwise the customer's currency. If neither is known, the file waits for
+  a person.
+- While the BOQ is empty, the BOQ tab lists every client file with **Read BOQ from this file**, for a BOQ that came
+  under another type.
+- If the review is rejected, its lines are hidden and the next BOQ file can start the BOQ again. Later files are read
+  as changes, as above.
+- Each BOQ line is linked to its item in the catalogue: an item that already exists is used, otherwise a new client
+  item is added through the Materials module.
+
 ### Choose how the analysis uses RAG
 
 
