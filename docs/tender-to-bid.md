@@ -692,6 +692,27 @@ The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab
    to **Approvals** with the gap as its amount, and the policy for "Opportunity price revision" decides who approves.
 6. The approved price goes to TenderOps, and the proposal is made from it. A new approved price replaces the old one.
 
+### Approve and submit the bid (bid pack)
+
+!!! note "Available after the next release"
+    TenderOps 2.71.0. Built and tested; not on the live system yet.
+
+On the TenderOps **Bid pack** tab, the offer is put together, approved and submitted.
+
+1. **Draft bid pack.** Add the documents of the offer, each in its part (technical, commercial or legal) with a role,
+   for example METHOD, PRICED_BOQ or FORM. A new draft starts with the documents of the pack before.
+2. **Open RFIs.** For each RFI the client has not answered, state the assumption the offer makes and the part it
+   belongs to. The release approver confirms it.
+3. **Checks.** The pack needs a BOQ revision, a current cost snapshot, an approved price on that snapshot, the priced
+   lines, and at least one document in each part.
+4. **Freeze and send for approval.** The pack is fixed by hash and each part goes to **Approvals**. If a part did not
+   change since the pack before, it keeps its approval, so only the changed parts are approved again. When every part
+   is approved, the release goes to Approvals.
+5. **Record submission.** On a released pack, record how it was submitted (Etimad, email, another portal or by hand),
+   the reference and the time, and attach the receipt: the portal receipt, the stamped delivery note or the sent email.
+   The receipt is kept with its hash and filed in the Dispatch layer. A pack is submitted once; a resubmission needs a
+   new pack.
+
 ### Choose how the analysis uses RAG
 
 
