@@ -345,11 +345,18 @@ Submitting a daily return also creates or updates that day's **daily report** fo
 2. **Details / crew** opens a panel below the table, not a window. In **Shared crew day**, press **Manage crew day**. (The same block is reached from the task's own **Daily Execution** tab.)
 3. Fill in: the project crew name, the actual headcount, the actual crew (the people deployed that day, each with their role), and the declared team lineup (required).
 4. Enter working hours for **each** person listed in the actual crew — entering only the totals (Working MH / Total paid MH) is refused; the person-level hours must add up to them.
-5. Rule: working hours plus delay hours must equal total paid hours; the unpaid break is separate. Use **Add delay** with a cause note to record lost time.
-6. Untick **"Actual roster incomplete"** only once everyone who worked that day is listed.
-7. Press **Save shared crew day** (not **Save draft**).
+5. To record lost time, press **Add delay**, choose the reason and enter the delay hours and a note. The per-person table then shows a delay column: split each person's hours between working and delay.
+6. Rule: working hours plus delay hours must equal total paid hours; the unpaid break is separate.
+7. Untick **"Actual roster incomplete"** only once everyone who worked that day is listed.
+8. Press **Save shared crew day** (not **Save draft**).
 
-The block then shows the shared crew day with its Working, Delay and Paid figures, and any reconciliation flags (for example a missing manpower budget link). The day's daily report then gets a manpower line with the crew name and headcount.
+The block then shows the shared crew day with its Working, Delay and Paid figures, the delay reason, and any reconciliation flags (for example a missing manpower budget link). The day's daily report then gets a manpower line with the crew name and headcount.
+
+### 12.3 Delay reasons catalogue (administrators)
+
+**Where:** Prizm Reports → Daily execution → **Delay catalogue**.
+
+Add each reason with a name and mark it **active**. Reasons are never deleted — retire one by making it inactive; its history stays. While the catalogue has no active reason, **Add delay** in the shared crew day (12.2) is disabled.
 
 ## 13. Other Project Controls / WBS screens
 
@@ -384,6 +391,18 @@ A work package appears in this list when its order-by date has passed, or falls 
 The page then shows **"Illustrative display accepted"**, with the review kept in history. This approves only the illustrative display — not drawings, quantities, QC, client acceptance or billing.
 
 The **material** editor inside the WP visual sets only the render material of each part; it is not purchasing material.
+
+Any change needs a new review: adding illustrative display parts, or applying a render-material revision (below), marks the visual **"Changed proposal · review required"**. Record the decision again (**Accept illustrative display**) to make it current.
+
+#### Changing render materials
+
+**Where:** the visual proposal review page → **Materials** tab → **Change render materials**.
+
+1. For each part, choose a material and a basis (illustrative or drawing-referenced), cite the source, and write the reason.
+2. Press **Prepare**, then check the draft (old → new per part).
+3. Tick the confirmation and press **Apply material revision**.
+
+This changes only how parts are drawn — no geometry, quantities, work or prices.
 
 ## 14. Schedule tools
 
