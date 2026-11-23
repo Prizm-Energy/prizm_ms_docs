@@ -666,6 +666,32 @@ The review runs in the **Approvals** module: set a policy for "Opportunity BOQ c
 Policies. When the approver approves, the revision is reviewed; when they reject it, it is rolled back. The opportunity's
 owner gets a notification, and the commercial manager too when priced lines are affected.
 
+### From the BOQ to the bid price
+
+!!! note "Available after the next release"
+    Prizm Projects 1.177.0, TenderOps 2.70.0 and Approvals 1.23.0. Built and tested; not on the live system yet.
+
+The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab, in this order.
+
+1. **WBS & CBS from the tender.** On the TenderOps **Stages** tab, the **WBS & CBS** step (after Technical) asks the AI
+   to propose the work breakdown, the cost code (CBS) of each work package and the link of each BOQ line to its work
+   packages, from the tender analysis. You review the proposal, change what is wrong and apply it. Nothing is applied
+   without a person.
+2. **Resources.** On **Resources**, each work package gets its lines: labour, material, plant or subcontract, each with
+   a quantity and a rate. Material comes only from approved catalogue items. The rate can come from the latest valid
+   winning quotation of that item.
+3. **Cost accounts.** **Cost accounts** shows the cost by work package and CBS code, and the checks that must pass. When
+   they pass, **Take snapshot** freezes the cost of every BOQ line. If an input changes later, the snapshot shows
+   **Out of date**, and TenderOps shows it on **Where bids wait**.
+4. **Pricing.** On **Pricing**, **Draft price revision** prices every BOQ line from the snapshot:
+    - the margin is the opportunity's target margin, 12% by default; change it for all lines or for one line;
+    - the price is in the BOQ currency, at the exchange rate of the day from the rate log, or a rate you enter with a
+      note;
+    - **By GL account** shows the cost by QuickBooks account. Each CBS code needs one (set on the CBS codes page).
+5. **Submit.** If no line is under the floor (8%) or at a loss, the price is approved at once. Otherwise the request goes
+   to **Approvals** with the gap as its amount, and the policy for "Opportunity price revision" decides who approves.
+6. The approved price goes to TenderOps, and the proposal is made from it. A new approved price replaces the old one.
+
 ### Choose how the analysis uses RAG
 
 
