@@ -260,15 +260,17 @@ Step 3 lists every blocker. The plan cannot be issued while any remain: an open 
 People appear in the crew list only when they are registered in **People** and have a dated deployment to the project for that day. The role list shows the budget's labour lines that the project's Project Controls setup accepts as crew roles.
 
 1. Open **Activities**, select the task, then **Task crew lineup**.
-2. Enter a crew name and the planned headcount.
-3. For each member, choose the person and the role / budget resource, and enter the planned paid hours and productive hours. **Add crew member** adds a row.
+2. Enter the crew name.
+3. For each member, press **Add crew member**, then pick the workforce person and the assigned role / budget resource, and enter the planned paid hours and planned productive hours. The planned crew count fills itself from the members added. Required skills are optional declarations.
 4. Press **Save crew lineup**; before people are deployed, the button reads **Save proposed lineup**.
 
-The **Task crew lineup** column shows the crew name. The daily plan header shows **Crew available** and **Allocated to selected work** in person-hours.
+The **Task crew lineup** column shows the crew name. The daily plan header shows **Crew available** and **Allocated to selected work** in person-hours. The production target per workday comes from the task itself; hours actually worked are entered later, in the shared crew day, not here.
 
-You can also start this from the daily plan itself: select exactly one activity row, then **Crew → Task crew lineup**. Selecting more than one row, or none, shows "Select one linked task first". From there, enter the crew name and planned headcount, add one line per person (the person, their role or budget resource, planned paid hours and productive hours), then the roster, then **Save proposed lineup**.
+You can also start this from the daily plan itself: if the task is not ticked for the day, switch to **All remaining activities** first, then click its row to select it (selecting more than one row, or none, shows "Select one linked task first"), then **Crew → Task crew lineup**. From there, enter the crew name, add one line per person (the person, their role or budget resource, planned paid hours and productive hours), then **Save proposed lineup**.
 
 Paid hours above the planning day's limit for a person (from the project calendar) block the issue as a **paid-hour conflict**. Lower the hours to fit the day.
+
+Saving the lineup marks the plan **"Sources changed"**; press **Save plan draft** again on the daily plan to clear it.
 
 ### 11.2 Resource basis (named site crew)
 
