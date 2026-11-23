@@ -354,6 +354,7 @@ Submitting a daily return also creates or updates that day's **daily report** fo
 
 - Each reported activity becomes a work line ("done") with its outcome (partial / completed). Crew hours entered in the return's **Details / crew** are added as manpower lines.
 - The report starts as a draft, with company and client approval pending. The report details show the chain from work row to task, activity and work package, and mark the quantity as a construction claim only — QC and client acceptance are not inferred.
+- In the report's **Crew, resources & site conditions** section, each crew that worked that day gets its own line with the crew name, the number of people, every role in the crew, and its paid and unpaid hours. Crew names appear only in the internal report — the client preview shows the people count and roles without crew names.
 - In Daily records, a report created from returns shows **"linked activities"**. Older hand-written reports show **"No current activity links"** and flags such as no crew count or no WP/activity link.
 - A return can be entered for a past day even when no plan was issued for it; the page says so ("No issued plan for this date…").
 
@@ -372,7 +373,11 @@ One person cannot be booked on two crews for the same day: the second crew's sav
 
 The block then shows the shared crew day with its Working, Delay and Paid figures, the delay reason, and any reconciliation flags (for example a missing manpower budget link). The day's daily report then gets a manpower line with the crew name and headcount.
 
-### 12.3 Delay reasons catalogue (administrators)
+### 12.3 Closing a task that needs owner acceptance
+
+A task whose quantity is fully reported cannot be closed straight away when it needs owner acceptance: the assignee first submits it for review, then the task owner approves and closes it.
+
+### 12.4 Delay reasons catalogue (administrators)
 
 **Where:** Prizm Reports → Daily execution → **Delay catalogue**.
 
