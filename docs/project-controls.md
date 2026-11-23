@@ -86,9 +86,11 @@ After a new Governing Scope review is recorded, open **QS Support → Planning R
 2. Choose the review decision: **Draft** or **Approved**. Enter the source / review reference and the reason.
 3. Press **Preview dictionary impact**, then confirm.
 
-Each confirmation creates a new dictionary version. Allocations (3.1) can use only codes from an **approved** version; without one, the Cost Plan refuses with **"Select an active approved code compatible with the resource family"**.
+Each confirmation creates a new dictionary version. Allocations (3.1) can use only codes from an **approved** version; without one, the Cost Plan refuses with **"Select an active approved code compatible with the resource family"**. If a cost line's family (Manpower, Plant, Service, Material or Other) has no code yet, add one here and approve it before allocating.
 
 ## 4. Native budget and approval review
+
+Before the native budget can be approved, its approval gate must be clear: every budget line has a company owner (declare the project company when the source budget has none), every line is allocated in the Cost Plan to a work package (3.1), every line has a real unit (N/A is not a unit, 3.2), and the budget is submitted for review.
 
 1. In the Cost Plan press **Compile native draft**. The new draft opens under **Latest proposal**.
 2. Press **Approval review** and read the holds. "Spending only" rows are normal; the funding step handles them.
@@ -101,7 +103,7 @@ If the review shows `PROJECT_COMPANY_SOURCE_INVALID`, set the project's company 
 1. In the approval review press **Submit cost approval**.
 2. A new button appears: **Central approvals … Pending approval**. Press it.
 3. Write the reason in **Decision reason**: what changed and who decided.
-4. Press **Approve**. The status becomes **Financially applied**.
+4. Press **Approve** or **Reject**. Approving sets the status to **Financially applied**.
 
 If you are not the approver, the system records the decision **on behalf of** the approver. Record an on-behalf decision only when the approver has agreed (for example on Microsoft Teams) or the project owner decided, and say which in the reason.
 
@@ -430,6 +432,17 @@ Any change needs a new review: adding illustrative display parts, or applying a 
 3. Tick the confirmation and press **Apply material revision**.
 
 This changes only how parts are drawn — no geometry, quantities, work or prices.
+
+### 13.4 Cost-based EV
+
+Only cost lines tied to a programme activity can earn. In the Cost Plan, link each allocation (3.1) to its work package's activity.
+
+1. On **Cost-based EV**, choose the evidence basis (construction claim, internal QC or client).
+2. Select the eligible lines and record an earning revision.
+
+The screen shows the known cost EV and the assessed budget at completion.
+
+If the approved Cost Plan changes later, compile and approve the native budget again (4, 5) before Cost-based EV uses the change.
 
 ## 14. Schedule tools
 
