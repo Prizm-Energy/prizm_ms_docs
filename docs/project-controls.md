@@ -257,6 +257,14 @@ In short, a condition moves **Open** → (proposed by the owner or the planner) 
 
 While a condition is open, **Site ready** in the daily plan is locked and the work shows **Awaiting release**. A condition that is open and due holds its work out of the daily proposal.
 
+### 10.2 Revising, withdrawing or reopening a condition
+
+- **Save revision** — change the date or the owner. This puts the condition back to **Open**.
+- **Withdraw condition** — use when the condition is no longer needed. It stops holding the work, and can be reopened later if it turns out it is still needed.
+- **Reopen / reconfirm** — reopens a condition that was already **Cleared**, for example a permit that has expired.
+
+Each of these asks for a short reason, and is kept in the condition's history.
+
 ## 11. Daily plan
 
 **Where:** Project Controls → Plan → **Daily plan**.
@@ -359,6 +367,8 @@ Submitting a daily return also creates or updates that day's **daily report** fo
 6. Rule: working hours plus delay hours must equal total paid hours; the unpaid break is separate.
 7. Untick **"Actual roster incomplete"** only once everyone who worked that day is listed.
 8. Press **Save shared crew day** (not **Save draft**).
+
+One person cannot be booked on two crews for the same day: the second crew's save is refused and asks you to pick the actual people.
 
 The block then shows the shared crew day with its Working, Delay and Paid figures, the delay reason, and any reconciliation flags (for example a missing manpower budget link). The day's daily report then gets a manpower line with the crew name and headcount.
 
