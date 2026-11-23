@@ -253,7 +253,9 @@ The condition gets a reference and shows as **Open**. The window then offers **S
 3. Write the reason and press **Propose clearance**.
 4. Press **Verify saved proposal**. The condition becomes **Readiness verified**. **Reopen / reconfirm** and **Withdraw condition** stay available afterwards.
 
-While a condition is open, **Site ready** in the daily plan is locked and the work shows **Awaiting release**.
+In short, a condition moves **Open** → (proposed by the owner or the planner) → **In review** → (verified by a planner) → **Cleared**. It can be reopened or withdrawn at any point, and its history is kept.
+
+While a condition is open, **Site ready** in the daily plan is locked and the work shows **Awaiting release**. A condition that is open and due holds its work out of the daily proposal.
 
 ## 11. Daily plan
 
@@ -316,6 +318,12 @@ When the Cost Plan maps material budget lines to an activity (3.1), selecting th
 - **"Activity allowance — takeoff not established"** means the quantity shown is an allowance; link an activity takeoff before deriving material quantities from it.
 - Without a mapping, the panel reports no material allocation is linked; daily reporting still works.
 
+### 11.5 Schedule look-ahead (L5)
+
+Choosing a **Plan period** (1 week, 2 weeks, 3 weeks or a month) opens the **Schedule look-ahead (L5)** from the chosen date. It lists the work items per work package, with **Checks before daily issue**, the saved daily targets and the window status.
+
+The look-ahead is a read-only, multi-day view — daily drafts for each day are still saved one date at a time from the **Daily plan** itself.
+
 ## 12. Daily return (report project work)
 
 **Where:** Project Controls → Work → **Daily return**, next to **Daily plan** and **Daily reports** — or **Record actuals** from the daily plan. Changing the date keeps you inside the project.
@@ -329,6 +337,8 @@ When the Cost Plan maps material budget lines to an activity (3.1), selecting th
 The page shows **"Daily return saved"**. The work package shows its reported percentage, and the Activities view shows **Today**, the last submitted return date and the balance remaining.
 
 Report every planned activity for the day, even when no work happened on it: use **Add activities** to add any activity that is due or in progress but was not on the issued plan, then choose **Not done** as its outcome. A missing entry is treated as unknown work, not as zero — it keeps the forecast provisional and holds back the next day's plan (**"Schedule readiness needs review"**).
+
+Photo evidence must first be attached to the task itself (open the task window and drop the file there) — the daily return cannot take a new upload. Then, in **Notes & evidence**, pick that attachment and save or submit again; the return gets a new revision that carries the evidence. Files attached to other tasks cannot be chosen.
 
 ### 12.1 How the daily return feeds the daily report
 
