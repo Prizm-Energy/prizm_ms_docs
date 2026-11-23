@@ -730,6 +730,8 @@ When an opportunity has no BOQ (no tender, or a tender without a BOQ), its first
   as changes, as above.
 - Each BOQ line is linked to its item in the catalogue: an item that already exists is used, otherwise a new client
   item is added through the Materials module.
+- The BOQ panel opens on **Items**: every line with its catalogue item, its **Evidence** (the client file it came from,
+  or the tender BOQ) and the **Revision** that added or last changed it. Click the revision to see its changes.
 
 ### Choose how the analysis uses RAG
 
