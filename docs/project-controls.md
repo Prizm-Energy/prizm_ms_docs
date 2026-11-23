@@ -272,12 +272,16 @@ Paid hours above the planning day's limit for a person (from the project calenda
 
 ### 11.2 Resource basis (named site crew)
 
-1. Open **Activities**, select the task, then its resource basis button.
+In the daily plan, a **"Resource checks"** note next to an activity means its resource basis has not been declared yet.
+
+1. Open **Activities**, select the task, then its resource basis button (or open it directly from the daily plan's "Resource checks" note).
 2. Choose **Named site crew required** (or **Named crew present throughout the working periods**, **No named site crew required**, or **Withdraw**).
 3. Enter the planning basis or reference and why it applies.
-4. Press **Preview impact**, tick **"I reviewed this resource basis…"**, then press **Apply local declaration**.
+4. Press **Preview impact**, read the before/after checks, tick **"I reviewed this resource basis…"**, then press **Apply local declaration**.
 
-The result reads **"Local declaration recorded"**. An undeclared basis is reported as **"Resource applicability needs reconciliation"** and blocks the issue.
+The window then shows the reviewed declaration and its revision, and the result reads **"Local declaration recorded"**. An undeclared basis is reported as **"Resource applicability needs reconciliation"** and blocks the issue.
+
+Afterwards, press **Save plan draft** again on the daily plan — **Review & issue** checks the draft against the new declaration, not the one it had before.
 
 ### 11.3 Issuing the daily plan
 
@@ -304,6 +308,8 @@ The server rechecks the plan, permissions and source version at the moment of is
 5. Press **Submit daily return**. **Save entered drafts** keeps it unsubmitted.
 
 The page shows **"Daily return saved"**. The work package shows its reported percentage, and the Activities view shows **Today**, the last submitted return date and the balance remaining.
+
+Report every planned activity for the day, even when no work happened on it: use **Add activities** to add any activity that is due or in progress but was not on the issued plan, then choose **Not done** as its outcome. A missing entry is treated as unknown work, not as zero — it keeps the forecast provisional and holds back the next day's plan (**"Schedule readiness needs review"**).
 
 ### 12.1 How the daily return feeds the daily report
 

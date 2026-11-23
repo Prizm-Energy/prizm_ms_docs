@@ -272,12 +272,16 @@
 
 ### 11.2 أساس المورد (طاقم موقع مسمّى)
 
-1. افتح **Activities**، اختر المهمة، ثم زر أساس المورد الخاص بها.
+في الخطة اليومية، ملاحظة **"Resource checks"** بجانب نشاط تعني أن أساس موارده لم يُعلن بعد.
+
+1. افتح **Activities**، اختر المهمة، ثم زر أساس المورد الخاص بها (أو افتحه مباشرة من ملاحظة "Resource checks" في الخطة اليومية).
 2. اختر **Named site crew required** (أو **Named crew present throughout the working periods** أو **No named site crew required** أو **Withdraw**).
 3. أدخل أساس التخطيط أو المرجع وسبب انطباقه.
-4. اضغط **Preview impact**، علّم **"I reviewed this resource basis…"**، ثم اضغط **Apply local declaration**.
+4. اضغط **Preview impact**، اقرأ الفحوصات قبل/بعد، علّم **"I reviewed this resource basis…"**، ثم اضغط **Apply local declaration**.
 
-النتيجة تقرأ **"Local declaration recorded"**. الأساس غير المُعلن يظهر كـ**"Resource applicability needs reconciliation"** ويوقف الإصدار.
+تُظهر النافذة بعدها الإعلان الذي تمت مراجعته ومراجعته (revision)، والنتيجة تقرأ **"Local declaration recorded"**. الأساس غير المُعلن يظهر كـ**"Resource applicability needs reconciliation"** ويوقف الإصدار.
+
+بعد ذلك اضغط **Save plan draft** مرة أخرى في الخطة اليومية — فـ**Review & issue** يتحقق من المسودة مقابل الإعلان الجديد، وليس الإعلان الذي كان قائمًا قبله.
 
 ### 11.3 إصدار الخطة اليومية
 
@@ -304,6 +308,8 @@
 5. اضغط **Submit daily return**. **Save entered drafts** تبقي التقرير غير مُرسل.
 
 تظهر الصفحة **"Daily return saved"**. تُظهر حزمة العمل نسبتها المُبلّغة، وتُظهر شاشة Activities **Today** وتاريخ آخر تقرير مُرسل والمتبقي.
+
+بلّغ عن كل نشاط مخطط لذلك اليوم، حتى لو لم يتم فيه أي عمل: استخدم **Add activities** لإضافة أي نشاط مستحق أو جارٍ ولم يكن ضمن الخطة الصادرة، ثم اختر **Not done** كحالته. السطر المفقود يُعامَل كعمل غير معروف، لا كصفر — فهذا يبقي التوقع مبدئيًا (provisional) ويوقف خطة اليوم التالي ("Schedule readiness needs review").
 
 ### 12.1 كيف يغذي التقرير اليومي التقرير اليومي في Prizm Reports
 
