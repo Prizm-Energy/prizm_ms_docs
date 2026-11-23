@@ -323,11 +323,14 @@ Submitting a daily return also creates or updates that day's **daily report** fo
 ### 12.2 Recording the crew day (crew hours into the daily report)
 
 1. Save or submit the day's entries first. **Details / crew** opens only when the table has no unsaved entries; otherwise it shows a short "unsaved" note next to the table.
-2. **Details / crew** opens a panel below the table, not a window. In **Shared crew day**, press **Manage crew day**.
-3. Fill in: the project crew name, the actual headcount, the actual crew (the people deployed that day), the declared team lineup (required), working hours, total paid hours, and unpaid break hours. Rule: working hours plus delay hours must equal total paid hours; the unpaid break is separate.
-4. Press **Save shared crew day** (not **Save draft**).
+2. **Details / crew** opens a panel below the table, not a window. In **Shared crew day**, press **Manage crew day**. (The same block is reached from the task's own **Daily Execution** tab.)
+3. Fill in: the project crew name, the actual headcount, the actual crew (the people deployed that day, each with their role), and the declared team lineup (required).
+4. Enter working hours for **each** person listed in the actual crew — entering only the totals (Working MH / Total paid MH) is refused; the person-level hours must add up to them.
+5. Rule: working hours plus delay hours must equal total paid hours; the unpaid break is separate. Use **Add delay** with a cause note to record lost time.
+6. Untick **"Actual roster incomplete"** only once everyone who worked that day is listed.
+7. Press **Save shared crew day** (not **Save draft**).
 
-The panel shows **Shared crew day** with the hours and any reconciliation flags (for example a missing manpower budget link). The day's daily report then gets a manpower line with the crew name and headcount.
+The block then shows the shared crew day with its Working, Delay and Paid figures, and any reconciliation flags (for example a missing manpower budget link). The day's daily report then gets a manpower line with the crew name and headcount.
 
 ## 13. Other Project Controls / WBS screens
 
