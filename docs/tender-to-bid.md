@@ -669,7 +669,7 @@ owner gets a notification, and the commercial manager too when priced lines are 
 ### Match each BOQ line to company items
 
 !!! note "Available after the next release"
-    Opportunities 2.53.0 and Prizm Projects 1.179.0.
+    Opportunities 2.54.0 and Prizm Projects 1.179.0.
 
 1. Open the opportunity's **BOQ** tab, **Items**. Each line shows its client item, its **Company item / kit** and a
    **Breakdown** column.
@@ -679,6 +679,17 @@ owner gets a notification, and the commercial manager too when priced lines are 
 3. Back on the BOQ tab, the line shows **Matched** and its company item or kit. A client item matched before is reused
    at once, with no new AI reading.
 4. **Opportunities → BOQ History** lists every match of every opportunity, with earlier matches kept.
+
+**A lump-sum line that is a whole system** (for example a water treatment plant) is not a kit. Click **System
+breakdown** on the line instead:
+
+1. The breakdown page opens. The AI lists the system's parts with their quantities per unit of the line and for the
+   whole line. Each part shows a catalogue **suggestion**, but nothing is chosen for you.
+2. Click **Change** on each part, pick an approved company item (search by name) or enter a kit number, and check the
+   quantity. **Remove** drops a part that does not belong.
+3. When every part has a company item or kit, click **Approve**. The line shows **Breakdown (N items)** and BOQ History
+   keeps the match. The same client item on another line or opportunity reuses the approved breakdown at once, with no
+   new AI reading; open it with **Open breakdown** to check it.
 
 **Quote age.** On **WBS-CBS → Resources**, a price from a supplier quotation counts for **3 months** from the
 quotation date. The **Quote age** column next to Rate shows its age in days: **green** under a month and a half,
