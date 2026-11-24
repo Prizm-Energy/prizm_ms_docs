@@ -666,6 +666,25 @@ The review runs in the **Approvals** module: set a policy for "Opportunity BOQ c
 Policies. When the approver approves, the revision is reviewed; when they reject it, it is rolled back. The opportunity's
 owner gets a notification, and the commercial manager too when priced lines are affected.
 
+### Match each BOQ line to company items
+
+!!! note "Available after the next release"
+    Opportunities 2.53.0 and Prizm Projects 1.179.0.
+
+1. Open the opportunity's **BOQ** tab, **Items**. Each line shows its client item, its **Company item / kit** and a
+   **Breakdown** column.
+2. Click **Break down** on a line. The Materials composition review opens in a new tab: the AI explains the client item
+   and proposes a single company item or a kit, with quantities and units. Check it, link existing company items where
+   they fit, and approve. Nothing is added before approval.
+3. Back on the BOQ tab, the line shows **Matched** and its company item or kit. A client item matched before is reused
+   at once, with no new AI reading.
+4. **Opportunities → BOQ History** lists every match of every opportunity, with earlier matches kept.
+
+**Quote age.** On **WBS-CBS → Resources**, a price from a supplier quotation counts for **3 months** from the
+quotation date. The **Quote age** column next to Rate shows its age in days: **green** under a month and a half,
+**yellow** up to 3 months, **red** after. A red price no longer counts; the line needs a new quotation before the cost
+snapshot.
+
 ### From the BOQ to the bid price
 
 The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab, in this order.
