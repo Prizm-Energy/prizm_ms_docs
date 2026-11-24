@@ -522,7 +522,65 @@ A project can hold its own quality processes:
 
 Obligations need an effective SOP revision first.
 
-## 17. Good practice
+## 17. Project Controls workspace — More menu (admin tools)
+
+These pages open from the **More** menu of the Project Controls workspace (day plan / schedule views), except **Copy original report**, which is under **Prizm Reports**. Pages marked **(admin)** show only to administrators with Project Controls edit.
+
+### 17.1 Repair activity calendars
+
+Appears only when an older forecast pinned activities to the project calendar, which holds forecast dates and blocks issuing the daily plan. One click puts exactly those activities back on their inherited calendar and releases the forecast dates. If nothing needs repair, it says so.
+
+### 17.2 Site or rehearsal records (admin)
+
+Tabs: **Daily returns**, **Crew days**, **Daily plans**. Each row shows the date, the record, its current purpose (**Site record** / **Rehearsal** / never reviewed) and the last reason.
+
+To change purpose: choose **Site** or **Rehearsal**, give a reason (6+ characters), then save.
+
+A rehearsal stays on file but is left out of site totals, commercial allocation and planning. The record itself is never edited.
+
+### 17.3 Returns covered by the opening
+
+Opened from the opening line of a task's observation measurement page.
+
+It shows the task's reviewed opening quantity and date, and the pending daily returns dated on or before the opening date.
+
+Tick the returns the opening already includes, give a reference and a reason, **Preview**, then **Apply**. Those returns are then never measured again. No quantity is added.
+
+### 17.4 Measurement history repair
+
+Shows every measurement plan version per work package and whether it links to the previous one (**First version** / **Linked** / **Linked by review** / **Broken link**).
+
+If links are broken after a task-ID migration, upload the archive (JSON) of the original versions with a reference and a reason, **Preview**, then **Apply**. Original plans and quantities never change.
+
+### 17.5 Step release check (read-only)
+
+Choose a day: for each activity it shows **Status** (**Ready** / **Start held** / **Finish held** / **Complete**), **May start**, **May finish**, earliest start/finish, and what it is waiting for (no predecessor declared, predecessor not started/finished, lag not elapsed).
+
+It changes nothing and reporting never depends on it. It needs the calendar's working hours to be declared.
+
+### 17.6 Labour planning authority (admin)
+
+Shows the current decision and its history.
+
+Record a decision — **"Provisional reservation allowed"** (daily plans may reserve labour before funding is reconciled) or **"Funding activation required"** — with an effective date and a reason. The latest decision counts. It never grants spending or deployment authority.
+
+### 17.7 Resource request budget source (admin)
+
+Lists approved resource-request lines with their current budget source and how many other matching budget lines exist.
+
+To change source: choose a budget line with the same item, unit and rate, **Preview** to see the reserved quantity before/after, give a reason, then **Move** the line. Quantities, prices and approvals do not change.
+
+### 17.8 Copy original report (admin)
+
+**Where:** Prizm Reports → Project review → **Copy original report**.
+
+Lists the report packets exported from the production ERP for the project.
+
+Choose one, give a reason (10+ characters), **Preview** to see the section counts and whether it is **Ready**, **Already copied**, or has row-number collisions, then **Copy the report**.
+
+The copy grants no approval, no client acceptance and no financial action. Reports with images cannot be copied yet.
+
+## 18. Good practice
 
 - Write a clear reason on every decision: what changed and who decided.
 - Do not approve a funding worksheet as a repeat if any amount changed.
