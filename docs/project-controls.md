@@ -444,6 +444,24 @@ The screen shows the known cost EV and the assessed budget at completion.
 
 If the approved Cost Plan changes later, compile and approve the native budget again (4, 5) before Cost-based EV uses the change.
 
+### 13.5 Advance cash reports
+
+**Where:** Project Budget Management → Advance Cash → **Reports**.
+
+Only people with the Budget view permission (or administrators) can open this page, since it covers every advance cash request across the company.
+
+The page has one tab per report:
+
+- **Custody** — each request's issued, cleared and remaining amount; filter by staff, department, custody status and date. **Details** opens the request's expense requests.
+- **By status**, **By department**, **By project**, **By requester** — summary tabs showing the number of requests and the total and average amount per group, with totals underneath. Project names, requesters and budgets open their records.
+- **Budget use** — approved budgets that approved advance cash was drawn on: the budget amount, the advance cash drawn, what remains, and the percentage used (shown in red above 90%, amber above 75%).
+
+The open tab is kept in the page address, so refreshing the page or sharing a link keeps the same tab open. The Custody grid's columns can be sorted and filtered.
+
+### 13.6 Cost review (actual cost)
+
+Booked supplier costs from the accounting system appear here as cost lines for the project. For each line, the reviewer previews it, chooses the work package cost account it belongs to, then applies it. Recognised lines then count as actual cost for the project.
+
 ## 14. Schedule tools
 
 **Where:** Schedule → **Planning tools**.
@@ -486,7 +504,17 @@ The request appears under **Preparations**. It asserts no quantity and gives no 
 
 The result appears under **Outcomes** as **"Awaiting independent review"**. A different, authorised reviewer must make that decision — the person who recorded it cannot.
 
-## 16. Good practice
+## 16. Project QMS
+
+A project can hold its own quality processes:
+
+- **Processes** — each process has ordered steps, and each step has a RACI (who is **R**esponsible, **A**ccountable, **C**onsulted and **I**nformed).
+- **Findings** and **catches** — a catch is a problem caught before it reached the client.
+- **Definition of Done sets** — each Definition of Done item needs a description and an acceptance rule; without both it is not saved.
+
+Obligations need an effective SOP revision first.
+
+## 17. Good practice
 
 - Write a clear reason on every decision: what changed and who decided.
 - Do not approve a funding worksheet as a repeat if any amount changed.
