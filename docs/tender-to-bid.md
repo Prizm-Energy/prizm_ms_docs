@@ -713,6 +713,29 @@ On the TenderOps **Bid pack** tab, the offer is put together, approved and submi
    The receipt is kept with its hash and filed in the Dispatch layer. A pack is submitted once; a resubmission needs a
    new pack.
 
+### Decide an approval (approver or administrator)
+
+!!! note "Available after the next release"
+    Approvals 1.25.0. On the test system (ms_dev); not on the live system yet.
+
+RFIs, BOQ changes, price revisions and bid packs are decided on one page in the **Approvals** module.
+
+1. Open **Approvals → My Approvals**. Each row is a step waiting for you, or for someone you cover while they are
+   away.
+2. Click the **Step**. The **Decision** tab shows the document, who raised it, the step and its approver, with
+   **Approve** and **Reject** (a rejection needs a reason).
+3. The **Chain** tab lists every step: its approver, its decision, who decided and when.
+
+An **administrator** can decide any waiting step with the same buttons:
+
+- In **My Approvals**, choose **Everyone (as administrator)** in the seat filter. The **Seat** column names the
+  approver of each step.
+- Open the step. A warning says you are deciding on the approver's behalf.
+- The approval stays in the approver's name. The Chain tab shows, for example, "Approved by Mustafa Zaroug on behalf
+  of Osama hassan", and the decision is written to the Activity Log.
+
+**Reassign** only moves a step to another person; it does not decide it.
+
 ### An opportunity with no tender BOQ: the first BOQ from the client's file
 
 !!! note "Available after the next release"
