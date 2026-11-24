@@ -485,24 +485,32 @@ A new local revision is saved; the baseline and actuals are kept.
 
 ## 15. Inspections
 
-### 15.1 Request an inspection of reported work
+**Where:** Work → **Work & inspections** → **Inspect an activity**. The page has three tabs: **Inspection**, **Preparations** and **Outcomes**.
 
-**Where:** Work → **Work & inspections** → **Inspect an activity**.
+### 15.1 Request an inspection of reported work
 
 1. Choose a reported operation (date, work package, activity). The page shows its details.
 2. Enter the requested inspection date, who is inspecting (**Client** or **Internal QC**) and readiness notes.
 3. Press **Prepare local operation IR draft**.
 
-The request appears under **Preparations**. It asserts no quantity and gives no approval or payment credit.
+The request appears under **Preparations**, registered as a draft in Project QMS (16). Original reporting and measurements are not changed, and the request asserts no quantity and gives no approval or payment credit.
 
 ### 15.2 Record the inspection result
 
 **Where:** **Preparations** → **Record inspected scope**.
 
-1. Enter the inspected scope and acceptance criterion, the inspection reference, the date, the signatory and the organisation.
-2. Choose the outcome (**Accepted scope** or **Rejected**) and upload the signed IR PDF (up to 10 MB). The system keeps its fingerprint.
+1. Enter the inspected scope and the acceptance criterion that was checked (for example the required blast profile or coating thickness), the record number, the observed date (not in the future), the signatory and the organisation, with optional notes.
+2. Choose the outcome (**Accepted scope** or **Rejected**) and attach the signed IR as a PDF (up to 10 MB) or give its company SharePoint link. The system keeps its fingerprint.
 
 The result appears under **Outcomes** as **"Awaiting independent review"**. A different, authorised reviewer must make that decision — the person who recorded it cannot.
+
+### 15.3 Review the result (independent reviewer)
+
+**Where:** **Outcomes**.
+
+The reviewer **Verifies** or **Rejects** the record. Verify confirms it as correct; Reject sends it back with a reason (for example a wrong signatory or a missing test sheet). A verified result can later be revoked, with a reason.
+
+A Rejected outcome can still be Verified — verifying means the record itself is correct, not that the inspected work passed.
 
 ## 16. Project QMS
 
