@@ -668,9 +668,6 @@ owner gets a notification, and the commercial manager too when priced lines are 
 
 ### From the BOQ to the bid price
 
-!!! note "Available after the next release"
-    Prizm Projects 1.177.0, TenderOps 2.70.0 and Approvals 1.23.0. Built and tested; not on the live system yet.
-
 The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab, in this order.
 
 1. **WBS & CBS from the tender.** On the TenderOps **Stages** tab, the **WBS & CBS** step (after Technical) asks the AI
@@ -694,9 +691,6 @@ The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab
 
 ### Approve and submit the bid (bid pack)
 
-!!! note "Available after the next release"
-    TenderOps 2.71.0. Built and tested; not on the live system yet.
-
 On the TenderOps **Bid pack** tab, the offer is put together, approved and submitted.
 
 1. **Draft bid pack.** Add the documents of the offer, each in its part (technical, commercial or legal) with a role,
@@ -714,9 +708,6 @@ On the TenderOps **Bid pack** tab, the offer is put together, approved and submi
    new pack.
 
 ### Decide an approval (approver or administrator)
-
-!!! note "Available after the next release"
-    Approvals 1.25.0. On the test system (ms_dev); not on the live system yet.
 
 RFIs, BOQ changes, price revisions and bid packs are decided on one page in the **Approvals** module.
 
@@ -737,9 +728,6 @@ An **administrator** can decide any waiting step with the same buttons:
 **Reassign** only moves a step to another person; it does not decide it.
 
 ### An opportunity with no tender BOQ: the first BOQ from the client's file
-
-!!! note "Available after the next release"
-    Opportunities 2.51.0 and TenderOps 2.72.0. Built and tested; not on the live system yet.
 
 When an opportunity has no BOQ (no tender, or a tender without a BOQ), its first BOQ comes from the client's files:
 
