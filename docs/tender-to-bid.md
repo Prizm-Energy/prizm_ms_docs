@@ -717,17 +717,31 @@ The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab
 2. **Resources.** On **Resources**, each work package gets its lines: labour, material, plant or subcontract, each with
    a quantity and a rate. Material comes only from approved catalogue items. The rate can come from the latest valid
    winning quotation of that item.
-3. **Cost accounts.** **Cost accounts** shows the cost by work package and CBS code, and the checks that must pass. When
+3. **Overheads.** Every bid also carries costs outside its work packages. On **Overheads** they sit in the **00**
+   branch of the WBS, which the system adds:
+   - **00.1** project indirects;
+   - **00.2** supply logistics, only when the job includes supply;
+   - **00.3** bid costs;
+   - **00.4** overhead, finance and risk.
+
+   **Refresh bid costs** adds the tender fee, the AI cost of the opportunity and the bid team time from its timesheets
+   (at each person's job position day cost). It also adds G&A, finance and contingency as a % of the direct cost.
+   - The company default % is under **Opportunities → Settings → TenderOps → Pricing**.
+   - To use a different % on one opportunity, choose **Edit** and write why.
+
+   The snapshot spreads these costs over the BOQ lines. Refresh before you take the snapshot when the tab says the
+   figures changed.
+4. **Cost accounts.** **Cost accounts** shows the cost by work package and CBS code, and the checks that must pass. When
    they pass, **Take snapshot** freezes the cost of every BOQ line. If an input changes later, the snapshot shows
    **Out of date**, and TenderOps shows it on **Where bids wait**.
-4. **Pricing.** On **Pricing**, **Draft price revision** prices every BOQ line from the snapshot:
+5. **Pricing.** On **Pricing**, **Draft price revision** prices every BOQ line from the snapshot:
     - the margin is the opportunity's target margin, 12% by default; change it for all lines or for one line;
     - the price is in the BOQ currency, at the exchange rate of the day from the rate log, or a rate you enter with a
       note;
     - **By GL account** shows the cost by QuickBooks account. Each CBS code needs one (set on the CBS codes page).
-5. **Submit.** If no line is under the floor (8%) or at a loss, the price is approved at once. Otherwise the request goes
+6. **Submit.** If no line is under the floor (8%) or at a loss, the price is approved at once. Otherwise the request goes
    to **Approvals** with the gap as its amount, and the policy for "Opportunity price revision" decides who approves.
-6. The approved price goes to TenderOps, and the proposal is made from it. A new approved price replaces the old one.
+7. The approved price goes to TenderOps, and the proposal is made from it. A new approved price replaces the old one.
 
 ### Approve and submit the bid (bid pack)
 
