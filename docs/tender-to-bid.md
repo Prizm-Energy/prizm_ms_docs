@@ -669,7 +669,7 @@ owner gets a notification, and the commercial manager too when priced lines are 
 ### Match each BOQ line to company items
 
 !!! note "Available after the next release"
-    Opportunities 2.54.0 and Prizm Projects 1.179.0.
+    Opportunities 2.57.0 and Prizm Projects 1.180.0.
 
 1. Open the opportunity's **BOQ** tab, **Items**. Each line shows its client item, its **Company item / kit** and a
    **Breakdown** column.
@@ -695,6 +695,12 @@ breakdown** on the line instead:
 quotation date. The **Quote age** column next to Rate shows its age in days: **green** under a month and a half,
 **yellow** up to 3 months, **red** after. A red price no longer counts; the line needs a new quotation before the cost
 snapshot.
+
+**Job type.** Supply, Install, and Supply and Install bids all follow the same steps. The job type you set on the
+opportunity shows on **WBS-CBS → Resources**, under the totals. A line that does not fit it gets a warning sign in the
+Type column: labour on a supply job, or supplied material on an install job. Hover the sign for the reason; the line is
+kept and priced as usual. The AI that proposes the WBS is also told the job type, so it does not propose installation
+work for a supply job.
 
 ### From the BOQ to the bid price
 
