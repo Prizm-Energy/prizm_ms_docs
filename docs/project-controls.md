@@ -344,19 +344,25 @@ The look-ahead is a read-only, multi-day view — daily drafts for each day are 
 
 1. Pick the date.
 2. Under **Add activities**, choose the activity, then **Add activities** (or add a whole work package). Expand the work package to see its activities.
-3. For each activity choose the **Outcome**: **Partial**, **Completed** or **Not done**. A Partial outcome needs a **Completed to date** value.
+3. For each activity choose the **Outcome**: **Partial**, **Completed** or **Not done**. Enter **Today** — the quantity done that day; **Cumulative** and **Balance** update on their own. Keep the outcome **Partial** until the scope is finished; a Partial outcome needs a **Completed to date** value.
 4. Use **Details / crew** to record hours, notes and evidence.
 5. Press **Submit daily return**. **Save entered drafts** keeps it unsubmitted.
 
 The page shows **"Daily return saved"**. The work package shows its reported percentage, and the Activities view shows **Today**, the last submitted return date and the balance remaining.
 
+If the day's daily plan is not issued yet, the page says the plan is **awaiting issue**. Reporting still works: under **Add activities**, pick the activities the crew actually worked on, press **Add activities**, open the work package, then use **Details / crew** on the activity — the row then shows as **"Added work"**.
+
 Report every planned activity for the day, even when no work happened on it: use **Add activities** to add any activity that is due or in progress but was not on the issued plan, then choose **Not done** as its outcome. A missing entry is treated as unknown work, not as zero — it keeps the forecast provisional and holds back the next day's plan (**"Schedule readiness needs review"**).
 
 Photo evidence must first be attached to the task itself (open the task window and drop the file there) — the daily return cannot take a new upload. Then, in **Notes & evidence**, pick that attachment and save or submit again; the return gets a new revision that carries the evidence. Files attached to other tasks cannot be chosen.
 
+Measurement plans for a work package need its activities declared through **Declare activity & reporting task**; declaring a new activity needs a line from the client-approved payment schedule.
+
 ### 12.1 How the daily return feeds the daily report
 
 Submitting a daily return also creates or updates that day's **daily report** for the project in Prizm Reports. Its record number starts with the project's local code and the date. Open it under Project Controls → Work → **Daily reports → Daily records**.
+
+Pressing **Submit construction claim** in the activity panel shows the daily work record number, **"Construction claim submitted"**, and the linked draft daily report.
 
 - Each reported activity becomes a work line ("done") with its outcome (partial / completed). Crew hours entered in the return's **Details / crew** are added as manpower lines.
 - The report starts as a draft, with company and client approval pending. The report details show the chain from work row to task, activity and work package, and mark the quantity as a construction claim only — QC and client acceptance are not inferred.
@@ -371,7 +377,7 @@ Submitting a daily return also creates or updates that day's **daily report** fo
 3. Fill in: the project crew name, the actual headcount, the actual crew (the people deployed that day, each with their role), and the declared team lineup (required). The actual crew starts pre-filled from the task's planned crew lineup (11.1); if different people worked, select who actually worked instead — supplier-supplied (subcontract) workers deployed on the project can be selected the same way as own employees.
 4. Enter working hours for **each** person listed in the actual crew — entering only the totals (Working MH / Total paid MH) is refused; the person-level hours must add up to them.
 5. To record lost time, press **Add delay**, choose the reason and enter the delay hours and a note. The per-person table then shows a delay column: split each person's hours between working and delay.
-6. Rule: working hours plus delay hours must equal total paid hours; the unpaid break is separate.
+6. Rule: **Total paid MH** = Working MH + recorded delay hours + any pending hours. **"Paid hours · classification pending"** is only the extra paid time not yet classified (for example waiting time) — not the person's total paid hours. Write the cause in the notes whenever pending time is entered. The unpaid break is separate.
 7. Untick **"Actual roster incomplete"** only once everyone who worked that day is listed.
 8. Press **Save shared crew day** (not **Save draft**).
 
