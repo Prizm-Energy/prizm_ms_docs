@@ -210,7 +210,7 @@ responsible person is told even when only the authority or an administrator may 
 1. Open **Opportunities → Settings → TenderOps**. You need to be an administrator, or have the
    TenderOps *manage settings* permission.
 2. Choose a section: automation, approvals and gates, pricing and suppliers, AI review,
-   integrations, people, or display.
+   integrations, people, background services, or display.
 3. Change a setting and save.
 
 - **Decision alerts inside the ERP**, in the Automation section, switches decision alerts on or off.
@@ -221,6 +221,10 @@ responsible person is told even when only the authority or an administrator may 
 - **IT ticket department** and **IT ticket priority**, in the Integrations section, choose where a
   technical fault's support ticket goes and how urgent it is. Left empty, the ticket goes to the
   *Information Technology* department with *Medium* priority (see *Send a technical fault to IT*).
+- **Background services** switches three scheduled jobs on or off: Virtual Team morning briefs, VTO
+  creation-event reconciliation and VTO source parity reconciliation. All three are off by default. A job
+  that is off does no work and writes nothing to the error log; switch one on only when its server and data
+  are ready.
 
 ### Convert a tender: one tender, one opportunity
 
