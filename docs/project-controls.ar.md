@@ -342,6 +342,8 @@
 
 **المكان:** Project Controls ← Work ← **Daily return**، بجانب **Daily plan** و**Daily reports** — أو **Record actuals** من الخطة اليومية. تغيير التاريخ يبقيك داخل المشروع.
 
+لجدول العمل شريط أدوات قياسي فوقه، مثل باقي جداول Project Controls: **Theme**، **Switch to Dark**، **Search**، و**Reset Columns**. **Search** يبحث في حزم العمل والأنشطة معًا.
+
 1. اختر التاريخ.
 2. تحت **Add activities** اختر النشاط ثم **Add activities** (أو أضف حزمة عمل كاملة). وسّع حزمة العمل لرؤية أنشطتها.
 3. لكل نشاط اختر **Outcome**: **Partial** أو **Completed** أو **Not done**. أدخل **Today** — الكمية المُنجزة ذلك اليوم؛ تتحدّث **Cumulative** و**Balance** تلقائيًا. أبقِ الحالة **Partial** حتى يكتمل النطاق؛ حالة Partial تحتاج قيمة **Completed to date**.

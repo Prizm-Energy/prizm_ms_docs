@@ -342,6 +342,8 @@ The look-ahead is a read-only, multi-day view — daily drafts for each day are 
 
 **Where:** Project Controls → Work → **Daily return**, next to **Daily plan** and **Daily reports** — or **Record actuals** from the daily plan. Changing the date keeps you inside the project.
 
+The work grid has the standard grid toolbar above it, like the other Project Controls grids: **Theme**, **Switch to Dark**, **Search** and **Reset Columns**. **Search** looks across work packages and activities.
+
 1. Pick the date.
 2. Under **Add activities**, choose the activity, then **Add activities** (or add a whole work package). Expand the work package to see its activities.
 3. For each activity choose the **Outcome**: **Partial**, **Completed** or **Not done**. Enter **Today** — the quantity done that day; **Cumulative** and **Balance** update on their own. Keep the outcome **Partial** until the scope is finished; a Partial outcome needs a **Completed to date** value.
