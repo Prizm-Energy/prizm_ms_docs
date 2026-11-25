@@ -98,6 +98,8 @@
 
 إذا ظهر `PROJECT_COMPANY_SOURCE_INVALID`، حدّد شركة المشروع من نموذج تعديل المشروع (نفس شركة الميزانية)، ثم أرسل من جديد.
 
+الميزانية الأصلية للمشروع تحتاج WBS واحدًا بالضبط للمشروع. إذا كان للمشروع أكثر من WBS، أو لم يكن له أي WBS، فإن **Compile native draft** تُظهر: *"The budget needs exactly one project WBS. This project has more than one WBS, or none. Keep one WBS for the project, then compile the budget again."* وعندما يكون للمشروع أكثر من WBS، فإن Project Controls (التوزيعات التجارية، التنفيذ، والجاهزية) يعمل دائمًا على الأحدث منها.
+
 ## 5. اعتماد التكلفة
 
 1. في مراجعة الاعتماد اضغط **Submit cost approval**.

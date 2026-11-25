@@ -98,6 +98,8 @@ Before the native budget can be approved, its approval gate must be clear: every
 
 If the review shows `PROJECT_COMPANY_SOURCE_INVALID`, set the project's company in the project edit form (the same company as its budget), then submit again.
 
+A project's native budget needs exactly one project WBS. If a project has more than one WBS, or none, **Compile native draft** shows: *"The budget needs exactly one project WBS. This project has more than one WBS, or none. Keep one WBS for the project, then compile the budget again."* When a project has more than one WBS, Project Controls (commercial allocations, execution and readiness) always works on the newest one.
+
 ## 5. Cost approval
 
 1. In the approval review press **Submit cost approval**.
