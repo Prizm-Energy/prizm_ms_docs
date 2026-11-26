@@ -228,6 +228,8 @@ responsible person is told even when only the authority or an administrator may 
   time.
 - **RFQ company for bids**, in the Pricing section, is the company of an RFQ sent from a bid whose opportunity has no
   company of its own. With neither, Send to RFQ is refused.
+- The values in use today (set on 26 November 2026): G&A **10%**, finance **2%**, contingency **5%**, **8** hours in a
+  working day, and RFQ company **PRIZM ENERGY FOR ELECTROMECHANICAL CONTRACTING L.L.C (PEM)**.
 - **Background services** switches three scheduled jobs on or off: Virtual Team morning briefs, VTO
   creation-event reconciliation and VTO source parity reconciliation. All three are off by default. A job
   that is off does no work and writes nothing to the error log; switch one on only when its server and data
