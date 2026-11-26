@@ -26,7 +26,7 @@ written here.
 | **Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed |
 | Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
 | **Automation (foundation)** | The run starts on its own, decisions alert people inside the ERP, tender triage and conversion follow one set of rules, tender documents are indexed only after a person approves it, the tender stays the source and the opportunity owns its BOQ, each business stage shows the AI team stages that feed it, and administrators are told when n8n delivery stops. | ✅ Closed |
-| The bid stages | Documents, work breakdown, procurement, pricing, approvals, submission and award. | In progress: every document version is kept, outputs from an old version are flagged, documents are registered and marked ready, and problems go on an issue register; the lines that need a supplier price are grouped into RFQ packages, one RFQ per supplier trade (on ms_dev since 26 Nov 2026); comparing offers on their evaluated value (delivery basis, advance payment, delivery time) is being built |
+| The bid stages | Documents, work breakdown, procurement, pricing, approvals, submission and award. | In progress: every document version is kept, outputs from an old version are flagged, documents are registered and marked ready, and problems go on an issue register; the lines that need a supplier price are grouped into RFQ packages, one RFQ per supplier trade (on ms_dev since 26 Nov 2026); each package is priced from its own RFQ's winner and the bid's priced items are listed with their supplier and quotation (tested locally) |
 
 ## Open the Virtual Tendering Team
 
@@ -757,6 +757,40 @@ The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab
 6. **Submit.** If no line is under the floor (8%) or at a loss, the price is approved at once. Otherwise the request goes
    to **Approvals** with the gap as its amount, and the policy for "Opportunity price revision" decides who approves.
 7. The approved price goes to TenderOps, and the proposal is made from it. A new approved price replaces the old one.
+
+### See the priced items, with their supplier and quotation
+
+The TenderOps page's **Priced items** tab lists every priced item of the bid with the supplier and the quotation its
+price came from (TenderOps 2.79.0). It is read only. A line of an RFQ package is priced from **its own package's RFQ**:
+the winner picked there, never a winner from another RFQ.
+
+Tested locally on 26 Nov 2026, on OPP-262866: PKG-01 Cables and glands went out as one RFQ, two suppliers quoted (Ducab
+and Power Plus Cables), and the comparison picked the lowest of each item.
+
+1. If the buyer picks a supplier that is not the lowest, the RFQ asks why. The reason is kept with the pick.
+
+    ![The buyer picks Ducab, not the lowest, and writes why](./tender-to-bid/img/priced-01-repick-reason.jpg)
+
+2. The package lines take the winner's price on their own when it is picked. On the opportunity's **WBS-CBS → RFQ
+   packages** tab, **Price from winners now** does it at once. Only a line whose winner changed is priced again, and only
+   once. A price typed by hand is never replaced.
+
+    ![Price from winners now: only the re-picked line](./tender-to-bid/img/priced-02-price-now.jpg)
+
+3. Open **TenderOps → Priced items**. The tiles count the priced lines, the total in the base currency, the lines whose
+   supplier was not the lowest, and the package lines still waiting. The grid is grouped by package, each with its
+   total. A line waiting for a price says why: no winner yet, or the package is not issued.
+
+    ![Priced items grouped by package](./tender-to-bid/img/priced-03-by-package.jpg)
+
+4. Scroll right for the quotation, the RFQ, whether the supplier was the lowest, and the buyer's reason. The supplier,
+   quotation, RFQ, item and package open their own screens.
+
+    ![Quotation, RFQ, lowest and reason](./tender-to-bid/img/priced-04-lowest-reason.jpg)
+
+5. **Group by** shows the same lines by supplier, work package or price source, each group with its total.
+
+    ![Priced items grouped by supplier](./tender-to-bid/img/priced-05-by-supplier.jpg)
 
 ### Approve and submit the bid (bid pack)
 
