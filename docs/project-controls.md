@@ -500,6 +500,19 @@ The open tab is kept in the page address, so refreshing the page or sharing a li
 
 Booked supplier costs from the accounting system appear here as cost lines for the project. For each line, the reviewer previews it, chooses the work package cost account it belongs to, then applies it. Recognised lines then count as actual cost for the project.
 
+### 14.7 Save a project's WBS as a reusable template
+
+**Where:** the project's WBS, in the WBS builder.
+
+1. Wait until the grid shows its rows: the counter above the grid reads **"WBS: n, Activities: n"**. Saving while the grid still says **"No Rows To Show"** would create a template with no rows.
+2. Click the template button — the last button in the right-hand group above the toolbar, tooltip **"Load a predefined WBS template or save the current one"**. The **Save as Template** dialog opens.
+3. Enter a **Template Name** and a **Description**, choose a **Category** from the list (**"+ Add new category…"** adds a new one), and add **Tags** (type a word, press Enter).
+4. Click **Save as Template**. The dialog shows **"Template saved."**
+
+Pressing **Escape** closes the whole dialog without saving. Only the WBS structure is saved — codes, names, descriptions, work-package flags, quantities, plus any rule-of-credit steps and rate build-up. Activities and resources are not saved. Element codes keep the source project's code root.
+
+Check the result under **Prizm Projects → Template Library**: it shows the template's Name, Category, Tags, Source (**Manual**), number of Elements and Created date, with view/edit/delete buttons.
+
 ## 15. Schedule tools
 
 **Where:** Schedule → **Planning tools**.
