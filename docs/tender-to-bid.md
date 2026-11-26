@@ -221,6 +221,13 @@ responsible person is told even when only the authority or an administrator may 
 - **IT ticket department** and **IT ticket priority**, in the Integrations section, choose where a
   technical fault's support ticket goes and how urgent it is. Left empty, the ticket goes to the
   *Information Technology* department with *Medium* priority (see *Send a technical fault to IT*).
+- **G&A %**, **Finance %** and **Contingency %**, in the Pricing section, are the company defaults of a bid's percentage
+  costs, each a % of its direct cost. They are 0 until the company sets them; one opportunity can use its own % with a
+  note on its **WBS-CBS → Overheads** tab.
+- **Hours in a working day** (8 by default), in the Pricing section, turns timesheet hours into days for the bid team
+  time.
+- **RFQ company for bids**, in the Pricing section, is the company of an RFQ sent from a bid whose opportunity has no
+  company of its own. With neither, Send to RFQ is refused.
 - **Background services** switches three scheduled jobs on or off: Virtual Team morning briefs, VTO
   creation-event reconciliation and VTO source parity reconciliation. All three are off by default. A job
   that is off does no work and writes nothing to the error log; switch one on only when its server and data
