@@ -513,6 +513,20 @@ Pressing **Escape** closes the whole dialog without saving. Only the WBS structu
 
 Check the result under **Prizm Projects → Template Library**: it shows the template's Name, Category, Tags, Source (**Manual**), number of Elements and Created date, with view/edit/delete buttons.
 
+### 14.8 Link a CBS code to a GL (QuickBooks) account
+
+**Where:** Prizm Projects → **CBS codes**.
+
+1. Use the grid's **Search** box to find the code — searching by name works well.
+2. In the Action column, click the third button (book icon) — a **"GL account \<code\>"** dialog opens.
+3. Pick the account from the **GL account** list (QuickBooks accounts with their type). **"(Use the parent's account)"** means the code takes its parent's account. Write a **Reason**, then click **GL account**.
+
+The page shows **"GL account of \<code\> saved."** In the grid's GL account column, the code shows the account name, and its lower codes show the same name marked **"(inherited)"**.
+
+A lower code uses its parent's account unless it has its own, so mapping the level-1 codes covers the whole tree. Give a lower code its own account only when it differs. Each change is kept in the **History** tab with its reason. Which account each code should use is a finance decision.
+
+Do not type into the grid when no box has focus — some letters are page shortcuts.
+
 ## 15. Schedule tools
 
 **Where:** Schedule → **Planning tools**.
