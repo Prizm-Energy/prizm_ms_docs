@@ -760,8 +760,9 @@ The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab
 
 On the TenderOps **Bid pack** tab, the offer is put together, approved and submitted.
 
-1. **Draft bid pack.** Add the documents of the offer, each in its part (technical, commercial or legal) with a role,
-   for example METHOD, PRICED_BOQ or FORM. A new draft starts with the documents of the pack before.
+1. **Draft bid pack.** Add the documents of the offer, each in its part (technical, commercial or legal) with a role
+   chosen from the list of that part's roles, for example Method statement, Priced BOQ or Tender form. A new draft starts
+   with the documents of the pack before.
 2. **Open RFIs.** For each RFI the client has not answered, state the assumption the offer makes and the part it
    belongs to. The release approver confirms it.
 3. **Checks.** The pack needs a BOQ revision, a current cost snapshot, an approved price on that snapshot, the priced
@@ -773,6 +774,19 @@ On the TenderOps **Bid pack** tab, the offer is put together, approved and submi
    the reference and the time, and attach the receipt: the portal receipt, the stamped delivery note or the sent email.
    The receipt is kept with its hash and filed in the Dispatch layer. A pack is submitted once; a resubmission needs a
    new pack.
+
+### Manage the roles of bid documents (administrators)
+
+The **Role** list of the Add document window comes from **Opportunities → Settings → TenderOps → Bid document roles**.
+It starts with 16 roles: 7 technical, 4 commercial and 5 legal.
+
+- **Add role:** enter a code (capital letters, digits and _, for example ZAKAT_CERT), the part, the English and Arabic
+  names and the order. The code cannot change later, because bid packs keep it.
+- **Edit:** change the names, the part or the order.
+- **Switch off:** the role is no longer offered for new documents. A pack that already used it still shows it.
+  **Switch on** offers it again. A role is never deleted.
+
+Only an administrator or a TenderOps settings manager sees this tab. Every change is written to the activity log.
 
 ### Decide an approval (approver or administrator)
 
@@ -854,8 +868,9 @@ Tested on ms_dev on 26 Nov 2026, on the same opportunity, after its price revisi
 
    ![Draft a bid pack](./tender-to-bid/img/approvals-bp-01-draft.jpg)
 
-2. Click **Add document**. Choose the document (1), its part and its role (2), then **Add document** (3). Add at least
-   one document to each part: technical, commercial and legal. Checks lists each part that has no document yet.
+2. Click **Add document**. Choose the document (1), its part and its role (2), then **Add document** (3). The **Role**
+   list shows only the roles of the chosen part that are switched on. Add at least one document to each part:
+   technical, commercial and legal. Checks lists each part that has no document yet.
 
    ![Add a document to a part](./tender-to-bid/img/approvals-bp-02-add-document.jpg)
 
