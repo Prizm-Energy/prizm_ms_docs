@@ -406,7 +406,26 @@ A task whose quantity is fully reported cannot be closed straight away when it n
 
 Add each reason with a name and mark it **active**. Reasons are never deleted — retire one by making it inactive; its history stays. **Add delay** in the shared crew day (12.2) becomes available only once the day has finished loading, and only when the catalogue has at least one active reason.
 
-## 13. Other Project Controls / WBS screens
+## 13. Work reconciliation
+
+**Where:** Work → **Work reconciliation**.
+
+### 13.1 Classify a daily-return source as original or additional scope
+
+1. Set the source type filter to **Daily return**.
+2. Click the work package code in a row — the detail panel opens — press **Review source routing**.
+3. On **Review work source**, fill in: **Portion / operation** (describe the part), **Review share %** (100 for the whole return), **Route to** (**Original scope**, **Additional work**, **Supporting observation**, **Excluded**, **Duplicate**), the source references and boundary, and a **Review reason**.
+4. Press **Preview declaration**, check the **Review impact** box (**"Routing covered"** and unresolved coverage 0%), then **Apply locally**.
+
+The review is saved as `r1` in **Declaration history**, and the row no longer lists "Original / additional scope classification" as open in the grid.
+
+This saves an internal versioned review only — quantities, progress, budget and approvals do not change, and it cannot approve an IPC, a payment or client acceptance. **"Proposed payment method"** can stay **"Not declared"**.
+
+Routing to **Supporting observation** needs an existing source that is already linked as applied measurement support; without one, the preview shows a message and the routing stays unresolved.
+
+**Withdraw review**, under Review action, takes a review back.
+
+## 14. Other Project Controls / WBS screens
 
 - **BOQ Mapping** — the **Available BOQ items** and **Mapped** tabs; **Map** a line to update the remaining value.
 - **Procurement packages** — **Manage** the **Mapped** and **Available** WBS elements of a package.
@@ -414,7 +433,7 @@ Add each reason with a name and mark it **active**. Reasons are never deleted �
 - **Baselines** — compare a baseline **View** against the current plan.
 - **Activity outline** — open a work package's side panel to see its activity breakdown.
 
-### 13.1 Long-lead alerts (Procurement → Long-Lead Alerts)
+### 14.1 Long-lead alerts (Procurement → Long-Lead Alerts)
 
 A work package appears in this list when its order-by date has passed, or falls within the next 14 days, and it is not marked **Ordered**. The order-by date is the required on-site date minus the lead time.
 
@@ -422,13 +441,13 @@ A work package appears in this list when its order-by date has passed, or falls 
 - The alert shows the lead time, the required on-site date, the order-by date, and how many days it is overdue.
 - Marking the work package as **Ordered** removes it from the alerts.
 
-### 13.2 EVM report (WBS page → EVM Report)
+### 14.2 EVM report (WBS page → EVM Report)
 
 - **Budget at completion** and **planned value** come from each work package's budget and its planned start and finish, measured against the latest **Project baseline**. **Earned value** is budget × percent complete. Take a new baseline after adding work packages or changing budgets, so they are included.
 - On a project with Project Controls, daily returns do not change the WBS percent complete by themselves — the EVM report reads the WBS progress.
 - If the report shows zeros right after the page opens, wait for the project to finish loading; the tab now refreshes itself once the WBS has loaded.
 
-### 13.3 WP visual build (Prepare build)
+### 14.3 WP visual build (Prepare build)
 
 **Where:** WP visual → **Prepare build**.
 
@@ -452,7 +471,7 @@ Any change needs a new review: adding illustrative display parts, or applying a 
 
 This changes only how parts are drawn — no geometry, quantities, work or prices.
 
-### 13.4 Cost-based EV
+### 14.4 Cost-based EV
 
 Only cost lines tied to a programme activity can earn. In the Cost Plan, link each allocation (3.1) to its work package's activity.
 
@@ -463,7 +482,7 @@ The screen shows the known cost EV and the assessed budget at completion.
 
 If the approved Cost Plan changes later, compile and approve the native budget again (4, 5) before Cost-based EV uses the change.
 
-### 13.5 Advance cash reports
+### 14.5 Advance cash reports
 
 **Where:** Project Budget Management → Advance Cash → **Reports**.
 
@@ -477,15 +496,15 @@ The page has one tab per report:
 
 The open tab is kept in the page address, so refreshing the page or sharing a link keeps the same tab open. The Custody grid's columns can be sorted and filtered.
 
-### 13.6 Cost review (actual cost)
+### 14.6 Cost review (actual cost)
 
 Booked supplier costs from the accounting system appear here as cost lines for the project. For each line, the reviewer previews it, chooses the work package cost account it belongs to, then applies it. Recognised lines then count as actual cost for the project.
 
-## 14. Schedule tools
+## 15. Schedule tools
 
 **Where:** Schedule → **Planning tools**.
 
-### 14.1 Hold an activity's start (Activity constraint)
+### 15.1 Hold an activity's start (Activity constraint)
 
 1. Choose the activity and the constraint type, for example **"start no earlier than"**, then the date.
 2. Write a reason and tick the confirmation. **Apply** stays disabled until both are done.
@@ -493,7 +512,7 @@ Booked supplier costs from the accounting system appear here as cost lines for t
 
 A rule that does not move anything reports **"0 affected"** — choose a date that really changes the programme. Saving creates a new local programme revision; the baseline and actuals are kept.
 
-### 14.2 Set an activity's working time (Working time)
+### 15.2 Set an activity's working time (Working time)
 
 1. Choose the activity, the start date and time, and the working hours needed.
 2. For **every** calendar in the list, enter the working periods per weekday (for example `07:00-12:00,13:00-17:00`). Leave a day empty when it is a rest day. **Preview** stays disabled until every calendar has periods; the counter shows **"n/n calendars have explicit periods"**.
@@ -502,19 +521,19 @@ A rule that does not move anything reports **"0 affected"** — choose a date th
 
 A new local revision is saved; the baseline and actuals are kept.
 
-## 15. Inspections
+## 16. Inspections
 
 **Where:** Work → **Work & inspections** → **Inspect an activity**. The page has three tabs: **Inspection**, **Preparations** and **Outcomes**.
 
-### 15.1 Request an inspection of reported work
+### 16.1 Request an inspection of reported work
 
 1. Choose a reported operation (date, work package, activity). The page shows its details.
 2. Enter the requested inspection date, who is inspecting (**Client** or **Internal QC**) and readiness notes.
 3. Press **Prepare local operation IR draft**.
 
-The request appears under **Preparations**, registered as a draft in Project QMS (16). Original reporting and measurements are not changed, and the request asserts no quantity and gives no approval or payment credit.
+The request appears under **Preparations**, registered as a draft in Project QMS (17). Original reporting and measurements are not changed, and the request asserts no quantity and gives no approval or payment credit.
 
-### 15.2 Record the inspection result
+### 16.2 Record the inspection result
 
 **Where:** **Preparations** → **Record inspected scope**.
 
@@ -523,7 +542,7 @@ The request appears under **Preparations**, registered as a draft in Project QMS
 
 The result appears under **Outcomes** as **"Awaiting independent review"**. A different, authorised reviewer must make that decision — the person who recorded it cannot.
 
-### 15.3 Review the result (independent reviewer)
+### 16.3 Review the result (independent reviewer)
 
 **Where:** **Outcomes** → **Review** link at the end of the Action column.
 
@@ -531,13 +550,13 @@ The reviewer chooses **Verify** or **Reject**, writes a reason and submits. Veri
 
 A Rejected outcome can still be Verified — verifying means the record itself is correct, not that the inspected work passed.
 
-### 15.4 Finding operation inspection results
+### 16.4 Finding operation inspection results
 
 **Where:** Work → **Work & inspections** → **Inspection evidence**.
 
 The **Inspection results** count and list here show only quantity-based (measured) inspection results. A result recorded for an operation inspection (operation scope, no quantity) is not listed here — find it under **Request an operation inspection → Outcomes** instead. An empty **Inspection results** list does not mean an operation inspection's result was lost; it just is not a quantity-based result.
 
-## 16. Project QMS
+## 17. Project QMS
 
 A project can hold its own quality processes:
 
@@ -547,15 +566,15 @@ A project can hold its own quality processes:
 
 Obligations need an effective SOP revision first.
 
-## 17. Project Controls workspace — More menu (admin tools)
+## 18. Project Controls workspace — More menu (admin tools)
 
 These pages open from the **More** menu of the Project Controls workspace (day plan / schedule views), except **Copy original report**, which is under **Prizm Reports**. Pages marked **(admin)** show only to administrators with Project Controls edit.
 
-### 17.1 Repair activity calendars
+### 18.1 Repair activity calendars
 
 Appears only when an older forecast pinned activities to the project calendar, which holds forecast dates and blocks issuing the daily plan. One click puts exactly those activities back on their inherited calendar and releases the forecast dates. If nothing needs repair, it says so.
 
-### 17.2 Site or rehearsal records (admin)
+### 18.2 Site or rehearsal records (admin)
 
 Tabs: **Daily returns**, **Crew days**, **Daily plans**. Each row shows the date, the record, its current purpose (**Site record** / **Rehearsal** / never reviewed) and the last reason.
 
@@ -563,7 +582,7 @@ To change purpose: choose **Site** or **Rehearsal**, give a reason (6+ character
 
 A rehearsal stays on file but is left out of site totals, commercial allocation and planning. The record itself is never edited.
 
-### 17.3 Returns covered by the opening
+### 18.3 Returns covered by the opening
 
 Opened from the opening line of a task's observation measurement page.
 
@@ -571,31 +590,31 @@ It shows the task's reviewed opening quantity and date, and the pending daily re
 
 Tick the returns the opening already includes, give a reference and a reason, **Preview**, then **Apply**. Those returns are then never measured again. No quantity is added.
 
-### 17.4 Measurement history repair
+### 18.4 Measurement history repair
 
 Shows every measurement plan version per work package and whether it links to the previous one (**First version** / **Linked** / **Linked by review** / **Broken link**).
 
 If links are broken after a task-ID migration, upload the archive (JSON) of the original versions with a reference and a reason, **Preview**, then **Apply**. Original plans and quantities never change.
 
-### 17.5 Step release check (read-only)
+### 18.5 Step release check (read-only)
 
 Choose a day: for each activity it shows **Status** (**Ready** / **Start held** / **Finish held** / **Complete**), **May start**, **May finish**, earliest start/finish, and what it is waiting for (no predecessor declared, predecessor not started/finished, lag not elapsed).
 
 It changes nothing and reporting never depends on it. It needs the calendar's working hours to be declared.
 
-### 17.6 Labour planning authority (admin)
+### 18.6 Labour planning authority (admin)
 
 Shows the current decision and its history.
 
 Record a decision — **"Provisional reservation allowed"** (daily plans may reserve labour before funding is reconciled) or **"Funding activation required"** — with an effective date and a reason. The latest decision counts. It never grants spending or deployment authority.
 
-### 17.7 Resource request budget source (admin)
+### 18.7 Resource request budget source (admin)
 
 Lists approved resource-request lines with their current budget source and how many other matching budget lines exist.
 
 To change source: choose a budget line with the same item, unit and rate, **Preview** to see the reserved quantity before/after, give a reason, then **Move** the line. Quantities, prices and approvals do not change.
 
-### 17.8 Copy original report (admin)
+### 18.8 Copy original report (admin)
 
 **Where:** Prizm Reports → Project review → **Copy original report**.
 
@@ -605,7 +624,7 @@ Choose one, give a reason (10+ characters), **Preview** to see the section count
 
 The copy grants no approval, no client acceptance and no financial action. Reports with images cannot be copied yet.
 
-## 18. Good practice
+## 19. Good practice
 
 - Write a clear reason on every decision: what changed and who decided.
 - Do not approve a funding worksheet as a repeat if any amount changed.
