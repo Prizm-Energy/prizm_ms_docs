@@ -372,6 +372,15 @@
 - في Daily records، التقرير المُنشأ من تقارير يومية يظهر بعلامة **"linked activities"**. التقارير القديمة المكتوبة يدويًا تظهر بعلامة **"No current activity links"** وتنبيهات مثل عدم وجود عدد طاقم أو عدم ربط بحزمة عمل/نشاط.
 - يمكن إدخال تقرير يومي ليوم ماضٍ حتى لو لم تُصدر له خطة؛ تذكر الصفحة ذلك ("No issued plan for this date…").
 
+#### مراجعة محتوى العميل (Client content review)
+
+**المكان:** Work ← **Daily return** ← اختر التاريخ ← **Open daily report** ← **Client content review**.
+
+1. لكل سطر، انقر نقرًا مزدوجًا على **Client draft** واختر **Include** أو **Withhold** أو **Pending review**؛ عدّل **Client wording / remarks** إن احتجت؛ اكتب **Decision reason**.
+2. اكتب **Reason for this review**، اضغط **Preview review**، راجع المعاينة، ثم **Save local content review**.
+
+رقم مراجعة المحتوى يرتفع ويُضاف السطر إلى **Content review history**. هذا يقرر فقط ما قد تحتويه مسودة محتوى العميل — لا يصدر التقرير ولا يغيّر **Company/Client report review**، التي تبقى **Pending Approval**. الكميات والوحدات والصور تبقى مرتبطة بمصدرها ولا يمكن تعديلها هنا.
+
 ### 12.2 تسجيل يوم الطاقم (ساعات الطاقم في التقرير اليومي)
 
 1. احفظ أو أرسل إدخالات اليوم أولًا. **Details / crew** لا يفتح إلا إذا لم يكن في الجدول إدخالات غير محفوظة؛ وإلا تظهر ملاحظة قصيرة "unsaved" بجانب الجدول.

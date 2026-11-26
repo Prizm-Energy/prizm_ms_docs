@@ -372,6 +372,15 @@ Pressing **Submit construction claim** in the activity panel shows the daily wor
 - In Daily records, a report created from returns shows **"linked activities"**. Older hand-written reports show **"No current activity links"** and flags such as no crew count or no WP/activity link.
 - A return can be entered for a past day even when no plan was issued for it; the page says so ("No issued plan for this date…").
 
+#### Reviewing the client content
+
+**Where:** Work → **Daily return** → pick the date → **Open daily report** → **Client content review**.
+
+1. For each row, double-click **Client draft** and choose **Include**, **Withhold** or **Pending review**; edit **Client wording / remarks** if needed; enter a **Decision reason**.
+2. Write a **Reason for this review**, press **Preview review**, check the preview, then **Save local content review**.
+
+The content revision number goes up and the row is added to **Content review history**. This only decides what the client draft may contain — it does not issue the report or change **Company/Client report review**, which stay **Pending Approval**. Quantities, units and photographs stay linked to the source and cannot be edited here.
+
 ### 12.2 Recording the crew day (crew hours into the daily report)
 
 1. Save or submit the day's entries first. **Details / crew** opens only when the table has no unsaved entries; otherwise it shows a short "unsaved" note next to the table.
