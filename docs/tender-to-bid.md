@@ -716,7 +716,11 @@ The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab
    without a person.
 2. **Resources.** On **Resources**, each work package gets its lines: labour, material, plant or subcontract, each with
    a quantity and a rate. Material comes only from approved catalogue items. The rate can come from the latest valid
-   winning quotation of that item.
+   winning quotation of that item. For material lines with no valid price:
+   - **Send unpriced lines to RFQ** puts them on one RFQ for the opportunity in the RFQ module, where you match
+     suppliers, approve and send it as usual;
+   - each line shows **In RFQ** with the RFQ code;
+   - when a winner is picked, the lines take its price on their own.
 3. **Overheads.** Every bid also carries costs outside its work packages. On **Overheads** they sit in the **00**
    branch of the WBS, which the system adds:
    - **00.1** project indirects;
