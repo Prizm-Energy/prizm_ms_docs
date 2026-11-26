@@ -346,7 +346,7 @@ The work grid has the standard grid toolbar above it, like the other Project Con
 
 1. Pick the date.
 2. Under **Add activities**, choose the activity, then **Add activities** (or add a whole work package). Expand the work package to see its activities.
-3. For each activity choose the **Outcome**: **Partial**, **Completed** or **Not done**. Enter **Today** — the quantity done that day; **Cumulative** and **Balance** update on their own. Keep the outcome **Partial** until the scope is finished; a Partial outcome needs a **Completed to date** value.
+3. For each activity choose the **Outcome**: **Partial**, **Completed** or **Not done**. Enter **Today** — the quantity done that day; **Cumulative** and **Balance** update on their own. Keep the outcome **Partial** until the scope is finished; a Partial outcome needs a **Completed to date** value. On the activity's last day, set the outcome to **Completed** and enter the remaining quantity in **Today**, so **Balance** reaches zero.
 4. Use **Details / crew** to record hours, notes and evidence.
 5. Press **Submit daily return**. **Save entered drafts** keeps it unsubmitted.
 
@@ -516,11 +516,17 @@ The result appears under **Outcomes** as **"Awaiting independent review"**. A di
 
 ### 15.3 Review the result (independent reviewer)
 
-**Where:** **Outcomes**.
+**Where:** **Outcomes** → **Review** link at the end of the Action column.
 
-The reviewer **Verifies** or **Rejects** the record. Verify confirms it as correct; Reject sends it back with a reason (for example a wrong signatory or a missing test sheet). A verified result can later be revoked, with a reason.
+The reviewer chooses **Verify** or **Reject**, writes a reason and submits. Verify confirms the record as correct; Reject sends it back with a reason (for example a wrong signatory or a missing test sheet). A verified result can later be revoked, with a reason.
 
 A Rejected outcome can still be Verified — verifying means the record itself is correct, not that the inspected work passed.
+
+### 15.4 Finding operation inspection results
+
+**Where:** Work → **Work & inspections** → **Inspection evidence**.
+
+The **Inspection results** count and list here show only quantity-based (measured) inspection results. A result recorded for an operation inspection (operation scope, no quantity) is not listed here — find it under **Request an operation inspection → Outcomes** instead. An empty **Inspection results** list does not mean an operation inspection's result was lost; it just is not a quantity-based result.
 
 ## 16. Project QMS
 
