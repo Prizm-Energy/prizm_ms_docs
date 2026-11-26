@@ -914,6 +914,44 @@ Tested on ms_dev on 26 Nov 2026, on the same opportunity, after its price revisi
 
     ![Bid pack submitted](./tender-to-bid/img/approvals-bp-11-submitted.jpg)
 
+### Step by step: approve a BOQ change from the tender
+
+Tested on ms_dev on 26 Nov 2026, on OPP-262866, after the client's addendum added two lines to the tender's BOQ.
+
+1. Within the hour, the opportunity's **BOQ** tab says **the tender's BOQ changed** (1). Click **Apply now** (2), or
+   wait: it is applied by itself.
+
+   ![The tender's BOQ changed](./tender-to-bid/img/approvals-bc-01-apply.jpg)
+
+2. **Changes** (1) shows the new revision against the one before. Only real changes are listed: here the two added
+   lines (2). Lines that did not change, even two with the same description, are not listed.
+
+   ![Only the real changes](./tender-to-bid/img/approvals-bc-02-changes.jpg)
+
+3. The revision goes to **Approvals**. In **My Approvals** (an administrator uses **Everyone (as administrator)** (1)),
+   the BOQ change waits for its approver (2).
+
+   ![The BOQ change in My Approvals](./tender-to-bid/img/approvals-bc-03-my-approvals.jpg)
+
+4. Open it. **Approve** (2) keeps the change. **Reject** (3), with a reason, rolls the BOQ back as it was, as a new
+   revision; nothing is deleted. The warning (1) shows when an administrator decides for the approver.
+
+   ![Decide the BOQ change](./tender-to-bid/img/approvals-bc-04-decide.jpg)
+
+5. The change is **Approved** (1), with who decided and when (2).
+
+   ![BOQ change approved](./tender-to-bid/img/approvals-bc-05-approved.jpg)
+
+6. On **Revisions**, the new revision is **Reviewed** with its 7 lines (1). An earlier change that was rejected shows
+   as **Rolled back**, with the roll-back revision after it (2).
+
+   ![BOQ revisions](./tender-to-bid/img/approvals-bc-06-revisions.jpg)
+
+7. On **WBS-CBS → Cost accounts**, the cost snapshot is **Out of date** because the BOQ changed (1). The checks name
+   the new lines that need a work package (2). Link them, then take a new snapshot before pricing again.
+
+   ![Snapshot out of date](./tender-to-bid/img/approvals-bc-07-snapshot.jpg)
+
 ### An opportunity with no tender BOQ: the first BOQ from the client's file
 
 When an opportunity has no BOQ (no tender, or a tender without a BOQ), its first BOQ comes from the client's files:
