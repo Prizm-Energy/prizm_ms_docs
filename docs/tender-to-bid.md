@@ -794,6 +794,111 @@ An **administrator** can decide any waiting step with the same buttons:
 
 **Reassign** only moves a step to another person; it does not decide it.
 
+### Step by step: approve a price revision
+
+This example was tested on ms_dev on 26 Nov 2026, on opportunity OPP-262866: a tender with 5 BOQ lines and a cost
+snapshot of 10,195.76 AED. The red numbers on each picture match the steps.
+
+1. On **WBS-CBS → Pricing**, open the draft price revision. Set the **Margin %** for all lines (1). Here it is 5%, under
+   the 8% floor, so every line shows **Under the floor** (2), and the **gap to approve** is 350 AED (3).
+
+   ![Draft price revision under the floor](./tender-to-bid/img/approvals-pr-01-draft.jpg)
+
+2. Open **Checks** (1). A revision cannot be submitted while a check fails. Here two CBS codes, B10 and M, have no GL
+   account (2).
+
+   ![Checks: CBS codes with no GL account](./tender-to-bid/img/approvals-pr-02-checks.jpg)
+
+3. On the **CBS codes** page, set the GL account on the **parent** code. Lower codes use their parent's account unless
+   they have their own. Choose the account (1), write the reason (2) and save (3). Here B (bid costs) takes
+   **Commissions and fees**.
+
+   ![Set the GL account of a CBS code](./tender-to-bid/img/approvals-pr-03-gl-account.jpg)
+
+   M (material) takes **Cost of materials - COS** (1).
+
+   ![GL account saved](./tender-to-bid/img/approvals-pr-04-gl-saved.jpg)
+
+4. Back on the revision, **Checks (0)** (1) means every check passes. Click **Submit** (2).
+
+   ![Every check passes](./tender-to-bid/img/approvals-pr-05-checks-pass.jpg)
+
+5. The revision is **In approval** (1), because lines are under the floor. **Approvals** (2) opens its request.
+
+   ![Price revision in approval](./tender-to-bid/img/approvals-pr-06-in-approval.jpg)
+
+6. The approver finds the step in **Approvals → My Approvals**. An administrator chooses **Everyone (as administrator)**
+   (1) to see every waiting step. The **Seat** column names the approver (2).
+
+   ![The price revision step in My Approvals](./tender-to-bid/img/approvals-pr-07-my-approvals.jpg)
+
+7. Open the step. An administrator sees a warning that the decision is made on the approver's behalf (1). Click
+   **Approve** (2), or **Reject** with a reason.
+
+   ![Decide the price revision](./tender-to-bid/img/approvals-pr-08-decide.jpg)
+
+8. The step is **Approved** (1). The **Chain** tab shows who decided and when (2).
+
+   ![Price revision approved](./tender-to-bid/img/approvals-pr-09-approved.jpg)
+
+9. Back on Pricing, the revision is **Approved** (1) and **Sent to TenderOps for the proposal** (2). The proposal and
+   the bid pack use this price.
+
+   ![Approved price sent to TenderOps](./tender-to-bid/img/approvals-pr-10-sent.jpg)
+
+### Step by step: approve and submit a bid pack
+
+Tested on ms_dev on 26 Nov 2026, on the same opportunity, after its price revision was approved.
+
+1. On the opportunity, open **Virtual Tendering Team → Bid pack** (1) and click **Draft bid pack** (2).
+
+   ![Draft a bid pack](./tender-to-bid/img/approvals-bp-01-draft.jpg)
+
+2. Click **Add document**. Choose the document (1), its part and its role (2), then **Add document** (3). Add at least
+   one document to each part: technical, commercial and legal. Checks lists each part that has no document yet.
+
+   ![Add a document to a part](./tender-to-bid/img/approvals-bp-02-add-document.jpg)
+
+3. When **Checks (0)** (1) shows and each part has its document (2), click **Freeze and send for approval** (3).
+
+   ![Every part has a document](./tender-to-bid/img/approvals-bp-03-documents.jpg)
+
+4. The pack is **In approval** (1). On **Parts and approvals**, each part waits in Approvals (2). **Open in Approvals**
+   (3) opens the decision page of that part.
+
+   ![Each part in Approvals](./tender-to-bid/img/approvals-bp-04-parts.jpg)
+
+5. In **My Approvals** the three part approvals are listed (2). An administrator uses **Everyone (as administrator)**
+   (1).
+
+   ![The three part approvals](./tender-to-bid/img/approvals-bp-05-my-approvals.jpg)
+
+6. Open each part and click **Approve** (2). The warning (1) shows when an administrator decides for the approver.
+
+   ![Approve a part](./tender-to-bid/img/approvals-bp-06-decide-part.jpg)
+
+7. When every part is **Approved** (1), with the time of each decision (2), the **release** opens in Approvals on its
+   own.
+
+   ![Every part approved](./tender-to-bid/img/approvals-bp-07-parts-approved.jpg)
+
+8. The release (1) is raised by the person who froze the pack. Approve it the same way.
+
+   ![The release in My Approvals](./tender-to-bid/img/approvals-bp-08-release.jpg)
+
+9. The pack is **Released** (1). Click **Record submission** (2).
+
+   ![Released bid pack](./tender-to-bid/img/approvals-bp-09-released.jpg)
+
+10. Choose the channel and enter the reference and the time (1), attach the receipt (2) and click **Record submission**
+    (3). A pack is submitted once.
+
+    ![Record the submission](./tender-to-bid/img/approvals-bp-10-submission.jpg)
+
+11. The pack is **Submitted** (1). The receipt is kept with its hash and filed in the opportunity's Dispatch layer (2).
+
+    ![Bid pack submitted](./tender-to-bid/img/approvals-bp-11-submitted.jpg)
+
 ### An opportunity with no tender BOQ: the first BOQ from the client's file
 
 When an opportunity has no BOQ (no tender, or a tender without a BOQ), its first BOQ comes from the client's files:

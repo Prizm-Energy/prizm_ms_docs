@@ -670,6 +670,106 @@
 
 **Reassign** ينقل الخطوة إلى شخص آخر فقط، ولا يتخذ القرار فيها.
 
+### خطوة بخطوة: اعتماد مراجعة سعر
+
+جُرّب هذا المثال على ms_dev يوم 26 نوفمبر 2026 على الفرصة OPP-262866: مناقصة فيها 5 بنود في جدول الكميات ولقطة
+تكلفة بقيمة 10,195.76 درهم. الأرقام الحمراء على كل صورة تطابق الخطوات. الصور من الواجهة الإنجليزية.
+
+1. في **WBS-CBS ← Pricing** افتح مسودة مراجعة السعر. حدّد **Margin %** لكل البنود (1). هنا 5%، أقل من الحد الأدنى 8%،
+   فيظهر على كل بند **Under the floor** (2)، و**الفرق المطلوب اعتماده** 350 درهماً (3).
+
+   ![مسودة مراجعة سعر تحت الحد الأدنى](./tender-to-bid/img/approvals-pr-01-draft.jpg)
+
+2. افتح **Checks** (1). لا تُقدَّم المراجعة ما دام فحص واحد لا ينجح. هنا كودان في الـ CBS، هما B10 وM، بدون حساب GL (2).
+
+   ![الفحوصات: أكواد CBS بدون حساب GL](./tender-to-bid/img/approvals-pr-02-checks.jpg)
+
+3. في صفحة **CBS codes** حدّد حساب الـ GL على الكود **الأب**. الأكواد الأدنى تأخذ حساب الأب ما لم يكن لها حساب خاص.
+   اختر الحساب (1) واكتب السبب (2) واحفظ (3). هنا يأخذ B (تكاليف العطاء) حساب **Commissions and fees**.
+
+   ![تحديد حساب GL لكود CBS](./tender-to-bid/img/approvals-pr-03-gl-account.jpg)
+
+   ويأخذ M (المواد) حساب **Cost of materials - COS** (1).
+
+   ![حُفظ حساب GL](./tender-to-bid/img/approvals-pr-04-gl-saved.jpg)
+
+4. في المراجعة، **Checks (0)** (1) تعني أن كل الفحوصات نجحت. اضغط **Submit** (2).
+
+   ![كل الفحوصات ناجحة](./tender-to-bid/img/approvals-pr-05-checks-pass.jpg)
+
+5. أصبحت المراجعة **In approval** (1) لأن بنوداً تحت الحد الأدنى. ورابط **Approvals** (2) يفتح طلبها.
+
+   ![مراجعة السعر في الاعتماد](./tender-to-bid/img/approvals-pr-06-in-approval.jpg)
+
+6. يجد المعتمد الخطوة في **Approvals ← My Approvals**. والمسؤول يختار **Everyone (as administrator)** (1) ليرى كل
+   الخطوات المنتظرة. عمود **Seat** يذكر المعتمد (2).
+
+   ![خطوة مراجعة السعر في My Approvals](./tender-to-bid/img/approvals-pr-07-my-approvals.jpg)
+
+7. افتح الخطوة. يرى المسؤول تنبيهاً بأن القرار يُتخذ نيابةً عن المعتمد (1). اضغط **Approve** (2)، أو **Reject** مع سبب.
+
+   ![القرار في مراجعة السعر](./tender-to-bid/img/approvals-pr-08-decide.jpg)
+
+8. أصبحت الخطوة **Approved** (1). ويعرض تبويب **Chain** من اتخذ القرار ومتى (2).
+
+   ![اعتُمدت مراجعة السعر](./tender-to-bid/img/approvals-pr-09-approved.jpg)
+
+9. في Pricing أصبحت المراجعة **Approved** (1) و**Sent to TenderOps for the proposal** (2). العرض وحزمة العطاء
+   يستخدمان هذا السعر.
+
+   ![أُرسل السعر المعتمد إلى TenderOps](./tender-to-bid/img/approvals-pr-10-sent.jpg)
+
+### خطوة بخطوة: اعتماد حزمة عطاء وتقديمها
+
+جُرّب على ms_dev يوم 26 نوفمبر 2026 على الفرصة نفسها بعد اعتماد مراجعة سعرها.
+
+1. في الفرصة افتح **Virtual Tendering Team ← Bid pack** (1) واضغط **Draft bid pack** (2).
+
+   ![إنشاء مسودة حزمة عطاء](./tender-to-bid/img/approvals-bp-01-draft.jpg)
+
+2. اضغط **Add document**. اختر المستند (1) وجزأه ودوره (2)، ثم **Add document** (3). أضف مستنداً واحداً على الأقل
+   لكل جزء: فني وتجاري وقانوني. وتعرض الفحوصات كل جزء ليس فيه مستند بعد.
+
+   ![إضافة مستند إلى جزء](./tender-to-bid/img/approvals-bp-02-add-document.jpg)
+
+3. عندما تظهر **Checks (0)** (1) ويكون في كل جزء مستنده (2)، اضغط **Freeze and send for approval** (3).
+
+   ![في كل جزء مستند](./tender-to-bid/img/approvals-bp-03-documents.jpg)
+
+4. أصبحت الحزمة **In approval** (1). في **Parts and approvals** ينتظر كل جزء في الاعتمادات (2). ورابط **Open in
+   Approvals** (3) يفتح صفحة القرار لذلك الجزء.
+
+   ![كل جزء في الاعتمادات](./tender-to-bid/img/approvals-bp-04-parts.jpg)
+
+5. في **My Approvals** تظهر اعتمادات الأجزاء الثلاثة (2). والمسؤول يستخدم **Everyone (as administrator)** (1).
+
+   ![اعتمادات الأجزاء الثلاثة](./tender-to-bid/img/approvals-bp-05-my-approvals.jpg)
+
+6. افتح كل جزء واضغط **Approve** (2). يظهر التنبيه (1) عندما يتخذ المسؤول القرار نيابةً عن المعتمد.
+
+   ![اعتماد جزء](./tender-to-bid/img/approvals-bp-06-decide-part.jpg)
+
+7. عندما تصبح كل الأجزاء **Approved** (1)، مع وقت كل قرار (2)، يُفتح **الإطلاق** في الاعتمادات تلقائياً.
+
+   ![اعتُمدت كل الأجزاء](./tender-to-bid/img/approvals-bp-07-parts-approved.jpg)
+
+8. يرفع الإطلاقَ (1) الشخصُ الذي ثبّت الحزمة. اعتمده بنفس الطريقة.
+
+   ![الإطلاق في My Approvals](./tender-to-bid/img/approvals-bp-08-release.jpg)
+
+9. أصبحت الحزمة **Released** (1). اضغط **Record submission** (2).
+
+   ![حزمة عطاء مُطلقة](./tender-to-bid/img/approvals-bp-09-released.jpg)
+
+10. اختر قناة التقديم وأدخل المرجع والوقت (1)، وأرفق الإيصال (2)، واضغط **Record submission** (3). الحزمة تُقدَّم
+    مرة واحدة.
+
+    ![تسجيل التقديم](./tender-to-bid/img/approvals-bp-10-submission.jpg)
+
+11. أصبحت الحزمة **Submitted** (1). يُحفظ الإيصال ببصمته ويُودع في طبقة الإرسال (Dispatch) للفرصة (2).
+
+    ![قُدّمت حزمة العطاء](./tender-to-bid/img/approvals-bp-11-submitted.jpg)
+
 ### فرصة بدون جدول كميات من مناقصة: أول جدول كميات من ملف العميل
 
 عندما لا يكون للفرصة جدول كميات (بدون مناقصة، أو مناقصة بدون جدول كميات)، يأتي أول جدول من ملفات العميل:
