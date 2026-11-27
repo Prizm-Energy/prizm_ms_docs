@@ -333,11 +333,50 @@ The units list shows:
 Imports and manual entry can leave more than one unit sharing the same symbol (for example, several units all named "Each" / "EA"). Review & Merge finds and resolves these duplicates without losing any of their history.
 
 1. On the Units list, filter by **Symbol** to see every unit sharing that symbol, and decide which one to keep as the **Survivor** — usually the oldest one, and the one already acting as a category's base unit if there is one.
+
+    ![Units list filtered by a shared symbol](resource-manager/img/merge-units/01_units_filtered_duplicates.png)
+
+    1. The **Symbol** filter.
+    2. The duplicate rows it turns up.
+    3. **Review & Merge**, to start resolving them.
+
 2. Open **Review & Merge**, then **New** to start a merge.
 3. In **Search Units**, type the unit's name. Click **Parent** on the Survivor, then click **Child** on each duplicate to add it to the merge.
+
+    ![Selecting the Survivor as Parent and a duplicate as Child](resource-manager/img/merge-units/02_select_parent_and_children.png)
+
+    1. **Search Units** — type the name to search.
+    2. **Parent** — the unit to keep (the Survivor).
+    3. **Child** — each duplicate to merge into it.
+    4. **Preview merge**, once every duplicate is added.
+
 4. The search box shows only a limited number of matches. Add the rest from the preview's **Suggested similar records** list, one at a time, waiting for the preview to refresh after each addition.
+
+    ![Suggested similar records, add to merge](resource-manager/img/merge-units/04_suggested_similar_add_to_merge.png)
+
+    1. **Suggested similar records** — units that already share a name with the Survivor but did not fit in the search results.
+    2. **Add to merge** — add one, then wait for the preview to refresh before adding the next.
+
 5. Click **Preview merge**. The impact view lists the records that will move to the Survivor (budget items, item specifications, BOQ lines, opportunity milestones and similar references) and the history rows that stay as they are (RFQs, technical inquiries, job estimations, item versions).
+
+    ![Preview merge impact and survivor category box](resource-manager/img/merge-units/03_preview_impact_and_suggestions.png)
+
+    1. Records that move to the Survivor.
+    2. Merged records are retired, never deleted, and the merge can be rolled back.
+    3. The Survivor's category decision (see the next step).
+
 6. Under **Required decisions**, confirm the Survivor's **Category**. If the Survivor is already a category's base unit, the merge will not allow **None**; confirm that category instead, leave the conversion **factor** empty, then **Apply to the Survivor**.
+
+    ![Required decisions and a blocking integrity issue](resource-manager/img/merge-units/05a_required_decisions_and_blocker.png)
+
+    1. **Required decisions** — what the Survivor still needs before it can be merged.
+    2. **Blocking integrity issues** — here, the Survivor had to stay its category's base unit; **Execute merge** stays disabled until every blocker clears.
+
+    ![Survivor category set, Execute merge enabled](resource-manager/img/merge-units/05_survivor_category_decision.png)
+
+    1. The category chosen and **Apply to the Survivor**.
+    2. **Execute merge**, now enabled.
+
 7. Once every required decision is resolved, click **Execute merge**. A confirmation message names the Survivor and how many units were merged into it.
 
 Merged units are **retired, not deleted** — nothing in their history is lost, and the merge can be undone.
@@ -345,7 +384,29 @@ Merged units are **retired, not deleted** — nothing in their history is lost, 
 **Checking and rolling back a merge**
 
 - Filter the Units list by the same symbol again — only the Survivor should remain.
+
+    ![Units filtered by the same symbol after the merge](resource-manager/img/merge-units/09_units_after_merge.png)
+
+    1. Only the Survivor is left for that symbol.
+    2. The page's row count confirms the duplicates are gone.
+
 - Open **Review & Merge** to see the merge history: each entry shows its status, how many units it merged, a **Details** view (the references that moved, with their audit trail), and a **Rollback** action.
+
+    ![Merge history list](resource-manager/img/merge-units/06_merge_history.png)
+
+    1. A merge entry — Survivor, how many units were merged, and its status.
+    2. **Rollback**, if the merge needs to be undone.
+
+    ![Merge Details - Survivor and merged units](resource-manager/img/merge-units/07_merge_details.png)
+
+    1. The Survivor and the full list of merged units.
+
+    ![Merge Details - references moved and audit trail](resource-manager/img/merge-units/08_merge_details_references.png)
+
+    1. **References moved** — which tables were repointed to the Survivor, and which only kept history.
+    2. Confirmation that the merge can be rolled back.
+    3. **Audit trail** — who ran the merge and when.
+
 - Use **Rollback** only to undo a merge; it restores the merged units and reverses the moved references.
 
 !!! tip "Picking the Survivor"
