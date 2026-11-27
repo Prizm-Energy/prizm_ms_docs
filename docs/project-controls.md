@@ -346,9 +346,11 @@ The work grid has the standard grid toolbar above it, like the other Project Con
 
 1. Pick the date.
 2. Under **Add activities**, choose the activity, then **Add activities** (or add a whole work package). Expand the work package to see its activities.
-3. For each activity choose the **Outcome**: **Partial**, **Completed** or **Not done**. Enter **Today** — the quantity done that day; **Cumulative** and **Balance** update on their own. Keep the outcome **Partial** until the scope is finished; a Partial outcome needs a **Completed to date** value. On the activity's last day, set the outcome to **Completed** and enter the remaining quantity in **Today**, so **Balance** reaches zero.
+3. For each activity choose the **Outcome**: **Partial**, **Completed** or **Not done**. Enter **Completed to date** — the running total completed so far, including work already submitted on earlier days, not just the day's own quantity; **Today** is then worked out as the difference and shown on its own, and **Balance** updates too. A **Completed to date** value lower than the already-submitted total is refused and the cell stays empty. Keep the outcome **Partial** until the scope is finished. On the activity's last day, set the outcome to **Completed** and enter the full completed quantity in **Completed to date**, so **Balance** reaches zero.
 4. Use **Details / crew** to record hours, notes and evidence.
 5. Press **Submit daily return**. **Save entered drafts** keeps it unsubmitted.
+
+**Recommended order:** press **Save entered drafts** first. Then, for each activity, open **Details / crew** to set **Location / work face**, use **Manage crew day** to enter each named crew member's working hours and the unpaid break (12.2), press **Save shared crew day**, and finally press **Submit construction claim**.
 
 The page shows **"Daily return saved"**. The work package shows its reported percentage, and the Activities view shows **Today**, the last submitted return date and the balance remaining.
 
