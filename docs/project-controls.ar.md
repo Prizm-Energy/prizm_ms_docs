@@ -527,6 +527,18 @@
 
 لا تكتب في الجدول عندما لا يكون أي مربع مُركَّزًا عليه — بعض الحروف اختصارات للصفحة.
 
+### 14.9 إنشاء حزمة توريد (Procurement package)
+
+**المكان:** WBS builder ← تبويب **Procurement** ← تبويب فرعي **Procurement Packages** ← **New Package**.
+
+1. املأ **Package Code** و**Scope** (مطلوبان)، و**Lead Time** (بالأسابيع)، وتاريخ **Required On-Site**، وتاريخ **Award By**، و**Status** (**Planned** أو **Enquiry** أو **Awarded** أو **Delivered**)، وأي **Notes**.
+2. اضغط **Save Package Details**. تظهر الصفحة **"Saved."**، وتُفتح تحتها تبويبات **Mapped WBS Elements** و**Available WBS Elements**. قبل أول حفظ، يطلب مربع الحوار حفظ بيانات الحزمة أولًا؛ لا يمكن ربط العناصر إلا بعد حفظها.
+3. في **Available WBS Elements**، اضغط **Add** على حزمة عمل لنقلها إلى **Mapped WBS Elements**؛ أزل عنصرًا مرتبطًا بأيقونة السلة الحمراء.
+
+تُظهر قائمة الحزم لكل حزمة الرموز المرتبطة بها، والقيمة، ومدة التوريد، وتاريخ الترسية، والحالة. **Manage** يعيد فتح الحزمة؛ **Delete package** يحذفها مع ارتباطاتها.
+
+حالة الحزمة لا تُزيل [تنبيه التوريد طويل المهلة](#141-procurement-long-lead-alerts) عن حزمة العمل — التنبيه يُزال فقط عند تعليم حزمة العمل نفسها كـ**Ordered**.
+
 ## 15. أدوات الجدول الزمني (Schedule tools)
 
 **المكان:** Schedule ← **Planning tools**.

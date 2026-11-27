@@ -527,6 +527,18 @@ A lower code uses its parent's account unless it has its own, so mapping the lev
 
 Do not type into the grid when no box has focus — some letters are page shortcuts.
 
+### 14.9 Create a procurement package
+
+**Where:** WBS builder → **Procurement** tab → **Procurement Packages** sub-tab → **New Package**.
+
+1. Fill in the **Package Code** and **Scope** (both required), the **Lead Time** (in weeks), the **Required On-Site** date, the **Award By** date, the **Status** (**Planned**, **Enquiry**, **Awarded** or **Delivered**), and any **Notes**.
+2. Click **Save Package Details**. The page shows **"Saved."**, and the **Mapped WBS Elements** and **Available WBS Elements** tabs open below. Before the first save, the dialog asks to save the package details first; elements can only be mapped once it has been saved.
+3. In **Available WBS Elements**, click **Add** on a work package to move it into **Mapped WBS Elements**; remove a mapped element with the red bin icon.
+
+The package list shows each package's mapped codes, value, lead time, award-by date and status. **Manage** reopens a package; **Delete package** removes it along with its element mappings.
+
+A package's status does not clear a work package's [long-lead alert](#141-long-lead-alerts-procurement-long-lead-alerts) — the alert only clears once the work package itself is marked **Ordered**.
+
 ## 15. Schedule tools
 
 **Where:** Schedule → **Planning tools**.
