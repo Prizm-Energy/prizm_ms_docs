@@ -326,6 +326,31 @@ The units list shows:
 2. Provide category name
 3. Link it to one of the SI base units
 
+#### Review & Merge duplicate units
+
+**Where:** Resource Manager → Units → **Review & Merge**.
+
+Imports and manual entry can leave more than one unit sharing the same symbol (for example, several units all named "Each" / "EA"). Review & Merge finds and resolves these duplicates without losing any of their history.
+
+1. On the Units list, filter by **Symbol** to see every unit sharing that symbol, and decide which one to keep as the **Survivor** — usually the oldest one, and the one already acting as a category's base unit if there is one.
+2. Open **Review & Merge**, then **New** to start a merge.
+3. In **Search Units**, type the unit's name. Click **Parent** on the Survivor, then click **Child** on each duplicate to add it to the merge.
+4. The search box shows only a limited number of matches. Add the rest from the preview's **Suggested similar records** list, one at a time, waiting for the preview to refresh after each addition.
+5. Click **Preview merge**. The impact view lists the records that will move to the Survivor (budget items, item specifications, BOQ lines, opportunity milestones and similar references) and the history rows that stay as they are (RFQs, technical inquiries, job estimations, item versions).
+6. Under **Required decisions**, confirm the Survivor's **Category**. If the Survivor is already a category's base unit, the merge will not allow **None**; confirm that category instead, leave the conversion **factor** empty, then **Apply to the Survivor**.
+7. Once every required decision is resolved, click **Execute merge**. A confirmation message names the Survivor and how many units were merged into it.
+
+Merged units are **retired, not deleted** — nothing in their history is lost, and the merge can be undone.
+
+**Checking and rolling back a merge**
+
+- Filter the Units list by the same symbol again — only the Survivor should remain.
+- Open **Review & Merge** to see the merge history: each entry shows its status, how many units it merged, a **Details** view (the references that moved, with their audit trail), and a **Rollback** action.
+- Use **Rollback** only to undo a merge; it restores the merged units and reverses the moved references.
+
+!!! tip "Picking the Survivor"
+    Prefer the oldest unit, and keep whichever one is already a category's base unit — the merge blocks clearing a base unit's category to **None**.
+
 ### System Enforcement
 
 The system enforces consistency by:
@@ -903,7 +928,7 @@ The module provides dedicated merge handlers for maintaining clean data:
 |-----------|---------|
 | **Merge Items** | Consolidate duplicate item records |
 | **Merge Specs** | Combine duplicate specification definitions |
-| **Merge Units** | Unify duplicate unit of measurement records |
+| **Merge Units** | Unify duplicate unit of measurement records — see [Review & Merge duplicate units](#review--merge-duplicate-units) under Units & Measurements |
 
 Each merge tool shows differences between records, lets you choose which values to keep, and archives the merged duplicates.
 
