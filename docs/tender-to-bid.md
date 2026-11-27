@@ -658,6 +658,26 @@ sending (Settings → Approvals and gates: 3 days by default, with Friday and Sa
 waiting for approval or past their date, and an RFI past its date also shows on **Where bids wait**, under the person
 who recorded the sending.
 
+#### The email to the client, and its PDF
+
+Each RFI has its own email, in the RFI window under **Email to the client**.
+
+1. The email starts from the company template (subject and text in English and Arabic, set in **Opportunities →
+   Settings → TenderOps → Approvals and gates**). Choose the **Language**, then fill **To** and **Cc**.
+2. **Draft with AI** rewrites the text from the question and the tender. Read it and change what you need: nothing is
+   sent by AI.
+3. **Save email**. Each save is a new version, and you can still edit it until the RFI is recorded as sent.
+4. **Copy email**, paste it into your mail and send it. Then **Record as sent**: the last saved version is kept as the
+   one sent and can no longer change.
+5. At that moment the system saves the sent email as a PDF named `RFI-00n - subject.pdf` straight in the
+   opportunity's **06 - Communications** folder. **PDF** opens it, and the text next to it says where it is kept.
+
+![The sent RFI email: PDF, and where it is kept](./tender-to-bid/img/rfi-pdf-01.png)
+
+- The PDF is in the email's language; an Arabic email reads right to left.
+- On an opportunity whose files are on SharePoint, the PDF is not written there; **PDF** still opens it from the RFI.
+- If saving the PDF fails, the send is still recorded; the system tries again every hour.
+
 ### When the tender's BOQ changes (addendum)
 
 When the client changes the tender's BOQ (an addendum or a revised BOQ), the opportunity's BOQ follows by itself within
