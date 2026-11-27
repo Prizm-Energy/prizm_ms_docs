@@ -26,7 +26,7 @@ written here.
 | **Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed |
 | Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
 | **Automation (foundation)** | The run starts on its own, decisions alert people inside the ERP, tender triage and conversion follow one set of rules, tender documents are indexed only after a person approves it, the tender stays the source and the opportunity owns its BOQ, each business stage shows the AI team stages that feed it, and administrators are told when n8n delivery stops. | ✅ Closed |
-| The bid stages | Documents, work breakdown, procurement, pricing, approvals, submission and award. | In progress: every document version is kept, outputs from an old version are flagged, documents are registered and marked ready, and problems go on an issue register; the lines that need a supplier price are grouped into RFQ packages, one RFQ per supplier trade; each package is priced from its own RFQ's winner and the bid's priced items are listed with their supplier and quotation (in production since 27 Nov 2026) |
+| The bid stages | Documents, work breakdown, procurement, pricing, approvals, submission and award. | In progress: every document version is kept, outputs from an old version are flagged, documents are registered and marked ready, and problems go on an issue register; the lines that need a supplier price are grouped into RFQ packages, one RFQ per supplier trade; each package is priced from its own RFQ's winner and the bid's priced items are listed with their supplier and quotation (in production since 27 Nov 2026); each work package's materials, manpower, equipment and services are proposed from company items, and the new items are approved automatically (built and tested, not yet released) |
 
 ## Open the Virtual Tendering Team
 
@@ -757,6 +757,34 @@ The cost and the price of the bid are built on the opportunity's **WBS-CBS** tab
 6. **Submit.** If no line is under the floor (8%) or at a loss, the price is approved at once. Otherwise the request goes
    to **Approvals** with the gap as its amount, and the policy for "Opportunity price revision" decides who approves.
 7. The approved price goes to TenderOps, and the proposal is made from it. A new approved price replaces the old one.
+
+### Resources of each work package from company items
+
+After an AI WBS is applied to the opportunity, the system fills each work package's **Resources** on its own, once
+an hour. You do not have to add the lines by hand.
+
+1. **Needs.** The AI reads the tender analysis, the work packages and their BOQ lines. It lists what each work package
+   needs under its CBS codes: **materials**, **manpower**, **equipment** and **services**, each with a unit and a
+   quantity rule (per unit of the work package, a fixed quantity, or a crew for a number of days). A work package and
+   CBS code that already have a line get nothing new, and a line a person added is never changed.
+2. **Items.** Each need is searched in the Materials catalogue.
+   - When an approved company item matches well enough (a search score of at least **0.75**), that item is used.
+   - Otherwise a new **company item** is added in Materials. It goes through Materials' normal formatting and
+     classification. If Materials finds the same item already exists, that item is used instead.
+3. **Approval.** When the classification of an item the system added has a suggested commodity, the system approves it
+   automatically as the **Prizm Automation** account, through Materials' own Classification Review. That account needs
+   the **AI Classification Review** permission. An item with no suggestion waits for a person on **Classification
+   Review**.
+4. **Lines.** Once its item is approved, the need becomes a line on **Resources** (source: catalogue). The line is then
+   priced like any catalogue line: from the item's latest valid winning quotation, or through an **RFQ package**.
+
+**Settings** (Opportunities → Settings → TenderOps → AI):
+
+| Setting | What it does |
+|---|---|
+| Propose resource lines from company items | Turns the hourly proposal on or off. |
+| Lowest match score to reuse an item | 0.3 to 1 (default 0.75). Below it, a new company item is added. |
+| Approve new resource items automatically | When off, a person approves every new item on Classification Review. |
 
 ### See the priced items, with their supplier and quotation
 
