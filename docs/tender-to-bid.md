@@ -26,7 +26,7 @@ written here.
 | **Diagnose & freeze** | Shows where bids actually wait and on whom, with a frozen specification. | ✅ Closed |
 | Right approver, right wait | Each decision goes to the right person, with a clear waiting time. | In progress |
 | **Automation (foundation)** | The run starts on its own, decisions alert people inside the ERP, tender triage and conversion follow one set of rules, tender documents are indexed only after a person approves it, the tender stays the source and the opportunity owns its BOQ, each business stage shows the AI team stages that feed it, and administrators are told when n8n delivery stops. | ✅ Closed |
-| The bid stages | Documents, work breakdown, procurement, pricing, approvals, submission and award. | In progress: every document version is kept, outputs from an old version are flagged, documents are registered and marked ready, and problems go on an issue register; the lines that need a supplier price are grouped into RFQ packages, one RFQ per supplier trade (on ms_dev since 26 Nov 2026); each package is priced from its own RFQ's winner and the bid's priced items are listed with their supplier and quotation (tested locally) |
+| The bid stages | Documents, work breakdown, procurement, pricing, approvals, submission and award. | In progress: every document version is kept, outputs from an old version are flagged, documents are registered and marked ready, and problems go on an issue register; the lines that need a supplier price are grouped into RFQ packages, one RFQ per supplier trade each package is priced from its own RFQ's winner and the bid's priced items are listed with their supplier and quotation (in production since 27 Nov 2026) |
 
 ## Open the Virtual Tendering Team
 
