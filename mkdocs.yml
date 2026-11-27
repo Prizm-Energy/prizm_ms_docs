@@ -8,6 +8,9 @@ theme:
     - navigation.sections
     - content.code.copy
 
+markdown_extensions:
+  - admonition
+
 plugins:
   - search
   - i18n:
