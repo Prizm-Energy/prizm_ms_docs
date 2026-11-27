@@ -377,7 +377,9 @@ Imports and manual entry can leave more than one unit sharing the same symbol (f
     1. The category chosen and **Apply to the Survivor**.
     2. **Execute merge**, now enabled.
 
-7. Once every required decision is resolved, click **Execute merge**. A confirmation message names the Survivor and how many units were merged into it.
+7. Once every required decision is resolved, click **Execute merge**. A confirmation message names the Survivor and how many units were merged into it, for example:
+
+    > "Merged 61 into Each [EA] (#4). You can roll this merge back." — with a **Roll back** link.
 
 Merged units are **retired, not deleted** — nothing in their history is lost, and the merge can be undone.
 
