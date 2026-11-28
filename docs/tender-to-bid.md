@@ -234,6 +234,17 @@ responsible person is told even when only the authority or an administrator may 
   creation-event reconciliation and VTO source parity reconciliation. All three are off by default. A job
   that is off does no work and writes nothing to the error log; switch one on only when its server and data
   are ready.
+- **AI tools during a stage**, in the AI review section (TenderOps 2.83.0). When **Agent loop** is on, the AI can
+  look things up while it works on a stage. Each thing it can look up has its own switch, named after the tool:
+    - **search_vector_db**: search the documents of the tender by meaning. With this one off, stages run in one pass
+      with the evidence fetched beforehand, and the other tools are not used.
+    - **search_catalog**: list the files of the tender in the Storage Box.
+    - **get_boq_lines**: read the BOQ lines taken from the tender documents.
+    - **get_cost_snapshot and get_price_revision**: read the frozen cost and the approved price revision (one switch).
+    - Searching past bids keeps its own switch, **Use past bids as precedent**.
+
+    All are on by default. A tool that is off is not offered to the AI. The tools only read; none of them changes
+    anything.
 
 ### Convert a tender: one tender, one opportunity
 
