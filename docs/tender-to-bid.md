@@ -622,6 +622,37 @@ settings* can change the stage owners; everyone else sees them.
 
 ## The bid stages
 
+### Follow the bid cycle
+
+Every opportunity converted from a tender has a **bid cycle**: the steps of the bid, from the conversion of the tender to
+the submission, and where each one stands (Opportunities 2.60.0, TenderOps 2.86.0; Supply opportunities first). Open the
+opportunity, then **Virtual Tendering Team → Run → Bid cycle**. (**Run** now has two tabs inside it: **Run**, the run as
+before, and **Bid cycle**.)
+
+Each row is one step, and one row per file for the document steps:
+
+| Column | What it shows |
+|---|---|
+| **Stage** | 1. Documents, 2. Tender study, 3. BOQ and items, 4. Pricing, 5. Submission. |
+| **Step** | What is done, for example *Approve the BOQ revision*. Select it to open the screen where the work is done. |
+| **File** | The file the step is about, for the document and BOQ steps. |
+| **Done by** | The system, an approval (automatic or by a person), a person, or an outside party (the suppliers, in the RFQ module). |
+| **State** | Done, Waiting for an earlier step, Ready (the system does it), Waiting for a person, In progress, Redo (an input changed), Failed, or Not tracked yet. |
+| **What happened** | The result, for example *8 work packages, each with a CBS code*. |
+| **Waiting for** | The earlier steps it still waits for. |
+
+Select a row to see the step's history: each change of its state, with the date.
+
+A step starts only when the result it needs exists, not just when the step before it ends: for example, the WBS waits until
+the tender breakdown and the BOQ revision are **approved**. Steps that do not depend on each other go on side by side. When
+an input changes (a new BOQ revision, for example), the steps that used it show **Redo**.
+
+The WBS and the CBS are built together by one AI run: every work package gets a CBS cost code. After they are approved, the
+step *Every work package has a CBS cost code* checks it; the cost snapshot waits for that check.
+
+In this first release the bid cycle only **watches**: each step is still done where it is done today (the stage tabs,
+Approvals, the BOQ and WBS tabs, the RFQ module, the bid pack). The cycle is checked again every few minutes.
+
 ### Keep track of the tender documents
 
 Open the opportunity's **Virtual Tendering Team** tab, then **Documents**. It lists every document of
@@ -1173,7 +1204,7 @@ tabs, each holding one topic. The tabs wrap onto a second line on a narrow scree
 
 | Tab | What it holds |
 |---|---|
-| **Run** | The run status, what still blocks the run, and the 11 stage cards. Select a card to open that stage. |
+| **Run** | Two tabs: **Run** (the run status, what still blocks the run, and the 11 stage cards; select a card to open that stage) and **Bid cycle** (every step of the bid and where it stands, TenderOps 2.86.0). |
 | **Intake** | The context panel and the indexing and embedding status. |
 | **Documents** | The document register. |
 | **Scope gate & ITP** | The scope gate and the ITP matrix. |
