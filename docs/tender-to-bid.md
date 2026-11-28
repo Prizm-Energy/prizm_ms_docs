@@ -243,8 +243,8 @@ responsible person is told even when only the authority or an administrator may 
     - **get_cost_snapshot and get_price_revision**: read the frozen cost and the approved price revision (one switch).
     - Searching past bids keeps its own switch, **Use past bids as precedent**.
 
-    All are on by default. A tool that is off is not offered to the AI. The tools only read; none of them changes
-    anything.
+    All are off by default: switch on the ones the AI may use. A tool that is off is not offered to the AI. The tools
+    only read; none of them changes anything.
 
 ### Convert a tender: one tender, one opportunity
 
