@@ -273,6 +273,22 @@ the bid's cost and price. Each of these is a tool with its own on/off switch.
   to the AI, and the AI calls no tool. This is how stages ran before the agent loop.
 - The tools only read. None of them changes the tender, the BOQ or the price.
 
+**What each combination does**
+
+| Agent loop | search_vector_db | Model chosen for the stage | What the stage does |
+|---|---|---|---|
+| Off | any | any | Runs in one pass with the evidence gathered first. No tool. |
+| On | Off | any | Runs in one pass with the evidence gathered first. No tool. |
+| On | On | Cloud model from OpenAI | The AI uses the tools that are switched on while it writes. |
+| On | On | Another cloud model (for example DeepSeek) | Runs in one pass: the tool loop works with OpenAI only. |
+| On | On | Local model | **The stage stops** with the message *Local agentic execution is not yet supported…*. Choose a cloud model for that stage, or switch off search_vector_db or Agent loop, and run the stage again. |
+
+- With a local model, the stage is never moved to a cloud model behind your back. It stops and says why (plan test E33).
+- The stage settings accept only one local model setup. Saving more than one is refused with
+  *model_configuration_multiple_local_policies_unsupported*.
+- Tools are used only when a stage reads the tender through the evidence index. An opportunity whose files are on the
+  Storage Box reads them directly, so its stages run in one pass even with every switch on.
+
 **Values in use today** (set on 28 November 2026, TenderOps 2.83.0): **Agent loop** on, **Use past bids as precedent**
 off, and all four tool switches **off**, so stages run in one pass with the evidence gathered beforehand.
 
