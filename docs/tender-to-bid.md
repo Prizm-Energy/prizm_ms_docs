@@ -693,7 +693,20 @@ the list with the official source of every limit.
 
 ### Ask the client a question (RFI)
 
-Open the opportunity, then **Virtual Tendering Team → RFIs**, and click **New RFI**.
+Open the opportunity, then **Virtual Tendering Team → RFIs**, and click **New RFI**. Each RFI opens on its own page in
+a new browser tab (TenderOps 2.84.0); selecting an RFI number in the list opens that RFI the same way.
+
+The RFI page has three tabs:
+
+| Tab | What it holds |
+|---|---|
+| **RFI** | The subject, the question, the documents it is about, and the client's answer once recorded. |
+| **Email to the client** | The email you send for this RFI, and its PDF once sent (below). |
+| **History** | Every step of this RFI, newest first: when, the step, the step before it, who did it and the reason. |
+
+The buttons for the next step (**Submit for approval**, **Record as sent**, **Record the answer**, **Close**,
+**Withdraw**) are at the top of the page, on every tab. **Back to the opportunity** returns to the opportunity's
+Virtual Tendering Team tab, on RFIs. The RFIs list there refreshes when you come back to it.
 
 1. Write the subject and the question, and pick the documents it is about. **Save draft**.
 2. **Submit for approval**. The RFI goes to the **Approvals** module, where the policy for **TenderOps RFI to the
@@ -707,8 +720,8 @@ Open the opportunity, then **Virtual Tendering Team → RFIs**, and click **New 
    documents you asked about are marked to check again.
 5. **Close the RFI** when nothing more is needed. **Withdraw** (with the reason) drops an RFI before the answer.
 
-Every step is kept. **Virtual Tendering Team → RFI history** lists all the steps of all the opportunity's RFIs, newest
-first: when, which RFI, the step, who and the reason. **This RFI's history** in an RFI opens that list filtered on it.
+Every step is kept, in the **History** tab of the RFI's page. (The separate RFI history tab of the opportunity was
+removed in TenderOps 2.84.0: each RFI's history is on its own page.)
 
 The answer is due on the tender's clarification deadline when it is known, otherwise a number of working days after
 sending (Settings → Approvals and gates: 3 days by default, with Friday and Saturday off). The RFIs tab counts the RFIs
@@ -717,7 +730,7 @@ who recorded the sending.
 
 #### The email to the client, and its PDF
 
-Each RFI has its own email, in the RFI window under **Email to the client**.
+Each RFI has its own email, in the **Email to the client** tab of the RFI's page.
 
 1. The email starts from the company template (subject and text in English and Arabic, set in **Opportunities →
    Settings → TenderOps → Approvals and gates**). Choose the **Language**, then fill **To** and **Cc**.
