@@ -244,7 +244,37 @@ responsible person is told even when only the authority or an administrator may 
     - Searching past bids keeps its own switch, **Use past bids as precedent**.
 
     All are off by default: switch on the ones the AI may use. A tool that is off is not offered to the AI. The tools
-    only read; none of them changes anything.
+    only read; none of them changes anything. See *Choose which tools the AI may use* below.
+
+### Choose which tools the AI may use (administrators)
+
+While it works on a stage, the AI can look things up in the tender: its documents, its file list, its BOQ lines, and
+the bid's cost and price. Each of these is a tool with its own on/off switch.
+
+1. Open **Opportunities → Settings → TenderOps** and select the **AI review** tab. You need to be an administrator, or
+   have the TenderOps *manage settings* permission.
+2. Make sure **Agent loop (tools during a stage)** is ticked. Without it, the AI uses no tool at all.
+3. Tick the tools the AI may use:
+
+    | Switch | What the AI can then do |
+    |---|---|
+    | **Agent tool: search_vector_db** | Search the documents of the tender by meaning. The other tools work only when this one is on. |
+    | **Agent tool: search_catalog** | List the files of the tender in the Storage Box. |
+    | **Agent tool: get_boq_lines** | Read the BOQ lines taken from the tender documents. |
+    | **Agent tools: get_cost_snapshot and get_price_revision** | Read the frozen cost and the approved price revision. |
+    | **Use past bids as precedent** | Search earlier bids for similar work. |
+
+4. Select **Save**. The change applies to the next stage that runs; a stage already running is not affected.
+
+**What happens when a tool is off**
+
+- The AI is not offered that tool, and a call to it is refused.
+- With **search_vector_db** off, a stage runs in one pass: the system gathers the tender's evidence first and gives it
+  to the AI, and the AI calls no tool. This is how stages ran before the agent loop.
+- The tools only read. None of them changes the tender, the BOQ or the price.
+
+**Values in use today** (set on 28 November 2026, TenderOps 2.83.0): **Agent loop** on, **Use past bids as precedent**
+off, and all four tool switches **off**, so stages run in one pass with the evidence gathered beforehand.
 
 ### Convert a tender: one tender, one opportunity
 
